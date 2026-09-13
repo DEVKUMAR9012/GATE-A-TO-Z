@@ -504,6 +504,52 @@ tr:hover { background-color: rgba(255, 255, 255, 0.02); }
   color: var(--text-muted);
 }
 
+.search-results-container {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-top: none;
+  border-radius: 0 0 var(--border-radius-sm) var(--border-radius-sm);
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 1000;
+  display: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.search-result-item {
+  display: block;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.search-result-item:hover {
+  background: var(--bg-secondary);
+  color: var(--accent-primary);
+}
+
+.search-result-title {
+  font-weight: 600;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.search-result-desc {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
 /* Checklists */
 .checklist { list-style: none; }
 .checklist li {

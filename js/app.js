@@ -27,21 +27,71 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Search functionality (Local page only)
+  // Global Search Functionality
+  const searchIndex = [
+    { title: "Overview / Home", url: "index.html", keywords: "home, overview, welcome, start" },
+    { title: "GATE Basics", url: "basics.html", keywords: "what is gate, eligibility, validity, score, marks, pattern, total" },
+    { title: "GATE CS Syllabus", url: "syllabus.html", keywords: "syllabus, weightage, books, algorithms, data structures, os, dbms, networks, coa, toc, compiler, math" },
+    { title: "GATE Papers", url: "papers.html", keywords: "papers, primary, secondary, da, data science, ec, electronics" },
+    { title: "Opportunities", url: "opportunities.html", keywords: "opportunities, mtech, psu, phd, ms, abroad, future, career" },
+    { title: "PSU Recruitment", url: "psu.html", keywords: "psu, jobs, ongc, iocl, drdo, barc, salary, government, recruitment, cutoff, rank" },
+    { title: "Admissions (IIT/NIT)", url: "admissions.html", keywords: "iit, nit, iiit, ccmt, coap, mtech, ms, phd, admission, cutoff, rank" },
+    { title: "Study Abroad", url: "abroad.html", keywords: "abroad, foreign, germany, singapore, nus, ntu, tum, ms, international" },
+    { title: "Scholarship & Stipend", url: "scholarship.html", keywords: "scholarship, stipend, aicte, hrd, 12400, money, finance" },
+    { title: "Preparation Roadmap", url: "roadmap.html", keywords: "roadmap, strategy, timeline, plan, preparation, study, months" },
+    { title: "Interactive Decision Tree", url: "decision-tree.html", keywords: "decision, tree, wizard, confused, what next, top rank, low rank, qualified" },
+    { title: "Other Target Exams", url: "targets.html", keywords: "targets, isro, barc, tifr, isi, bits hd, pget, state exams, iiit" },
+    { title: "Resources", url: "resources.html", keywords: "resources, links, books, videos, nptel, free" },
+    { title: "Login / Join GAZ", url: "login.html", keywords: "login, signup, join, register, account" }
+  ];
+
   const searchInput = document.getElementById('global-search');
-  if (searchInput) {
+  const searchResultsContainer = document.getElementById('search-results');
+
+  if (searchInput && searchResultsContainer) {
     searchInput.addEventListener('input', function(e) {
-      const term = e.target.value.toLowerCase();
+      const term = e.target.value.toLowerCase().trim();
       
-      const searchableElements = document.querySelectorAll('.searchable, .accordion-item, .card, .timeline-item, .target-card');
-      searchableElements.forEach(el => {
-        const text = el.innerText.toLowerCase();
-        if (text.includes(term)) {
-          el.style.display = '';
-        } else {
-          el.style.display = 'none';
-        }
-      });
+      if (term.length < 2) {
+        searchResultsContainer.style.display = 'none';
+        return;
+      }
+      
+      const results = searchIndex.filter(item => 
+        item.title.toLowerCase().includes(term) || 
+        item.keywords.includes(term)
+      );
+      
+      if (results.length > 0) {
+        searchResultsContainer.innerHTML = results.map(res => `
+          <a href="${res.url}" class="search-result-item">
+            <div class="search-result-title">${res.title}</div>
+            <div class="search-result-desc">Matches: ${term}</div>
+          </a>
+        `).join('');
+        searchResultsContainer.style.display = 'block';
+      } else {
+        searchResultsContainer.innerHTML = `
+          <div class="search-result-item" style="color:var(--text-muted); text-align:center;">
+            No results found
+          </div>
+        `;
+        searchResultsContainer.style.display = 'block';
+      }
+    });
+
+    // Hide when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!searchInput.contains(e.target) && !searchResultsContainer.contains(e.target)) {
+        searchResultsContainer.style.display = 'none';
+      }
+    });
+    
+    // Show again when clicking input if there is text
+    searchInput.addEventListener('focus', function(e) {
+      if (e.target.value.trim().length >= 2) {
+        searchResultsContainer.style.display = 'block';
+      }
     });
   }
 

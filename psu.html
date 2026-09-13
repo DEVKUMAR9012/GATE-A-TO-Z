@@ -1,149 +1,138 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PSU Recruitment for GATE CSE | GATE A TO Z</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PSU Recruitment for GATE CSE | GATE A TO Z</title>
+<link href="css/style.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
 </head>
 <body>
-
-  <!-- Mobile Header -->
-  <header class="mobile-header">
-    <div class="logo">GATE A TO Z</div>
-    <button class="menu-toggle" id="menu-btn"><i class="fas fa-bars"></i></button>
-  </header>
-
-  <div class="app-container">
-    
-    <!-- Sidebar -->
-    <nav class="sidebar" id="sidebar">
-      <div class="sidebar-header">
-        <div class="logo">GATE A TO Z</div>
-      </div>
-      <div class="search-container mb-4">
-        <i class="fas fa-search search-icon"></i>
-        <input type="text" class="search-input" id="global-search" placeholder="Search topics...">
-      </div>
-      <ul class="nav-list">
-        <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Overview</a></li>
-        <li class="nav-item"><a href="basics.html" class="nav-link"><i class="fas fa-book"></i> GATE Basics</a></li>
-        <li class="nav-item"><a href="papers.html" class="nav-link"><i class="fas fa-file-alt"></i> GATE Papers</a></li>
-        <li class="nav-item"><a href="syllabus.html" class="nav-link"><i class="fas fa-laptop-code"></i> GATE CS</a></li>
-        <li class="nav-item"><a href="opportunities.html" class="nav-link"><i class="fas fa-bullseye"></i> Opportunities</a></li>
-        <li class="nav-item"><a href="admissions.html" class="nav-link"><i class="fas fa-university"></i> IIT / NIT Admissions</a></li>
-        <li class="nav-item"><a href="psu.html" class="nav-link active"><i class="fas fa-building"></i> PSU Recruitment</a></li>
-        <li class="nav-item"><a href="scholarship.html" class="nav-link"><i class="fas fa-money-bill-wave"></i> Scholarship</a></li>
-        <li class="nav-item"><a href="abroad.html" class="nav-link"><i class="fas fa-globe"></i> Abroad</a></li>
-        <li class="nav-item"><a href="roadmap.html" class="nav-link"><i class="fas fa-map-signs"></i> Roadmap & Plan</a></li>
-        <li class="nav-item"><a href="decision-tree.html" class="nav-link"><i class="fas fa-code-branch"></i> Decision Tree</a></li>
-        <li class="nav-item"><a href="targets.html" class="nav-link"><i class="fas fa-crosshairs"></i> Targets</a></li>
-        <li class="nav-item"><a href="resources.html" class="nav-link"><i class="fas fa-link"></i> Official Sources</a></li>
-        <li class="nav-item mt-4">
-            <a href="login.html" class="nav-link" style="border: 1px solid var(--accent-primary); border-radius: var(--border-radius-sm);">
-                <i class="fas fa-sign-in-alt"></i> Join GAZ (Optional)
+<!-- Mobile Header -->
+<header class="mobile-header">
+<div class="logo">GATE A TO Z</div>
+<button class="menu-toggle" id="menu-btn"><i class="fas fa-bars"></i></button>
+</header>
+<div class="app-container">
+<!-- Sidebar -->
+<nav class="sidebar" id="sidebar">
+<div class="sidebar-header">
+<div class="logo">GATE A TO Z</div>
+</div>
+<div class="search-container mb-4">
+<i class="fas fa-search search-icon"></i>
+<input class="search-input" id="global-search" placeholder="Search topics..." type="text"/>
+<div class="search-results-container" id="search-results"></div></div>
+<ul class="nav-list">
+<li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-home"></i> Overview</a></li>
+<li class="nav-item"><a class="nav-link" href="basics.html"><i class="fas fa-book"></i> GATE Basics</a></li>
+<li class="nav-item"><a class="nav-link" href="papers.html"><i class="fas fa-file-alt"></i> GATE Papers</a></li>
+<li class="nav-item"><a class="nav-link" href="syllabus.html"><i class="fas fa-laptop-code"></i> GATE CS</a></li>
+<li class="nav-item"><a class="nav-link" href="opportunities.html"><i class="fas fa-bullseye"></i> Opportunities</a></li>
+<li class="nav-item"><a class="nav-link" href="admissions.html"><i class="fas fa-university"></i> IIT / NIT Admissions</a></li>
+<li class="nav-item"><a class="nav-link active" href="psu.html"><i class="fas fa-building"></i> PSU Recruitment</a></li>
+<li class="nav-item"><a class="nav-link" href="scholarship.html"><i class="fas fa-money-bill-wave"></i> Scholarship</a></li>
+<li class="nav-item"><a class="nav-link" href="abroad.html"><i class="fas fa-globe"></i> Abroad</a></li>
+<li class="nav-item"><a class="nav-link" href="roadmap.html"><i class="fas fa-map-signs"></i> Roadmap &amp; Plan</a></li>
+<li class="nav-item"><a class="nav-link" href="decision-tree.html"><i class="fas fa-code-branch"></i> Decision Tree</a></li>
+<li class="nav-item"><a class="nav-link" href="targets.html"><i class="fas fa-crosshairs"></i> Targets</a></li>
+<li class="nav-item"><a class="nav-link" href="resources.html"><i class="fas fa-link"></i> Official Sources</a></li>
+<li class="nav-item mt-4">
+<a class="nav-link" href="login.html" style="border: 1px solid var(--accent-primary); border-radius: var(--border-radius-sm);">
+<i class="fas fa-sign-in-alt"></i> Join GAZ (Optional)
             </a>
-        </li>
-      </ul>
-    </nav>
-
-    <!-- Main Content -->
-    <main class="main-content">
-      
-      <section id="psu" class="section searchable">
-        <span class="section-tag">Careers</span>
-        <h2 class="section-title">PSU Recruitment for Computer Science</h2>
-        
-        <div class="callout warning mb-4">
-          <span class="callout-title">⚠️ The Reality of PSUs for CSE</span>
+</li>
+</ul>
+</nav>
+<!-- Main Content -->
+<main class="main-content">
+<section class="section searchable" id="psu">
+<span class="section-tag">Careers</span>
+<h2 class="section-title">PSU Recruitment for Computer Science</h2>
+<div class="callout warning mb-4">
+<span class="callout-title">⚠️ The Reality of PSUs for CSE</span>
           Unlike Core branches (Mechanical/Electrical), CSE has significantly fewer PSU vacancies. A "Qualified" status is not enough. To secure a PSU job through GATE CSE, you generally need an <strong>All India Rank (AIR) under 200</strong> for General Category.
         </div>
-
-        <p class="text-secondary mb-4">Below is the exact list of Public Sector Undertakings (PSUs) and Research Organizations that actively hire Computer Science graduates using GATE scores, along with historical expected rank cutoffs.</p>
-
-        <div class="table-container mb-4">
-          <table>
-            <thead>
-              <tr>
-                <th>Organization</th>
-                <th>Role</th>
-                <th>Expected Safe AIR (Gen)</th>
-                <th>Recruitment Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>ONGC</strong> (Oil and Natural Gas Corp)</td>
-                <td>Programming Officer</td>
-                <td class="text-cyan font-bold">&lt; 100</td>
-                <td><span class="badge high">Active</span></td>
-              </tr>
-              <tr>
-                <td><strong>IOCL</strong> (Indian Oil Corp)</td>
-                <td>Information Systems Officer</td>
-                <td class="text-cyan font-bold">&lt; 150</td>
-                <td><span class="badge high">Active</span></td>
-              </tr>
-              <tr>
-                <td><strong>POSOCO / Grid-India</strong></td>
-                <td>Executive Trainee (CS)</td>
-                <td class="text-cyan font-bold">&lt; 150</td>
-                <td><span class="badge high">Active</span></td>
-              </tr>
-              <tr>
-                <td><strong>DRDO</strong> (Defence R&D)</td>
-                <td>Scientist 'B'</td>
-                <td class="text-cyan font-bold">&lt; 250</td>
-                <td><span class="badge high">Active</span> (Includes Interview)</td>
-              </tr>
-              <tr>
-                <td><strong>BARC</strong> (Bhabha Atomic Research)</td>
-                <td>Scientific Officer (OCES/DGFS)</td>
-                <td class="text-cyan font-bold">&lt; 300</td>
-                <td><span class="badge high">Active</span> (Direct Interview Call)</td>
-              </tr>
-              <tr>
-                <td><strong>CRIS</strong> (Centre for Railway Info)</td>
-                <td>Assistant Software Engineer</td>
-                <td class="text-cyan font-bold">&lt; 400</td>
-                <td><span class="badge high">Active</span></td>
-              </tr>
-              <tr>
-                <td><strong>NIC</strong> (National Informatics Centre)</td>
-                <td>Scientist 'B' / Scientific Technical Asst</td>
-                <td class="text-cyan">Varies</td>
-                <td><span class="badge medium">Separate Exam usually</span></td>
-              </tr>
-              <tr>
-                <td><strong>NTPC</strong> (National Thermal Power)</td>
-                <td>Executive Trainee (IT)</td>
-                <td class="text-cyan">Rare</td>
-                <td><span class="badge notverified">Rare for CS</span></td>
-              </tr>
-              <tr>
-                <td><strong>GAIL</strong> (Gas Authority)</td>
-                <td>Executive Trainee</td>
-                <td class="text-cyan">N/A</td>
-                <td><span class="badge notverified">Usually Core only</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <h3 class="mt-4 mb-3" style="color:var(--text-primary); font-family:var(--font-display); text-transform:uppercase;">The Selection Process</h3>
-        <ul class="checklist">
-          <li><strong>Step 1: GATE Score</strong> - You must score in the top 0.1% to get shortlisted.</li>
-          <li><strong>Step 2: Apply Independently</strong> - PSUs release their own notifications. You must apply on their respective websites using your GATE Registration Number.</li>
-          <li><strong>Step 3: Group Discussion (GD)</strong> - Many PSUs conduct GDs to check communication skills and leadership.</li>
-          <li><strong>Step 4: Personal Interview (PI)</strong> - Technical and HR rounds. Weightage is usually 85% GATE Score, 15% Interview/GD.</li>
-        </ul>
-
-      </section>
-
-    </main>
-  </div>
-
-  <script src="js/app.js"></script>
+<p class="text-secondary mb-4">Below is the exact list of Public Sector Undertakings (PSUs) and Research Organizations that actively hire Computer Science graduates using GATE scores, along with historical expected rank cutoffs.</p>
+<div class="table-container mb-4">
+<table>
+<thead>
+<tr>
+<th>Organization</th>
+<th>Role</th>
+<th>Expected Safe AIR (Gen)</th>
+<th>Recruitment Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ONGC</strong> (Oil and Natural Gas Corp)</td>
+<td>Programming Officer</td>
+<td class="text-cyan font-bold">&lt; 100</td>
+<td><span class="badge high">Active</span></td>
+</tr>
+<tr>
+<td><strong>IOCL</strong> (Indian Oil Corp)</td>
+<td>Information Systems Officer</td>
+<td class="text-cyan font-bold">&lt; 150</td>
+<td><span class="badge high">Active</span></td>
+</tr>
+<tr>
+<td><strong>POSOCO / Grid-India</strong></td>
+<td>Executive Trainee (CS)</td>
+<td class="text-cyan font-bold">&lt; 150</td>
+<td><span class="badge high">Active</span></td>
+</tr>
+<tr>
+<td><strong>DRDO</strong> (Defence R&amp;D)</td>
+<td>Scientist 'B'</td>
+<td class="text-cyan font-bold">&lt; 250</td>
+<td><span class="badge high">Active</span> (Includes Interview)</td>
+</tr>
+<tr>
+<td><strong>BARC</strong> (Bhabha Atomic Research)</td>
+<td>Scientific Officer (OCES/DGFS)</td>
+<td class="text-cyan font-bold">&lt; 300</td>
+<td><span class="badge high">Active</span> (Direct Interview Call)</td>
+</tr>
+<tr>
+<td><strong>CRIS</strong> (Centre for Railway Info)</td>
+<td>Assistant Software Engineer</td>
+<td class="text-cyan font-bold">&lt; 400</td>
+<td><span class="badge high">Active</span></td>
+</tr>
+<tr>
+<td><strong>NIC</strong> (National Informatics Centre)</td>
+<td>Scientist 'B' / Scientific Technical Asst</td>
+<td class="text-cyan">Varies</td>
+<td><span class="badge medium">Separate Exam usually</span></td>
+</tr>
+<tr>
+<td><strong>NTPC</strong> (National Thermal Power)</td>
+<td>Executive Trainee (IT)</td>
+<td class="text-cyan">Rare</td>
+<td><span class="badge notverified">Rare for CS</span></td>
+</tr>
+<tr>
+<td><strong>GAIL</strong> (Gas Authority)</td>
+<td>Executive Trainee</td>
+<td class="text-cyan">N/A</td>
+<td><span class="badge notverified">Usually Core only</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 class="mt-4 mb-3" style="color:var(--text-primary); font-family:var(--font-display); text-transform:uppercase;">The Selection Process</h3>
+<ul class="checklist">
+<li><strong>Step 1: GATE Score</strong> - You must score in the top 0.1% to get shortlisted.</li>
+<li><strong>Step 2: Apply Independently</strong> - PSUs release their own notifications. You must apply on their respective websites using your GATE Registration Number.</li>
+<li><strong>Step 3: Group Discussion (GD)</strong> - Many PSUs conduct GDs to check communication skills and leadership.</li>
+<li><strong>Step 4: Personal Interview (PI)</strong> - Technical and HR rounds. Weightage is usually 85% GATE Score, 15% Interview/GD.</li>
+</ul>
+</section>
+</main>
+</div>
+<script src="js/app.js"></script>
 </body>
 </html>
