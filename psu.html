@@ -1,139 +1,850 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>PSU Recruitment for GATE CSE | GATE A TO Z</title>
-<link href="css/style.css" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PSU Recruitment for GATE CSE | GATE A TO Z</title>
+  <meta name="description" content="Complete PSU recruitment guide for GATE CSE students with AIR cutoffs, salaries, eligibility, and selection process for ONGC, IOCL, DRDO, BARC, ISRO and more.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-<!-- Mobile Header -->
-<header class="mobile-header">
-<div class="logo">GATE A TO Z</div>
-<button class="menu-toggle" id="menu-btn"><i class="fas fa-bars"></i></button>
-</header>
-<div class="app-container">
-<!-- Sidebar -->
-<nav class="sidebar" id="sidebar">
-<div class="sidebar-header">
-<div class="logo">GATE A TO Z</div>
-</div>
-<div class="search-container mb-4">
-<i class="fas fa-search search-icon"></i>
-<input class="search-input" id="global-search" placeholder="Search topics..." type="text"/>
-<div class="search-results-container" id="search-results"></div></div>
-<ul class="nav-list">
-<li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-home"></i> Overview</a></li>
-<li class="nav-item"><a class="nav-link" href="basics.html"><i class="fas fa-book"></i> GATE Basics</a></li>
-<li class="nav-item"><a class="nav-link" href="papers.html"><i class="fas fa-file-alt"></i> GATE Papers</a></li>
-<li class="nav-item"><a class="nav-link" href="syllabus.html"><i class="fas fa-laptop-code"></i> GATE CS</a></li>
-<li class="nav-item"><a class="nav-link" href="opportunities.html"><i class="fas fa-bullseye"></i> Opportunities</a></li>
-<li class="nav-item"><a class="nav-link" href="admissions.html"><i class="fas fa-university"></i> IIT / NIT Admissions</a></li>
-<li class="nav-item"><a class="nav-link active" href="psu.html"><i class="fas fa-building"></i> PSU Recruitment</a></li>
-<li class="nav-item"><a class="nav-link" href="scholarship.html"><i class="fas fa-money-bill-wave"></i> Scholarship</a></li>
-<li class="nav-item"><a class="nav-link" href="abroad.html"><i class="fas fa-globe"></i> Abroad</a></li>
-<li class="nav-item"><a class="nav-link" href="roadmap.html"><i class="fas fa-map-signs"></i> Roadmap &amp; Plan</a></li>
-<li class="nav-item"><a class="nav-link" href="decision-tree.html"><i class="fas fa-code-branch"></i> Decision Tree</a></li>
-<li class="nav-item"><a class="nav-link" href="targets.html"><i class="fas fa-crosshairs"></i> Targets</a></li>
-<li class="nav-item"><a class="nav-link" href="resources.html"><i class="fas fa-link"></i> Official Sources</a></li>
-<li class="nav-item"><a href="institutes.html" class="nav-link"><i class="fas fa-landmark"></i> Institute Explorer</a></li>
+  <header class="mobile-header">
+    <div class="logo">GATE A TO Z</div>
+    <button class="menu-toggle" id="menu-btn"><i class="fas fa-bars"></i></button>
+  </header>
+  <div class="app-container">
+    <nav class="sidebar" id="sidebar">
+      <div class="sidebar-header"><div class="logo">GATE A TO Z</div></div>
+      <div class="search-container mb-4">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" class="search-input" id="global-search" placeholder="Search topics...">
+        <div class="search-results-container" id="search-results"></div>
+      </div>
+      <ul class="nav-list">
+        <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Overview</a></li>
+        <li class="nav-item"><a href="basics.html" class="nav-link"><i class="fas fa-book"></i> GATE Basics</a></li>
+        <li class="nav-item"><a href="papers.html" class="nav-link"><i class="fas fa-file-alt"></i> GATE Papers</a></li>
+        <li class="nav-item"><a href="syllabus.html" class="nav-link"><i class="fas fa-laptop-code"></i> GATE CS</a></li>
+        <li class="nav-item"><a href="opportunities.html" class="nav-link"><i class="fas fa-bullseye"></i> Opportunities</a></li>
+        <li class="nav-item"><a href="admissions.html" class="nav-link"><i class="fas fa-university"></i> IIT / NIT Admissions</a></li>
+        <li class="nav-item"><a href="institutes.html" class="nav-link"><i class="fas fa-landmark"></i> Institute Explorer</a></li>
+        <li class="nav-item"><a href="psu.html" class="nav-link active"><i class="fas fa-building"></i> PSU Recruitment</a></li>
+        <li class="nav-item"><a href="scholarship.html" class="nav-link"><i class="fas fa-money-bill-wave"></i> Scholarship</a></li>
+        <li class="nav-item"><a href="abroad.html" class="nav-link"><i class="fas fa-globe"></i> Abroad</a></li>
+        <li class="nav-item"><a href="roadmap.html" class="nav-link"><i class="fas fa-map-signs"></i> Roadmap & Plan</a></li>
+        <li class="nav-item"><a href="decision-tree.html" class="nav-link"><i class="fas fa-code-branch"></i> Decision Tree</a></li>
+        <li class="nav-item"><a href="targets.html" class="nav-link"><i class="fas fa-crosshairs"></i> Targets</a></li>
+        <li class="nav-item"><a href="resources.html" class="nav-link"><i class="fas fa-link"></i> Official Sources</a></li>
         <li class="nav-item mt-4">
-<a class="nav-link" href="login.html" style="border: 1px solid var(--accent-primary); border-radius: var(--border-radius-sm);">
-<i class="fas fa-sign-in-alt"></i> Join GAZ (Optional)
+            <a href="login.html" class="nav-link" style="border:1px solid var(--accent-primary);border-radius:var(--border-radius-sm);">
+                <i class="fas fa-sign-in-alt"></i> Join GAZ (Optional)
             </a>
-</li>
-</ul>
-</nav>
-<!-- Main Content -->
-<main class="main-content">
-<section class="section searchable" id="psu">
-<span class="section-tag">Careers</span>
-<h2 class="section-title">PSU Recruitment for Computer Science</h2>
-<div class="callout warning mb-4">
-<span class="callout-title">⚠️ The Reality of PSUs for CSE</span>
-          Unlike Core branches (Mechanical/Electrical), CSE has significantly fewer PSU vacancies. A "Qualified" status is not enough. To secure a PSU job through GATE CSE, you generally need an <strong>All India Rank (AIR) under 200</strong> for General Category.
+        </li>
+      </ul>
+    </nav>
+    <main class="main-content">
+      <section id="psu" class="section searchable">
+        <span class="section-tag">Careers</span>
+        <h2 class="section-title">PSU Recruitment for CS/IT</h2>
+
+        <div class="callout warning mb-4">
+          <span class="callout-title">⚠️ The Reality of PSUs for CSE</span>
+          Unlike Core branches (Mechanical/Electrical), CSE has significantly fewer PSU vacancies. A "Qualified" GATE status is NOT enough. To secure a PSU job through GATE CSE, you generally need an <strong>All India Rank (AIR) under 200</strong> for General Category. Treat PSU preparation as a bonus, not a primary goal.
         </div>
-<p class="text-secondary mb-4">Below is the exact list of Public Sector Undertakings (PSUs) and Research Organizations that actively hire Computer Science graduates using GATE scores, along with historical expected rank cutoffs.</p>
-<div class="table-container mb-4">
-<table>
-<thead>
-<tr>
-<th>Organization</th>
-<th>Role</th>
-<th>Expected Safe AIR (Gen)</th>
-<th>Recruitment Status</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>ONGC</strong> (Oil and Natural Gas Corp)</td>
-<td>Programming Officer</td>
-<td class="text-cyan font-bold">&lt; 100</td>
-<td><span class="badge high">Active</span></td>
-</tr>
-<tr>
-<td><strong>IOCL</strong> (Indian Oil Corp)</td>
-<td>Information Systems Officer</td>
-<td class="text-cyan font-bold">&lt; 150</td>
-<td><span class="badge high">Active</span></td>
-</tr>
-<tr>
-<td><strong>POSOCO / Grid-India</strong></td>
-<td>Executive Trainee (CS)</td>
-<td class="text-cyan font-bold">&lt; 150</td>
-<td><span class="badge high">Active</span></td>
-</tr>
-<tr>
-<td><strong>DRDO</strong> (Defence R&amp;D)</td>
-<td>Scientist 'B'</td>
-<td class="text-cyan font-bold">&lt; 250</td>
-<td><span class="badge high">Active</span> (Includes Interview)</td>
-</tr>
-<tr>
-<td><strong>BARC</strong> (Bhabha Atomic Research)</td>
-<td>Scientific Officer (OCES/DGFS)</td>
-<td class="text-cyan font-bold">&lt; 300</td>
-<td><span class="badge high">Active</span> (Direct Interview Call)</td>
-</tr>
-<tr>
-<td><strong>CRIS</strong> (Centre for Railway Info)</td>
-<td>Assistant Software Engineer</td>
-<td class="text-cyan font-bold">&lt; 400</td>
-<td><span class="badge high">Active</span></td>
-</tr>
-<tr>
-<td><strong>NIC</strong> (National Informatics Centre)</td>
-<td>Scientist 'B' / Scientific Technical Asst</td>
-<td class="text-cyan">Varies</td>
-<td><span class="badge medium">Separate Exam usually</span></td>
-</tr>
-<tr>
-<td><strong>NTPC</strong> (National Thermal Power)</td>
-<td>Executive Trainee (IT)</td>
-<td class="text-cyan">Rare</td>
-<td><span class="badge notverified">Rare for CS</span></td>
-</tr>
-<tr>
-<td><strong>GAIL</strong> (Gas Authority)</td>
-<td>Executive Trainee</td>
-<td class="text-cyan">N/A</td>
-<td><span class="badge notverified">Usually Core only</span></td>
-</tr>
-</tbody>
-</table>
-</div>
-<h3 class="mt-4 mb-3" style="color:var(--text-primary); font-family:var(--font-display); text-transform:uppercase;">The Selection Process</h3>
-<ul class="checklist">
-<li><strong>Step 1: GATE Score</strong> - You must score in the top 0.1% to get shortlisted.</li>
-<li><strong>Step 2: Apply Independently</strong> - PSUs release their own notifications. You must apply on their respective websites using your GATE Registration Number.</li>
-<li><strong>Step 3: Group Discussion (GD)</strong> - Many PSUs conduct GDs to check communication skills and leadership.</li>
-<li><strong>Step 4: Personal Interview (PI)</strong> - Technical and HR rounds. Weightage is usually 85% GATE Score, 15% Interview/GD.</li>
-</ul>
-</section>
-</main>
-</div>
-<script src="js/app.js"></script>
+
+        <div class="psu-filter-bar mb-4">
+          <button class="filter-btn active" onclick="filterPSU('all',this)">All PSUs</button>
+          <button class="filter-btn" onclick="filterPSU('active',this)">Active Recruiters</button>
+          <button class="filter-btn" onclick="filterPSU('irregular',this)">Irregular</button>
+        </div>
+
+        <div class="psu-grid" id="psu-grid">
+
+        <div class="psu-card">
+          <div class="psu-card-header">
+            <div class="psu-logo-wrap">
+              <img src="img/psu/Oil_and_Natural_Gas_Corporation.png" alt="ONGC logo" loading="lazy"
+                   onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/320px-No_image_available.svg.png'">
+            </div>
+            <div class="psu-header-info">
+              <h3 class="psu-name">ONGC</h3>
+              <p class="psu-full-name">Oil and Natural Gas Corporation</p>
+              <div class="psu-tags">
+                <span class="section-tag" style="font-size:0.7rem;padding:2px 8px;">Oil & Gas</span>
+                <span class="badge high">Active</span>
+              </div>
+            </div>
+            <div class="psu-air-badge">AIR < 100</div>
+          </div>
+          <div class="psu-card-body">
+            <div class="psu-detail-grid">
+              <div class="psu-detail-item">
+                <i class="fas fa-briefcase"></i>
+                <div>
+                  <span class="psu-label">Role</span>
+                  <span class="psu-value">Programming Officer / E1</span>
+                </div>
+              </div>
+              <div class="psu-detail-item">
+                <i class="fas fa-rupee-sign"></i>
+                <div>
+                  <span class="psu-label">CTC / Package</span>
+                  <span class="psu-value text-cyan">~₹ 17–20 LPA</span>
+                </div>
+              </div>
+              <div class="psu-detail-item">
+                <i class="fas fa-list-ol"></i>
+                <div>
+                  <span class="psu-label">Safe AIR (General)</span>
+                  <span class="psu-value text-cyan">< 100</span>
+                </div>
+              </div>
+              <div class="psu-detail-item">
+                <i class="fas fa-user-check"></i>
+                <div>
+                  <span class="psu-label">Eligibility</span>
+                  <span class="psu-value">B.Tech CSE/IT. Min 60% (55% for SC/ST/PH). Age ≤ 30 yrs.</span>
+                </div>
+              </div>
+            </div>
+            <div class="psu-selection">
+              <i class="fas fa-route"></i>
+              <div>
+                <span class="psu-label">Selection Process</span>
+                <span class="psu-value">GATE Score → GD → Personal Interview (85% GATE + 15% PI)</span>
+              </div>
+            </div>
+            <div class="psu-notes">
+              <i class="fas fa-lightbulb" style="color:var(--accent-primary);margin-right:0.5rem;"></i>
+              One of the biggest PSU recruiters for CS. Excellent perks including HRA, quarters, and medical for entire family.
+            </div>
+            <a href="https://www.ongcindia.com" target="_blank" class="psu-website-btn">
+              Visit Official Website <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+        <div class="psu-card">
+          <div class="psu-card-header">
+            <div class="psu-logo-wrap">
+              <img src="img/psu/Indian_Oil_Corporation.png" alt="IOCL logo" loading="lazy"
+                   onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/320px-No_image_available.svg.png'">
+            </div>
+            <div class="psu-header-info">
+              <h3 class="psu-name">IOCL</h3>
+              <p class="psu-full-name">Indian Oil Corporation Limited</p>
+              <div class="psu-tags">
+                <span class="section-tag" style="font-size:0.7rem;padding:2px 8px;">Oil & Gas</span>
+                <span class="badge high">Active</span>
+              </div>
+            </div>
+            <div class="psu-air-badge">AIR < 150</div>
+          </div>
+          <div class="psu-card-body">
+            <div class="psu-detail-grid">
+              <div class="psu-detail-item">
+                <i class="fas fa-briefcase"></i>
+                <div>
+                  <span class="psu-label">Role</span>
+                  <span class="psu-value">Information Systems Officer (Grade A)</span>
+                </div>
+              </div>
+              <div class="psu-detail-item">
+                <i class="fas fa-rupee-sign"></i>
+                <div>
+                  <span class="psu-label">CTC / Package</span>
+                  <span class="psu-value text-cyan">~₹ 16–19 LPA</span>
+                </div>
+              </div>
+              <div class="psu-detail-item">
+                <i class="fas fa-list-ol"></i>
+                <div>
+                  <span class="psu-label">Safe AIR (General)</span>
+                  <span class="psu-value text-cyan">< 150</span>
+                </div>
+              </div>
+              <div class="psu-detail-item">
+                <i class="fas fa-user-check"></i>
+                <div>
+                  <span class="psu-label">Eligibility</span>
+                  <span class="psu-value">B.Tech CSE/IT/ECE. Min 65%. Age ≤ 26 yrs.</span>
+                </div>
+              </div>
+            </div>
+            <div class="psu-selection">
+              <i class="fas fa-route"></i>
+              <div>
+                <span class="psu-label">Selection Process</span>
+                <span class="psu-value">GATE Score → GD → Personal Interview</span>
+              </div>
+            </div>
+            <div class="psu-notes">
+              <i class="fas fa-lightbulb" style="color:var(--accent-primary);margin-right:0.5rem;"></i>
+              Huge company. One of the Maharatna PSUs. Job security is outstanding. Postings can be anywhere in India.
+            </div>
+            <a href="https://www.iocl.com" target="_blank" class="psu-website-btn">
+              Visit Official Website <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+        <div class="psu-card">
+          <div class="psu-card-header">
+            <div class="psu-logo-wrap">
+              <img src="img/psu/Power_System_Operation_Corporation.png" alt="POSOCO / Grid-India logo" loading="lazy"
+                   onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/320px-No_image_available.svg.png'">
+            </div>
+            <div class="psu-header-info">
+              <h3 class="psu-name">POSOCO / Grid-India</h3>
+              <p class="psu-full-name">Power System Operation Corporation</p>
+              <div class="psu-tags">
+                <span class="section-tag" style="font-size:0.7rem;padding:2px 8px;">Power</span>
+                <span class="badge high">Active</span>
+              </div>
+            </div>
+            <div class="psu-air-badge">AIR < 150</div>
+          </div>
+          <div class="psu-card-body">
+            <div class="psu-detail-grid">
+              <div class="psu-detail-item">
+                <i class="fas fa-briefcase"></i>
+                <div>
+                  <span class="psu-label">Role</span>
+                  <span class="psu-value">Executive Trainee (CS/IT)</span>
+                </div>
+              </div>
+              <div class="psu-detail-item">
+                <i class="fas fa-rupee-sign"></i>
+                <div>
+                  <span class="psu-label">CTC / Package</span>
+                  <span class="psu-value text-cyan">~₹ 18–22 LPA</span>
+                </div>
+              </div>
+              <div class="psu-detail-item">
+                <i class="fas fa-list-ol"></i>
+                <div>
+                  <span class="psu-label">Safe AIR (General)</span>
+                  <span class="psu-value text-cyan">< 150</span>
+                </div>
+              </div>
+              <div class="psu-detail-item">
+                <i class="fas fa-user-check"></i>
+                <div>
+                  <span class="psu-label">Eligibility</span>
+                  <span class="psu-value">B.Tech CSE/IT. Min 65%. Age ≤ 28 yrs.</span>
+                </div>
+              </div>
+            </div>
+            <div class="psu-selection">
+              <i class="fas fa-route"></i>
+              <div>
+                <span class="psu-label">Selection Process</span>
+                <span class="psu-value">GATE Score only (No Interview). Direct merit list.</span>
+              </div>
+            </div>
+            <div class="psu-notes">
+              <i class="fas fa-lightbulb" style="color:var(--accent-primary);margin-right:0.5rem;"></i>
+              Extremely competitive for CS. No interview makes GATE score the only deciding factor. Excellent work-life balance.
+            </div>
+            <a href="https://www.posoco.in" target="_blank" class="psu-website-btn">
+              Visit Official Website <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+        <div class="psu-card">
+          <div class="psu-card-header">
+            <div class="psu-logo-wrap">
+              <img src="img/psu/Defence_Research_and_Development_Organisation.png" alt="DRDO logo" loading="lazy"
+                   onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/320px-No_image_available.svg.png'">
+            </div>
+            <div class="psu-header-info">
+              <h3 class="psu-name">DRDO</h3>
+              <p class="psu-full-name">Defence Research and Development Organisation</p>
+              <div class="psu-tags">
+                <span class="section-tag" style="font-size:0.7rem;padding:2px 8px;">Defence & Research</span>
+                <span class="badge high">Active</span>
+              </div>
+            </div>
+            <div class="psu-air-badge">AIR < 250</div>
+          </div>
+          <div class="psu-card-body">
+            <div class="psu-detail-grid">
+              <div class="psu-detail-item">
+                <i class="fas fa-briefcase"></i>
+                <div>
+                  <span class="psu-label">Role</span>
+                  <span class="psu-value">Scientist 'B'</span>
+                </div>
+              </div>
+              <div class="psu-detail-item">
+                <i class="fas fa-rupee-sign"></i>
+                <div>
+                  <span class="psu-label">CTC / Package</span>
+                  <span class="psu-value text-cyan">~₹ 15.5 LPA + allowances</span>
+                </div>
+              </div>
+              <div class="psu-detail-item">
+                <i class="fas fa-list-ol"></i>
+                <div>
+                  <span class="psu-label">Safe AIR (General)</span>
+                  <span class="psu-value text-cyan">< 250</span>
+                </div>
+              </div>
+              <div class="psu-detail-item">
+                <i class="fas fa-user-check"></i>
+                <div>
+                  <span class="psu-label">Eligibility</span>
+                  <span class="psu-value">B.Tech CSE/IT. Min 60%. Age ≤ 28 yrs.</span>
+                </div>
+              </div>
+            </div>
+            <div class="psu-selection">
+              <i class="fas fa-route"></i>
+              <div>
+                <span class="psu-label">Selection Process</span>
+                <span class="psu-value">GATE Score → Personal Interview (Technical + HR)</span>
+              </div>
+            </div>
+            <div class="psu-notes">
+              <i class="fas fa-lightbulb" style="color:var(--accent-primary);margin-right:0.5rem;"></i>
+              Prestige is unmatched. You work on cutting-edge defense technology. Gazetted Officer status. Government housing available.
+            </div>
+            <a href="https://www.drdo.gov.in" target="_blank" class="psu-website-btn">
+              Visit Official Website <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+        <div class="psu-card">
+          <div class="psu-card-header">
+            <div class="psu-logo-wrap">
+              <img src="img/psu/Bhabha_Atomic_Research_Centre.png" alt="BARC logo" loading="lazy"
+                   onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/320px-No_image_available.svg.png'">
+            </div>
+            <div class="psu-header-info">
+              <h3 class="psu-name">BARC</h3>
+              <p class="psu-full-name">Bhabha Atomic Research Centre</p>
+              <div class="psu-tags">
+                <span class="section-tag" style="font-size:0.7rem;padding:2px 8px;">Nuclear / Research</span>
+                <span class="badge high">Active</span>
+              </div>
+            </div>
+            <div class="psu-air-badge">AIR < 300</div>
+          </div>
+          <div class="psu-card-body">
+            <div class="psu-detail-grid">
+              <div class="psu-detail-item">
+                <i class="fas fa-briefcase"></i>
+                <div>
+                  <span class="psu-label">Role</span>
+                  <span class="psu-value">Scientific Officer (OCES/DGFS)</span>
+                </div>
+              </div>
+              <div class="psu-detail-item">
+                <i class="fas fa-rupee-sign"></i>
+                <div>
+                  <span class="psu-label">CTC / Package</span>
+                  <span class="psu-value text-cyan">~₹ 14–16 LPA + allowances</span>
+                </div>
+              </div>
+              <div class="psu-detail-item">
+                <i class="fas fa-list-ol"></i>
+                <div>
+                  <span class="psu-label">Safe AIR (General)</span>
+                  <span class="psu-value text-cyan">< 300</span>
+                </div>
+              </div>
+              <div class="psu-detail-item">
+                <i class="fas fa-user-check"></i>
+                <div>
+                  <span class="psu-label">Eligibility</span>
+                  <span class="psu-value">B.Tech CSE/IT. Min 60%. Age ≤ 26 yrs.</span>
+                </div>
+              </div>
+            </div>
+            <div class="psu-selection">
+              <i class="fas fa-route"></i>
+              <div>
+                <span class="psu-label">Selection Process</span>
+                <span class="psu-value">GATE Score → Interview (Shortlisted candidates attend a 1-year training at Mumbai before final placement)</span>
+              </div>
+            </div>
+            <div class="psu-notes">
+              <i class="fas fa-lightbulb" style="color:var(--accent-primary);margin-right:0.5rem;"></i>
+              Very prestigious. Includes 1-year OCES/DGFS training program in Mumbai or Mysuru. Classified work on nuclear R&D systems.
+            </div>
+            <a href="https://www.barc.gov.in" target="_blank" class="psu-website-btn">
+              Visit Official Website <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+        <div class="psu-card">
+          <div class="psu-card-header">
+            <div class="psu-logo-wrap">
+              <img src="img/psu/Centre_for_Railway_Information_Systems.png" alt="CRIS logo" loading="lazy"
+                   onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/320px-No_image_available.svg.png'">
+            </div>
+            <div class="psu-header-info">
+              <h3 class="psu-name">CRIS</h3>
+              <p class="psu-full-name">Centre for Railway Information Systems</p>
+              <div class="psu-tags">
+                <span class="section-tag" style="font-size:0.7rem;padding:2px 8px;">Railways / IT</span>
+                <span class="badge high">Active</span>
+              </div>
+            </div>
+            <div class="psu-air-badge">AIR < 400</div>
+          </div>
+          <div class="psu-card-body">
+            <div class="psu-detail-grid">
+              <div class="psu-detail-item">
+                <i class="fas fa-briefcase"></i>
+                <div>
+                  <span class="psu-label">Role</span>
+                  <span class="psu-value">Assistant Software Engineer / Junior Software Engineer</span>
+                </div>
+              </div>
+              <div class="psu-detail-item">
+                <i class="fas fa-rupee-sign"></i>
+                <div>
+                  <span class="psu-label">CTC / Package</span>
+                  <span class="psu-value text-cyan">~₹ 12–15 LPA</span>
+                </div>
+              </div>
+              <div class="psu-detail-item">
+                <i class="fas fa-list-ol"></i>
+                <div>
+                  <span class="psu-label">Safe AIR (General)</span>
+                  <span class="psu-value text-cyan">< 400</span>
+                </div>
+              </div>
+              <div class="psu-detail-item">
+                <i class="fas fa-user-check"></i>
+                <div>
+                  <span class="psu-label">Eligibility</span>
+                  <span class="psu-value">B.Tech CSE/IT. Min 60%. Age ≤ 30 yrs.</span>
+                </div>
+              </div>
+            </div>
+            <div class="psu-selection">
+              <i class="fas fa-route"></i>
+              <div>
+                <span class="psu-label">Selection Process</span>
+                <span class="psu-value">GATE Score → Technical Interview</span>
+              </div>
+            </div>
+            <div class="psu-notes">
+              <i class="fas fa-lightbulb" style="color:var(--accent-primary);margin-right:0.5rem;"></i>
+              The IT arm of Indian Railways. Great for CSE students since the work is pure software development (PNR system, ticketing etc).
+            </div>
+            <a href="https://www.cris.org.in" target="_blank" class="psu-website-btn">
+              Visit Official Website <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+        <div class="psu-card">
+          <div class="psu-card-header">
+            <div class="psu-logo-wrap">
+              <img src="img/psu/Indian_Space_Research_Organisation.png" alt="ISRO logo" loading="lazy"
+                   onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/320px-No_image_available.svg.png'">
+            </div>
+            <div class="psu-header-info">
+              <h3 class="psu-name">ISRO</h3>
+              <p class="psu-full-name">Indian Space Research Organisation</p>
+              <div class="psu-tags">
+                <span class="section-tag" style="font-size:0.7rem;padding:2px 8px;">Space Research</span>
+                <span class="badge high">Active</span>
+              </div>
+            </div>
+            <div class="psu-air-badge">AIR < 200</div>
+          </div>
+          <div class="psu-card-body">
+            <div class="psu-detail-grid">
+              <div class="psu-detail-item">
+                <i class="fas fa-briefcase"></i>
+                <div>
+                  <span class="psu-label">Role</span>
+                  <span class="psu-value">Scientist/Engineer 'SC'</span>
+                </div>
+              </div>
+              <div class="psu-detail-item">
+                <i class="fas fa-rupee-sign"></i>
+                <div>
+                  <span class="psu-label">CTC / Package</span>
+                  <span class="psu-value text-cyan">~₹ 15.6 LPA + allowances</span>
+                </div>
+              </div>
+              <div class="psu-detail-item">
+                <i class="fas fa-list-ol"></i>
+                <div>
+                  <span class="psu-label">Safe AIR (General)</span>
+                  <span class="psu-value text-cyan">< 200</span>
+                </div>
+              </div>
+              <div class="psu-detail-item">
+                <i class="fas fa-user-check"></i>
+                <div>
+                  <span class="psu-label">Eligibility</span>
+                  <span class="psu-value">B.Tech CSE/IT/ECE. Min 65%. Age ≤ 35 yrs.</span>
+                </div>
+              </div>
+            </div>
+            <div class="psu-selection">
+              <i class="fas fa-route"></i>
+              <div>
+                <span class="psu-label">Selection Process</span>
+                <span class="psu-value">GATE Score → Written Test (Centralised Recruitment Board) → Interview</span>
+              </div>
+            </div>
+            <div class="psu-notes">
+              <i class="fas fa-lightbulb" style="color:var(--accent-primary);margin-right:0.5rem;"></i>
+              Dream job for engineers. Uses GATE scores for initial shortlisting but has its own CRB exam and interview. Incredible prestige and interesting work.
+            </div>
+            <a href="https://www.isro.gov.in" target="_blank" class="psu-website-btn">
+              Visit Official Website <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+        <div class="psu-card">
+          <div class="psu-card-header">
+            <div class="psu-logo-wrap">
+              <img src="img/psu/Bharat_Heavy_Electricals_Limited.png" alt="BHEL logo" loading="lazy"
+                   onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/320px-No_image_available.svg.png'">
+            </div>
+            <div class="psu-header-info">
+              <h3 class="psu-name">BHEL</h3>
+              <p class="psu-full-name">Bharat Heavy Electricals Limited</p>
+              <div class="psu-tags">
+                <span class="section-tag" style="font-size:0.7rem;padding:2px 8px;">Manufacturing / Power</span>
+                <span class="badge high">Active</span>
+              </div>
+            </div>
+            <div class="psu-air-badge">AIR < 500</div>
+          </div>
+          <div class="psu-card-body">
+            <div class="psu-detail-grid">
+              <div class="psu-detail-item">
+                <i class="fas fa-briefcase"></i>
+                <div>
+                  <span class="psu-label">Role</span>
+                  <span class="psu-value">Engineer Trainee (IT/CS)</span>
+                </div>
+              </div>
+              <div class="psu-detail-item">
+                <i class="fas fa-rupee-sign"></i>
+                <div>
+                  <span class="psu-label">CTC / Package</span>
+                  <span class="psu-value text-cyan">~₹ 12–14 LPA</span>
+                </div>
+              </div>
+              <div class="psu-detail-item">
+                <i class="fas fa-list-ol"></i>
+                <div>
+                  <span class="psu-label">Safe AIR (General)</span>
+                  <span class="psu-value text-cyan">< 500</span>
+                </div>
+              </div>
+              <div class="psu-detail-item">
+                <i class="fas fa-user-check"></i>
+                <div>
+                  <span class="psu-label">Eligibility</span>
+                  <span class="psu-value">B.Tech CSE/IT. Min 60%. Age ≤ 27 yrs.</span>
+                </div>
+              </div>
+            </div>
+            <div class="psu-selection">
+              <i class="fas fa-route"></i>
+              <div>
+                <span class="psu-label">Selection Process</span>
+                <span class="psu-value">GATE Score → GD → Personal Interview</span>
+              </div>
+            </div>
+            <div class="psu-notes">
+              <i class="fas fa-lightbulb" style="color:var(--accent-primary);margin-right:0.5rem;"></i>
+              Navratna PSU. CS vacancies are limited but available. Good for those wanting a stable government job with moderate technical work.
+            </div>
+            <a href="https://www.bhel.com" target="_blank" class="psu-website-btn">
+              Visit Official Website <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+        <div class="psu-card">
+          <div class="psu-card-header">
+            <div class="psu-logo-wrap">
+              <img src="img/psu/NTPC_Limited.png" alt="NTPC logo" loading="lazy"
+                   onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/320px-No_image_available.svg.png'">
+            </div>
+            <div class="psu-header-info">
+              <h3 class="psu-name">NTPC</h3>
+              <p class="psu-full-name">National Thermal Power Corporation</p>
+              <div class="psu-tags">
+                <span class="section-tag" style="font-size:0.7rem;padding:2px 8px;">Power</span>
+                <span class="badge medium">Irregular</span>
+              </div>
+            </div>
+            <div class="psu-air-badge psu-air-varies">Varies</div>
+          </div>
+          <div class="psu-card-body">
+            <div class="psu-detail-grid">
+              <div class="psu-detail-item">
+                <i class="fas fa-briefcase"></i>
+                <div>
+                  <span class="psu-label">Role</span>
+                  <span class="psu-value">Executive Trainee (IT)</span>
+                </div>
+              </div>
+              <div class="psu-detail-item">
+                <i class="fas fa-rupee-sign"></i>
+                <div>
+                  <span class="psu-label">CTC / Package</span>
+                  <span class="psu-value text-cyan">~₹ 18–22 LPA</span>
+                </div>
+              </div>
+              <div class="psu-detail-item">
+                <i class="fas fa-list-ol"></i>
+                <div>
+                  <span class="psu-label">Safe AIR (General)</span>
+                  <span class="psu-value text-cyan">Varies</span>
+                </div>
+              </div>
+              <div class="psu-detail-item">
+                <i class="fas fa-user-check"></i>
+                <div>
+                  <span class="psu-label">Eligibility</span>
+                  <span class="psu-value">B.Tech CSE/IT. Min 65%. Age ≤ 27 yrs.</span>
+                </div>
+              </div>
+            </div>
+            <div class="psu-selection">
+              <i class="fas fa-route"></i>
+              <div>
+                <span class="psu-label">Selection Process</span>
+                <span class="psu-value">GATE Score → Group Discussion → Interview</span>
+              </div>
+            </div>
+            <div class="psu-notes">
+              <i class="fas fa-lightbulb" style="color:var(--accent-primary);margin-right:0.5rem;"></i>
+              Maharatna PSU. CS vacancies are irregular and uncommon. When they do recruit, competition is fierce. Check notifications yearly.
+            </div>
+            <a href="https://www.ntpc.co.in" target="_blank" class="psu-website-btn">
+              Visit Official Website <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+        <div class="psu-card">
+          <div class="psu-card-header">
+            <div class="psu-logo-wrap">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/320px-No_image_available.svg.png" alt="GAIL logo" loading="lazy"
+                   onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/320px-No_image_available.svg.png'">
+            </div>
+            <div class="psu-header-info">
+              <h3 class="psu-name">GAIL</h3>
+              <p class="psu-full-name">Gas Authority of India Limited</p>
+              <div class="psu-tags">
+                <span class="section-tag" style="font-size:0.7rem;padding:2px 8px;">Oil & Gas</span>
+                <span class="badge high">Active</span>
+              </div>
+            </div>
+            <div class="psu-air-badge">AIR < 300</div>
+          </div>
+          <div class="psu-card-body">
+            <div class="psu-detail-grid">
+              <div class="psu-detail-item">
+                <i class="fas fa-briefcase"></i>
+                <div>
+                  <span class="psu-label">Role</span>
+                  <span class="psu-value">Executive Trainee (Telecommunication/IT)</span>
+                </div>
+              </div>
+              <div class="psu-detail-item">
+                <i class="fas fa-rupee-sign"></i>
+                <div>
+                  <span class="psu-label">CTC / Package</span>
+                  <span class="psu-value text-cyan">~₹ 18–22 LPA</span>
+                </div>
+              </div>
+              <div class="psu-detail-item">
+                <i class="fas fa-list-ol"></i>
+                <div>
+                  <span class="psu-label">Safe AIR (General)</span>
+                  <span class="psu-value text-cyan">< 300</span>
+                </div>
+              </div>
+              <div class="psu-detail-item">
+                <i class="fas fa-user-check"></i>
+                <div>
+                  <span class="psu-label">Eligibility</span>
+                  <span class="psu-value">B.Tech CSE/IT/ECE for Telecom branch. Age ≤ 28 yrs.</span>
+                </div>
+              </div>
+            </div>
+            <div class="psu-selection">
+              <i class="fas fa-route"></i>
+              <div>
+                <span class="psu-label">Selection Process</span>
+                <span class="psu-value">GATE Score → GD → Personal Interview</span>
+              </div>
+            </div>
+            <div class="psu-notes">
+              <i class="fas fa-lightbulb" style="color:var(--accent-primary);margin-right:0.5rem;"></i>
+              CS candidates typically apply under the 'Telecommunication' discipline. Maharatna company with excellent salary and facilities.
+            </div>
+            <a href="https://www.gail.nic.in" target="_blank" class="psu-website-btn">
+              Visit Official Website <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+        <div class="psu-card">
+          <div class="psu-card-header">
+            <div class="psu-logo-wrap">
+              <img src="img/psu/Hindustan_Petroleum.png" alt="HPCL logo" loading="lazy"
+                   onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/320px-No_image_available.svg.png'">
+            </div>
+            <div class="psu-header-info">
+              <h3 class="psu-name">HPCL</h3>
+              <p class="psu-full-name">Hindustan Petroleum Corporation Limited</p>
+              <div class="psu-tags">
+                <span class="section-tag" style="font-size:0.7rem;padding:2px 8px;">Oil & Gas</span>
+                <span class="badge high">Active</span>
+              </div>
+            </div>
+            <div class="psu-air-badge">AIR < 200</div>
+          </div>
+          <div class="psu-card-body">
+            <div class="psu-detail-grid">
+              <div class="psu-detail-item">
+                <i class="fas fa-briefcase"></i>
+                <div>
+                  <span class="psu-label">Role</span>
+                  <span class="psu-value">Officer (IT)</span>
+                </div>
+              </div>
+              <div class="psu-detail-item">
+                <i class="fas fa-rupee-sign"></i>
+                <div>
+                  <span class="psu-label">CTC / Package</span>
+                  <span class="psu-value text-cyan">~₹ 16–19 LPA</span>
+                </div>
+              </div>
+              <div class="psu-detail-item">
+                <i class="fas fa-list-ol"></i>
+                <div>
+                  <span class="psu-label">Safe AIR (General)</span>
+                  <span class="psu-value text-cyan">< 200</span>
+                </div>
+              </div>
+              <div class="psu-detail-item">
+                <i class="fas fa-user-check"></i>
+                <div>
+                  <span class="psu-label">Eligibility</span>
+                  <span class="psu-value">B.Tech CSE/IT. Min 60%. Age ≤ 25 yrs.</span>
+                </div>
+              </div>
+            </div>
+            <div class="psu-selection">
+              <i class="fas fa-route"></i>
+              <div>
+                <span class="psu-label">Selection Process</span>
+                <span class="psu-value">GATE Score → Group Task → Personal Interview</span>
+              </div>
+            </div>
+            <div class="psu-notes">
+              <i class="fas fa-lightbulb" style="color:var(--accent-primary);margin-right:0.5rem;"></i>
+              Navratna Maharatna PSU. Less frequent CS recruitment than ONGC/IOCL but good pay when available.
+            </div>
+            <a href="https://www.hindustanpetroleum.com" target="_blank" class="psu-website-btn">
+              Visit Official Website <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+        <div class="psu-card">
+          <div class="psu-card-header">
+            <div class="psu-logo-wrap">
+              <img src="img/psu/Bharat_Petroleum.png" alt="BPCL logo" loading="lazy"
+                   onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/320px-No_image_available.svg.png'">
+            </div>
+            <div class="psu-header-info">
+              <h3 class="psu-name">BPCL</h3>
+              <p class="psu-full-name">Bharat Petroleum Corporation Limited</p>
+              <div class="psu-tags">
+                <span class="section-tag" style="font-size:0.7rem;padding:2px 8px;">Oil & Gas</span>
+                <span class="badge high">Active</span>
+              </div>
+            </div>
+            <div class="psu-air-badge">AIR < 200</div>
+          </div>
+          <div class="psu-card-body">
+            <div class="psu-detail-grid">
+              <div class="psu-detail-item">
+                <i class="fas fa-briefcase"></i>
+                <div>
+                  <span class="psu-label">Role</span>
+                  <span class="psu-value">Engineer (IT)</span>
+                </div>
+              </div>
+              <div class="psu-detail-item">
+                <i class="fas fa-rupee-sign"></i>
+                <div>
+                  <span class="psu-label">CTC / Package</span>
+                  <span class="psu-value text-cyan">~₹ 16–18 LPA</span>
+                </div>
+              </div>
+              <div class="psu-detail-item">
+                <i class="fas fa-list-ol"></i>
+                <div>
+                  <span class="psu-label">Safe AIR (General)</span>
+                  <span class="psu-value text-cyan">< 200</span>
+                </div>
+              </div>
+              <div class="psu-detail-item">
+                <i class="fas fa-user-check"></i>
+                <div>
+                  <span class="psu-label">Eligibility</span>
+                  <span class="psu-value">B.Tech CSE/IT. Min 60%. Age ≤ 25 yrs.</span>
+                </div>
+              </div>
+            </div>
+            <div class="psu-selection">
+              <i class="fas fa-route"></i>
+              <div>
+                <span class="psu-label">Selection Process</span>
+                <span class="psu-value">GATE Score → Interview</span>
+              </div>
+            </div>
+            <div class="psu-notes">
+              <i class="fas fa-lightbulb" style="color:var(--accent-primary);margin-right:0.5rem;"></i>
+              Navratna PSU. Good company culture. CS recruitment is limited but salary and perks are excellent.
+            </div>
+            <a href="https://www.bharatpetroleum.in" target="_blank" class="psu-website-btn">
+              Visit Official Website <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+        </div>
+
+        <h3 class="mt-5 mb-3" style="color:var(--text-primary);font-family:var(--font-display);text-transform:uppercase;">General Selection Process</h3>
+        <div class="table-container mb-4">
+          <table>
+            <thead><tr><th>Step</th><th>Stage</th><th>Weightage</th><th>Tip</th></tr></thead>
+            <tbody>
+              <tr><td><strong>1</strong></td><td>GATE Score (Shortlisting)</td><td class="text-cyan font-bold">~85%</td><td>This is the only thing you can control right now. Maximize your score.</td></tr>
+              <tr><td><strong>2</strong></td><td>Apply on PSU Website</td><td>—</td><td>PSUs release their own notifications. Monitor their websites and job portals (like NaukriGovt) from Feb-April after GATE results.</td></tr>
+              <tr><td><strong>3</strong></td><td>Group Discussion (GD)</td><td>~5%</td><td>Practice speaking on tech and current affairs for 2 minutes. Be the first to speak or summarize.</td></tr>
+              <tr><td><strong>4</strong></td><td>Personal Interview (PI)</td><td>~10-15%</td><td>Review your B.Tech subjects deeply. Expect questions on OS, DBMS, Networks, and your Final Year Project.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+      </section>
+    </main>
+  </div>
+  <script>
+    function filterPSU(type, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.psu-card').forEach(c => {
+        if (type === 'all') { c.style.display = 'flex'; return; }
+        c.style.display = c.dataset.status === type ? 'flex' : 'none';
+      });
+    }
+  </script>
+  <script src="js/app.js"></script>
 </body>
 </html>

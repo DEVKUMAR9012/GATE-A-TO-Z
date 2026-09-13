@@ -936,3 +936,182 @@ tr:hover { background-color: rgba(255, 255, 255, 0.02); }
 }
 .filter-btn:hover { border-color: var(--accent-primary); color: var(--accent-primary); }
 .filter-btn.active { background: var(--accent-primary); color: var(--bg-primary); border-color: var(--accent-primary); font-weight: 700; }
+
+/* ===== PSU CARDS ===== */
+.psu-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.psu-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-bounce);
+}
+
+.psu-card:hover {
+    border-color: var(--accent-primary);
+    box-shadow: 0 8px 24px rgba(110,231,183,0.08);
+    transform: translateY(-2px);
+}
+
+.psu-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    background: rgba(255,255,255,0.02);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+}
+
+.psu-logo-wrap {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    background: #fff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 6px;
+}
+
+.psu-logo-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.psu-header-info { flex: 1; }
+
+.psu-name {
+    font-size: 1.4rem;
+    font-family: var(--font-display);
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.2rem;
+}
+
+.psu-full-name {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+
+.psu-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+
+.psu-air-badge {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    background: linear-gradient(135deg, var(--accent-primary), #3b82f6);
+    color: var(--bg-primary);
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.psu-air-varies {
+    background: linear-gradient(135deg, #f59e0b, #ef4444) !important;
+}
+
+.psu-card-body { padding: 1.5rem; }
+
+.psu-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.psu-detail-item {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+}
+
+.psu-detail-item > i {
+    color: var(--accent-primary);
+    margin-top: 2px;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    width: 16px;
+}
+
+.psu-label {
+    display: block;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 2px;
+}
+
+.psu-value {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.psu-selection {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    padding: 1rem;
+    background: rgba(110,231,183,0.04);
+    border: 1px solid rgba(110,231,183,0.15);
+    border-radius: var(--border-radius-sm);
+    margin-bottom: 1rem;
+}
+
+.psu-selection > i { color: var(--accent-primary); margin-top: 2px; flex-shrink: 0; }
+
+.psu-notes {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    padding: 0.75rem;
+    background: rgba(255,255,255,0.02);
+    border-radius: var(--border-radius-sm);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.psu-website-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    border: 1px solid var(--accent-primary);
+    color: var(--accent-primary);
+    padding: 0.5rem 1.25rem;
+    border-radius: var(--border-radius-sm);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.psu-website-btn:hover {
+    background: var(--accent-primary);
+    color: var(--bg-primary);
+}
+
+.psu-filter-bar { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+@media (max-width: 768px) {
+    .psu-card-header { flex-wrap: wrap; }
+    .psu-air-badge { position: static; margin-left: auto; }
+    .psu-detail-grid { grid-template-columns: 1fr; }
+}
