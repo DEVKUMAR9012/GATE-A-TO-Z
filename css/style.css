@@ -565,6 +565,9 @@ tr:last-child td {
   .sidebar {
     transform: translateX(-100%);
     border-right: none;
+    width: 280px;
+    z-index: 1000;
+    box-shadow: 1px 0 20px rgba(0, 0, 0, 0.9);
   }
   .sidebar.open {
     transform: translateX(0);
@@ -576,20 +579,99 @@ tr:last-child td {
   }
   .mobile-header {
     display: flex;
-  }
-  .hero-title {
-    font-size: 2.5rem;
+    box-shadow: 0 1px 0 var(--border-color);
   }
 }
 
 @media (max-width: 640px) {
   .main-content {
-    padding: 5rem 1rem 2rem 1rem;
+    padding: 5rem 1rem 2rem 1rem; /* Tighter padding for phones */
   }
+  
+  /* Typography Scale Down */
   .hero-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
   }
+  .hero-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  .section-title {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Full width buttons */
   .hero-actions {
     flex-direction: column;
+    gap: 1rem;
+  }
+  .btn {
+    width: 100%;
+    padding: 1rem; /* Larger touch target */
+  }
+
+  /* Cards & Components */
+  .card, .target-card {
+    padding: 1.25rem;
+  }
+  
+  .callout {
+    padding: 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  /* Accordion Adjustments */
+  .accordion-header {
+    padding: 1rem 0;
+    font-size: 0.95rem;
+  }
+  .accordion-content {
+    font-size: 0.9rem;
+  }
+  
+  /* Timeline Fix for small screens */
+  .timeline {
+    padding-left: 1.5rem;
+    margin-left: 0.5rem;
+  }
+  .timeline-item::before {
+    left: -29px; /* Adjusting dot position */
+  }
+  .timeline-content {
+    padding: 1rem;
+  }
+  
+  /* Targets Grid */
+  .targets-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Table Scroll Hint */
+  .table-container {
+    position: relative;
+  }
+  .table-container::after {
+    content: '→ Scroll';
+    position: absolute;
+    top: -25px;
+    right: 0;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+  th, td {
+    padding: 0.75rem 1rem;
+  }
+  
+  /* Graph/Decision Tree */
+  .graph-container {
+    padding: 1rem;
+    overflow-x: auto;
+  }
+  .decision-node {
+    padding: 0.75rem;
+    font-size: 0.85rem;
   }
 }
