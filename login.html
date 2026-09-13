@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login / Join GAZ | GATE A TO Z</title>
+<link href="css/style.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+    .auth-container {
+      max-width: 450px;
+      margin: 4rem auto;
+      text-align: center;
+    }
+    .auth-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      text-align: left;
+    }
+    .auth-input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .auth-input-group label {
+      font-family: var(--font-display);
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 0.85rem;
+    }
+    .auth-input {
+      padding: 1rem 1.25rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-sm);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      transition: border-color 0.2s;
+    }
+    .auth-input:focus {
+      outline: none;
+      border-color: var(--accent-primary);
+    }
+    .auth-toggle {
+      margin-top: 2rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+    .auth-toggle a {
+      color: var(--accent-primary);
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .optional-badge {
+      display: inline-block;
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+<!-- Mobile Header -->
+<header class="mobile-header">
+<div class="logo">GATE A TO Z</div>
+<button class="menu-toggle" id="menu-btn"><i class="fas fa-bars"></i></button>
+</header>
+<div class="app-container">
+<!-- Sidebar Placeholder: Will be filled by python script -->
+<nav class="sidebar" id="sidebar">
+<div class="sidebar-header">
+<div class="logo">GATE A TO Z</div>
+</div>
+<div class="search-container mb-4">
+<i class="fas fa-search search-icon"></i>
+<input class="search-input" id="global-search" placeholder="Search topics..." type="text"/>
+</div>
+<ul class="nav-list">
+<li class="nav-item"><a class="nav-link active" href="index.html"><i class="fas fa-home"></i> Overview</a></li>
+<li class="nav-item"><a class="nav-link" href="basics.html"><i class="fas fa-book"></i> GATE Basics</a></li>
+<li class="nav-item"><a class="nav-link" href="papers.html"><i class="fas fa-file-alt"></i> GATE Papers</a></li>
+<li class="nav-item"><a class="nav-link" href="syllabus.html"><i class="fas fa-laptop-code"></i> GATE CS</a></li>
+<li class="nav-item"><a class="nav-link" href="opportunities.html"><i class="fas fa-bullseye"></i> Opportunities</a></li>
+<li class="nav-item"><a class="nav-link" href="admissions.html"><i class="fas fa-university"></i> IIT / NIT Admissions</a></li>
+<li class="nav-item"><a class="nav-link" href="psu.html"><i class="fas fa-building"></i> PSU Recruitment</a></li>
+<li class="nav-item"><a class="nav-link" href="scholarship.html"><i class="fas fa-money-bill-wave"></i> Scholarship</a></li>
+<li class="nav-item"><a class="nav-link" href="abroad.html"><i class="fas fa-globe"></i> Abroad</a></li>
+<li class="nav-item"><a class="nav-link" href="roadmap.html"><i class="fas fa-map-signs"></i> Roadmap &amp; Plan</a></li>
+<li class="nav-item"><a class="nav-link" href="decision-tree.html"><i class="fas fa-code-branch"></i> Decision Tree</a></li>
+<li class="nav-item"><a class="nav-link" href="targets.html"><i class="fas fa-crosshairs"></i> Targets</a></li>
+<li class="nav-item"><a class="nav-link" href="resources.html"><i class="fas fa-link"></i> Official Sources</a></li>
+<li class="nav-item mt-4">
+<a class="nav-link active" href="login.html" style="border: 1px solid var(--accent-primary); border-radius: var(--border-radius-sm);">
+<i class="fas fa-sign-in-alt"></i> Join GAZ (Optional)
+            </a>
+</li>
+</ul>
+</nav>
+<!-- Main Content -->
+<main class="main-content">
+<section class="section" style="border-bottom: none; min-height: 80vh; display: flex; align-items: center;">
+<div class="auth-container">
+<div class="badge high optional-badge">Optional (Koi Force Nahi!)</div>
+<h1 class="section-title text-center mb-1">Join the GAZ Crew</h1>
+<p class="text-muted mb-4">Track your syllabus progress, save resources, and get exclusive updates.</p>
+<div class="card">
+<form class="auth-form" onsubmit="event.preventDefault(); alert('Login functionality coming soon!');">
+<div class="auth-input-group">
+<label for="email">Email Address</label>
+<input class="auth-input" id="email" placeholder="you@example.com" required="" type="email"/>
+</div>
+<div class="auth-input-group">
+<label for="password">Password</label>
+<input class="auth-input" id="password" placeholder="••••••••" required="" type="password"/>
+</div>
+<button class="btn btn-primary mt-2" style="width: 100%;" type="submit">Sign In</button>
+</form>
+<div class="auth-toggle">
+              Don't have an account? <a onclick="alert('Registration coming soon!')">Create one</a>
+</div>
+</div>
+<p class="text-muted" style="font-size: 0.85rem; margin-top: 1rem;"><i class="fas fa-info-circle"></i> Joining GAZ is completely optional and always free.</p>
+</div>
+</section>
+</main>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>
