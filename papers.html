@@ -1,90 +1,108 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>GATE A TO Z | Complete Roadmap for CSE Students</title>
-<link href="css/style.css" rel="stylesheet"/>
-<!-- Icons -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GATE Papers (CS vs DA) | GATE A TO Z</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-<!-- Mobile Header -->
-<header class="mobile-header">
-<div class="logo">GATE A TO Z</div>
-<button class="menu-toggle" id="menu-btn"><i class="fas fa-bars"></i></button>
-</header>
-<div class="app-container">
-<!-- Sidebar -->
-<nav class="sidebar" id="sidebar">
-<div class="sidebar-header">
-<div class="logo">GATE A TO Z</div>
-</div>
-<div class="search-container mb-4">
-<i class="fas fa-search search-icon"></i>
-<input class="search-input" id="global-search" placeholder="Search topics..." type="text"/>
-<div class="search-results-container" id="search-results"></div></div>
-<ul class="nav-list">
-<li class="nav-item"><a class="nav-link active" href="index.html"><i class="fas fa-home"></i> Overview</a></li>
-<li class="nav-item"><a class="nav-link" href="basics.html"><i class="fas fa-book"></i> GATE Basics</a></li>
-<li class="nav-item"><a class="nav-link active" href="papers.html"><i class="fas fa-file-alt"></i> GATE Papers</a></li>
-<li class="nav-item"><a class="nav-link" href="syllabus.html"><i class="fas fa-laptop-code"></i> GATE CS</a></li>
-<li class="nav-item"><a class="nav-link" href="opportunities.html"><i class="fas fa-bullseye"></i> Opportunities</a></li>
-<li class="nav-item"><a class="nav-link" href="admissions.html"><i class="fas fa-university"></i> IIT / NIT Admissions</a></li>
-<li class="nav-item"><a class="nav-link" href="psu.html"><i class="fas fa-building"></i> PSU Recruitment</a></li>
-<li class="nav-item"><a class="nav-link" href="scholarship.html"><i class="fas fa-money-bill-wave"></i> Scholarship</a></li>
-<li class="nav-item"><a class="nav-link" href="abroad.html"><i class="fas fa-globe"></i> Abroad</a></li>
-<li class="nav-item"><a class="nav-link" href="roadmap.html"><i class="fas fa-map-signs"></i> Roadmap &amp; Plan</a></li>
-<li class="nav-item"><a class="nav-link" href="decision-tree.html"><i class="fas fa-code-branch"></i> Decision Tree</a></li>
-<li class="nav-item"><a class="nav-link" href="targets.html"><i class="fas fa-crosshairs"></i> Targets</a></li>
-<li class="nav-item"><a class="nav-link" href="resources.html"><i class="fas fa-link"></i> Official Sources</a></li>
-<li class="nav-item mt-4">
-<a class="nav-link" href="login.html" style="border: 1px solid var(--accent-primary); border-radius: var(--border-radius-sm);">
-<i class="fas fa-sign-in-alt"></i> Join GAZ (Optional)
+
+  <!-- Mobile Header -->
+  <header class="mobile-header">
+    <div class="logo">GATE A TO Z</div>
+    <button class="menu-toggle" id="menu-btn"><i class="fas fa-bars"></i></button>
+  </header>
+
+  <div class="app-container">
+    
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">GATE A TO Z</div>
+      </div>
+      <div class="search-container mb-4">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" class="search-input" id="global-search" placeholder="Search topics...">
+        <div class="search-results-container" id="search-results"></div>
+      </div>
+      <ul class="nav-list">
+        <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Overview</a></li>
+        <li class="nav-item"><a href="basics.html" class="nav-link"><i class="fas fa-book"></i> GATE Basics</a></li>
+        <li class="nav-item"><a href="papers.html" class="nav-link active"><i class="fas fa-file-alt"></i> GATE Papers</a></li>
+        <li class="nav-item"><a href="syllabus.html" class="nav-link"><i class="fas fa-laptop-code"></i> GATE CS</a></li>
+        <li class="nav-item"><a href="opportunities.html" class="nav-link"><i class="fas fa-bullseye"></i> Opportunities</a></li>
+        <li class="nav-item"><a href="admissions.html" class="nav-link"><i class="fas fa-university"></i> IIT / NIT Admissions</a></li>
+        <li class="nav-item"><a href="psu.html" class="nav-link"><i class="fas fa-building"></i> PSU Recruitment</a></li>
+        <li class="nav-item"><a href="scholarship.html" class="nav-link"><i class="fas fa-money-bill-wave"></i> Scholarship</a></li>
+        <li class="nav-item"><a href="abroad.html" class="nav-link"><i class="fas fa-globe"></i> Abroad</a></li>
+        <li class="nav-item"><a href="roadmap.html" class="nav-link"><i class="fas fa-map-signs"></i> Roadmap & Plan</a></li>
+        <li class="nav-item"><a href="decision-tree.html" class="nav-link"><i class="fas fa-code-branch"></i> Decision Tree</a></li>
+        <li class="nav-item"><a href="targets.html" class="nav-link"><i class="fas fa-crosshairs"></i> Targets</a></li>
+        <li class="nav-item"><a href="resources.html" class="nav-link"><i class="fas fa-link"></i> Official Sources</a></li>
+        <li class="nav-item mt-4">
+            <a href="login.html" class="nav-link" style="border: 1px solid var(--accent-primary); border-radius: var(--border-radius-sm);">
+                <i class="fas fa-sign-in-alt"></i> Join GAZ (Optional)
             </a>
-</li>
-</ul>
-</nav>
-<!-- Main Content -->
-<main class="main-content"><section class="section searchable" id="papers">
-<span class="section-tag">Papers</span>
-<h2 class="section-title">GATE Papers &amp; Combinations</h2>
-<div class="card" style="border-color: var(--accent-cyan);">
-<div class="flex" style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1rem;">
-<h3 style="margin:0;">CS (Computer Science &amp; IT)</h3>
-<span class="badge high">Primary CSE Paper</span>
-</div>
-<p>This is the natural choice for a B.Tech CSE student. It aligns perfectly with your college curriculum and unlocks conventional CSE M.Tech/MS programs and core PSU jobs.</p>
-</div>
-<h3 class="mt-4 mb-3">Allowed Second-Paper Combinations</h3>
-<p class="mb-3">You can optionally appear for a second paper. For CS, allowed secondary options include: DA, EC, GE, MA, ME, PH, RA, and ST.</p>
-<div class="accordion">
-<div class="accordion-item">
-<div class="accordion-header">
-              CS + DA (Data Science &amp; AI) <span class="badge high">Highly Recommended</span>
-<i class="fas fa-chevron-down accordion-icon"></i>
-</div>
-<div class="accordion-content">
-              Shares ~50% syllabus overlap (Programming, DS, Algo, Math). Excellent choice if targeting specialized M.Tech programs in AI/Data Science at top IITs.
-            </div>
-</div>
-<div class="accordion-item">
-<div class="accordion-header">
-              CS + MA (Math) / ST (Statistics) <span class="badge medium">Moderate</span>
-<i class="fas fa-chevron-down accordion-icon"></i>
-</div>
-<div class="accordion-content">
-              Good only if you wish to pursue hardcore theoretical research in computational math or statistics.
-            </div>
-</div>
-</div>
-<div class="callout warning">
-<span class="callout-title">⚠ Second Paper Warning</span>
-          A second paper does NOT automatically unlock every additional M.Tech program. Each institute independently decides which GATE paper they accept for their degrees.
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      
+      <section id="papers" class="section searchable">
+        <span class="section-tag">Exam Structure</span>
+        <h2 class="section-title">The GATE CS vs DA Dilemma</h2>
+        <p class="text-secondary mb-4">Starting recently, GATE allows candidates to write <strong>two papers</strong>. For a Computer Science student, the most powerful combination is CS (Computer Science) as primary, and the newly introduced DA (Data Science & AI) as secondary.</p>
+
+        <h3 class="mt-4 mb-3" style="color:var(--text-primary); font-family:var(--font-display); text-transform:uppercase;">What is GATE DA?</h3>
+        <p class="text-secondary mb-3">Introduced in 2024, the Data Science and Artificial Intelligence (DA) paper is a massive game-changer. It is highly mathematical and specifically targets the booming AI industry.</p>
+        
+        <div class="card mb-4" style="border-color: var(--accent-primary);">
+          <h4 class="text-cyan mb-2">GATE DA Syllabus Breakdown</h4>
+          <ul class="checklist">
+            <li><strong>Probability & Statistics (Massive Weightage):</strong> Bayes Theorem, Distributions (Binomial, Poisson, Normal), Central Limit Theorem.</li>
+            <li><strong>Linear Algebra:</strong> Matrices, Eigenvalues/Vectors, SVD (Singular Value Decomposition).</li>
+            <li><strong>Calculus & Optimization:</strong> Maxima/Minima, Gradient Descent.</li>
+            <li><strong>Machine Learning:</strong> Supervised vs Unsupervised, Regression, Classification, Clustering (K-Means), Decision Trees.</li>
+            <li><strong>AI:</strong> Search techniques (A*), Logic.</li>
+            <li><strong>Database:</strong> SQL, Relational Algebra (Overlaps with CS).</li>
+            <li><strong>Programming & DS:</strong> Python, Arrays, Stacks, Queues (Overlaps with CS).</li>
+          </ul>
         </div>
-</section></main>
-</div>
-<script src="js/app.js"></script>
+
+        <h3 class="mt-4 mb-3" style="color:var(--text-primary); font-family:var(--font-display); text-transform:uppercase;">Should You Write Both? (CS + DA)</h3>
+        
+        <div class="dashboard-cards">
+          <div class="card">
+            <h4 class="text-cyan mb-2">Pros of writing CS + DA</h4>
+            <ul class="checklist text-sm">
+              <li><strong>Double the Chances:</strong> If you mess up CS, a good rank in DA still gets you into Top IITs for M.Tech in AI/DS.</li>
+              <li><strong>Overlapping Syllabus:</strong> DB, DS, Programming, and some Math overlap perfectly.</li>
+              <li><strong>Future Proof:</strong> M.Tech AI is currently seeing the highest placements (often higher than core CS).</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4 class="text-cyan mb-2">Cons of writing CS + DA</h4>
+            <ul class="checklist text-sm">
+              <li><strong>Context Switching:</strong> Studying ML and heavy Statistics alongside Compiler Design and CN can cause burnout.</li>
+              <li><strong>No PSU Jobs:</strong> Currently, PSUs strictly hire via CS. There is zero PSU recruitment via DA.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout success mt-4">
+          <span class="callout-title">The Expert Recommendation</span>
+          If you are in your <strong>3rd Year</strong>, just write CS. Focus on building core fundamentals. If you are in your <strong>4th Year or a Dropper</strong>, definitely write CS + DA to maximize your chances of getting into an IIT.
+        </div>
+
+      </section>
+
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
 </body>
 </html>
