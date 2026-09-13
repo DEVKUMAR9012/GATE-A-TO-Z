@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GATE A TO Z | Complete Roadmap for CSE Students</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Mobile Header -->
+  <header class="mobile-header">
+    <div class="logo">GATE A TO Z</div>
+    <button class="menu-toggle" id="menu-btn"><i class="fas fa-bars"></i></button>
+  </header>
+
+  <div class="app-container">
+    
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">GATE A TO Z</div>
+      </div>
+      <div class="search-container mb-4">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" class="search-input" id="global-search" placeholder="Search topics...">
+      </div>
+      <ul class="nav-list">
+        <li class="nav-item"><a href="#home" class="nav-link active"><i class="fas fa-home"></i> Overview</a></li>
+        <li class="nav-item"><a href="#basics" class="nav-link"><i class="fas fa-book"></i> GATE Basics</a></li>
+        <li class="nav-item"><a href="#papers" class="nav-link"><i class="fas fa-file-alt"></i> GATE Papers</a></li>
+        <li class="nav-item"><a href="#cs-syllabus" class="nav-link"><i class="fas fa-laptop-code"></i> GATE CS</a></li>
+        <li class="nav-item"><a href="#opportunities" class="nav-link"><i class="fas fa-bullseye"></i> Opportunities</a></li>
+        <li class="nav-item"><a href="#admissions" class="nav-link"><i class="fas fa-university"></i> IIT / NIT Admissions</a></li>
+        <li class="nav-item"><a href="#psu" class="nav-link"><i class="fas fa-building"></i> PSU Recruitment</a></li>
+        <li class="nav-item"><a href="#scholarship" class="nav-link"><i class="fas fa-money-bill-wave"></i> Scholarship</a></li>
+        <li class="nav-item"><a href="#foreign" class="nav-link"><i class="fas fa-globe"></i> Abroad</a></li>
+        <li class="nav-item"><a href="#roadmap" class="nav-link"><i class="fas fa-map-signs"></i> Roadmap & Plan</a></li>
+        <li class="nav-item"><a href="#decision-tree" class="nav-link"><i class="fas fa-code-branch"></i> Decision Tree</a></li>
+        <li class="nav-item"><a href="#targets" class="nav-link"><i class="fas fa-crosshairs"></i> Targets</a></li>
+        <li class="nav-item"><a href="#resources" class="nav-link"><i class="fas fa-link"></i> Official Sources</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      
+      <!-- HERO -->
+      <section id="home" class="hero">
+        <div class="badge high mb-3">Built for a B.Tech CSE Student</div>
+        <h1 class="hero-title">GATE A TO Z</h1>
+        <p class="hero-subtitle">Your Complete Roadmap from 2nd-Year CSE to GATE, IITs, IISc, NITs, PSUs & Beyond.</p>
+        
+        <div class="hero-actions">
+          <a href="#basics" class="btn btn-primary">Explore GATE <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></a>
+          <a href="#roadmap" class="btn btn-secondary">Start My Roadmap</a>
+        </div>
+
+        <div class="dashboard-cards">
+          <div class="stat-card">
+            <div class="stat-value">2027</div>
+            <div class="stat-label">Target Exam</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">CS</div>
+            <div class="stat-label">Primary Paper</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">100</div>
+            <div class="stat-label">Total Marks</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">3 Yrs</div>
+            <div class="stat-label">Score Validity</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GATE BASICS -->
+      <section id="basics" class="section searchable">
+        <span class="section-tag">Basics</span>
+        <h2 class="section-title">What is GATE?</h2>
+        <div class="card">
+          <p class="mb-3">The Graduate Aptitude Test in Engineering (GATE) is a national-level examination testing the comprehensive understanding of various undergraduate subjects in engineering and science. For 2027, it is organized by IIT Madras.</p>
+          <ul class="checklist">
+            <li><b>Eligibility:</b> Candidates currently in the 3rd year or higher of an undergraduate degree program, or graduates.</li>
+            <li><b>Age Limit:</b> No age limit.</li>
+            <li><b>Pattern:</b> 3 hours, 65 questions, 100 marks. Contains MCQ, MSQ, and NAT questions.</li>
+            <li><b>Score Validity:</b> 3 years from announcement of results (for academics). Usually 1 year for PSUs.</li>
+          </ul>
+        </div>
+        
+        <div class="callout warning">
+          <span class="callout-title">⚠ Important Warning</span>
+          Qualifying GATE does not guarantee admission, financial assistance, or a PSU job. It simply provides the score necessary to apply for these opportunities, which are governed by individual institute and employer criteria.
+        </div>
+        
+        <h3 class="mt-4 mb-3">Marks vs Score vs Rank</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Term</th>
+                <th>Definition</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>Raw Marks</b></td>
+                <td>Literal marks scored out of 100 in the exam.</td>
+              </tr>
+              <tr>
+                <td><b>Normalized Marks</b></td>
+                <td>Adjusted marks to account for varying difficulty levels across multiple exam shifts (common for CS).</td>
+              </tr>
+              <tr>
+                <td><b>GATE Score</b></td>
+                <td>The normalized score out of 1000. This is what institutes use for admissions via COAP/CCMT.</td>
+              </tr>
+              <tr>
+                <td><b>AIR (Rank)</b></td>
+                <td>All India Rank - your absolute position among all CS test takers.</td>
+              </tr>
+              <tr>
+                <td><b>Qualifying Cutoff</b></td>
+                <td>Minimum score needed to pass. E.g., ~30 marks for General category in CS. Getting this only gives a scorecard, not admission.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- GATE PAPERS -->
+      <section id="papers" class="section searchable">
+        <span class="section-tag">Papers</span>
+        <h2 class="section-title">GATE Papers & Combinations</h2>
+        
+        <div class="card" style="border-color: var(--accent-cyan);">
+          <div class="flex" style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1rem;">
+            <h3 style="margin:0;">CS (Computer Science & IT)</h3>
+            <span class="badge high">Primary CSE Paper</span>
+          </div>
+          <p>This is the natural choice for a B.Tech CSE student. It aligns perfectly with your college curriculum and unlocks conventional CSE M.Tech/MS programs and core PSU jobs.</p>
+        </div>
+
+        <h3 class="mt-4 mb-3">Allowed Second-Paper Combinations</h3>
+        <p class="mb-3">You can optionally appear for a second paper. For CS, allowed secondary options include: DA, EC, GE, MA, ME, PH, RA, and ST.</p>
+        
+        <div class="accordion">
+          <div class="accordion-item">
+            <div class="accordion-header">
+              CS + DA (Data Science & AI) <span class="badge high">Highly Recommended</span>
+              <i class="fas fa-chevron-down accordion-icon"></i>
+            </div>
+            <div class="accordion-content">
+              Shares ~50% syllabus overlap (Programming, DS, Algo, Math). Excellent choice if targeting specialized M.Tech programs in AI/Data Science at top IITs.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">
+              CS + MA (Math) / ST (Statistics) <span class="badge medium">Moderate</span>
+              <i class="fas fa-chevron-down accordion-icon"></i>
+            </div>
+            <div class="accordion-content">
+              Good only if you wish to pursue hardcore theoretical research in computational math or statistics.
+            </div>
+          </div>
+        </div>
+        
+        <div class="callout warning">
+          <span class="callout-title">⚠ Second Paper Warning</span>
+          A second paper does NOT automatically unlock every additional M.Tech program. Each institute independently decides which GATE paper they accept for their degrees.
+        </div>
+      </section>
+
+      <!-- GATE CS SYLLABUS -->
+      <section id="cs-syllabus" class="section searchable">
+        <span class="section-tag">Syllabus</span>
+        <h2 class="section-title">GATE CS Syllabus Experience</h2>
+        
+        <div class="accordion">
+          <!-- Programming & DS -->
+          <div class="accordion-item">
+            <div class="accordion-header">
+              Programming & Data Structures
+              <span class="badge high">Priority: VERY HIGH</span>
+            </div>
+            <div class="accordion-content">
+              <p><b>Importance:</b> Core foundation. Around 10-12 marks.</p>
+              <p><b>Prerequisites:</b> None (Start here)</p>
+              <p><b>Topics:</b> C programming, recursion, arrays, stacks, queues, linked lists, trees, BSTs, binary heaps, graphs.</p>
+              <p><b>PYQ Strategy:</b> Solve immediately after learning. Essential for coding rounds too.</p>
+            </div>
+          </div>
+
+          <!-- Algorithms -->
+          <div class="accordion-item">
+            <div class="accordion-header">
+              Algorithms
+              <span class="badge high">Priority: VERY HIGH</span>
+            </div>
+            <div class="accordion-content">
+              <p><b>Importance:</b> Core foundation. Around 6-8 marks.</p>
+              <p><b>Prerequisites:</b> Programming & DS, Discrete Math.</p>
+              <p><b>Topics:</b> Searching, sorting, hashing, asymptotic complexity, greedy, dynamic programming, divide-and-conquer, graph traversals, MST, shortest paths.</p>
+            </div>
+          </div>
+
+          <!-- Engineering Math -->
+          <div class="accordion-item">
+            <div class="accordion-header">
+              Engineering & Discrete Mathematics
+              <span class="badge high">Priority: HIGH</span>
+            </div>
+            <div class="accordion-content">
+              <p><b>Importance:</b> ~13-15 marks. Pure logical foundation.</p>
+              <p><b>Topics:</b> Logic, sets, relations, functions, groups, graphs, combinatorics, linear algebra (matrices, eigenvalues), calculus, probability/statistics.</p>
+            </div>
+          </div>
+
+          <!-- OS -->
+          <div class="accordion-item">
+            <div class="accordion-header">
+              Operating Systems
+              <span class="badge high">Priority: VERY HIGH</span>
+            </div>
+            <div class="accordion-content">
+              <p><b>Importance:</b> ~8-10 marks. Conceptual.</p>
+              <p><b>Prerequisites:</b> Programming, Basic COA.</p>
+              <p><b>Topics:</b> System calls, processes, threads, IPC, synchronization, deadlocks, CPU scheduling, memory management, virtual memory.</p>
+            </div>
+          </div>
+
+          <!-- DBMS -->
+          <div class="accordion-item">
+            <div class="accordion-header">
+              Databases (DBMS)
+              <span class="badge high">Priority: VERY HIGH</span>
+            </div>
+            <div class="accordion-content">
+              <p><b>Importance:</b> ~6-8 marks. Highly scoring.</p>
+              <p><b>Topics:</b> ER model, relational algebra, SQL, normal forms, indexing (B/B+ trees), transactions, concurrency control.</p>
+            </div>
+          </div>
+
+          <!-- CN -->
+          <div class="accordion-item">
+            <div class="accordion-header">
+              Computer Networks
+              <span class="badge high">Priority: VERY HIGH</span>
+            </div>
+            <div class="accordion-content">
+              <p><b>Importance:</b> ~8-10 marks. Vast syllabus.</p>
+              <p><b>Topics:</b> OSI/TCP-IP layers, switching, MAC, Ethernet, routing, IPv4, TCP/UDP congestion, DNS, HTTP.</p>
+            </div>
+          </div>
+          
+          <!-- COA -->
+          <div class="accordion-item">
+            <div class="accordion-header">
+              Computer Organization & Architecture (COA)
+              <span class="badge high">Priority: HIGH</span>
+            </div>
+            <div class="accordion-content">
+              <p><b>Importance:</b> ~8-10 marks. Hardware oriented.</p>
+              <p><b>Prerequisites:</b> Digital Logic.</p>
+              <p><b>Topics:</b> Instruction set, ALU, control unit, memory hierarchy, cache, I/O, pipelining.</p>
+            </div>
+          </div>
+
+          <!-- Digital Logic -->
+          <div class="accordion-item">
+            <div class="accordion-header">
+              Digital Logic
+              <span class="badge medium">Priority: MEDIUM-HIGH</span>
+            </div>
+            <div class="accordion-content">
+              <p><b>Importance:</b> ~4-6 marks. Formulaic and scoring.</p>
+              <p><b>Topics:</b> Boolean algebra, K-maps, combinational/sequential circuits, number representation.</p>
+            </div>
+          </div>
+
+          <!-- TOC -->
+          <div class="accordion-item">
+            <div class="accordion-header">
+              Theory of Computation (TOC)
+              <span class="badge high">Priority: HIGH</span>
+            </div>
+            <div class="accordion-content">
+              <p><b>Importance:</b> ~8-10 marks. Logical patterns.</p>
+              <p><b>Topics:</b> Regular expressions, DFA/NFA, CFG, PDA, Turing machines, undecidability.</p>
+            </div>
+          </div>
+
+          <!-- Compiler -->
+          <div class="accordion-item">
+            <div class="accordion-header">
+              Compiler Design
+              <span class="badge medium">Priority: MEDIUM</span>
+            </div>
+            <div class="accordion-content">
+              <p><b>Importance:</b> ~4-6 marks. Short syllabus.</p>
+              <p><b>Prerequisites:</b> TOC.</p>
+              <p><b>Topics:</b> Lexical analysis, parsing, syntax-directed translation, intermediate code, optimization.</p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="mt-4">Subject Dependency Graph</h3>
+        <div class="graph-container">
+          <div style="display:flex; justify-content:center; gap:2rem;">
+            <div style="text-align:center;">
+              <div class="node mb-2">Discrete Math</div>
+              <div class="edge">↓</div>
+              <div class="node mb-2">Algorithms</div>
+              <div class="edge">↑</div>
+              <div class="node mb-2">Data Structures</div>
+              <div class="edge">↑</div>
+              <div class="node">Programming</div>
+            </div>
+            
+            <div style="text-align:center;">
+              <div class="node mb-2">Digital Logic</div>
+              <div class="edge">↓</div>
+              <div class="node mb-2">COA</div>
+              <div class="edge">↓</div>
+              <div class="node">Operating Systems</div>
+            </div>
+            
+            <div style="text-align:center;">
+              <div class="node mb-2">TOC</div>
+              <div class="edge">↓</div>
+              <div class="node">Compiler Design</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- OPPORTUNITIES -->
+      <section id="opportunities" class="section searchable">
+        <span class="section-tag">Opportunities</span>
+        <h2 class="section-title">What GATE Unlocks</h2>
+        <div class="card">
+          <ul class="checklist">
+            <li><b>IITs & IISc:</b> Premier M.Tech / MS (Research) / Direct PhD programs.</li>
+            <li><b>NITs, IIITs, IIEST, CFTIs:</b> Centralized admissions via CCMT.</li>
+            <li><b>PSU Recruitment:</b> Executive-level jobs in government enterprises (if eligible).</li>
+            <li><b>Financial Assistance:</b> AICTE/MoE stipends for eligible master's students.</li>
+            <li><b>Foreign Universities:</b> Specific programs in Singapore and Germany (as GRE substitute).</li>
+            <li><b>State/Private Universities:</b> E.g., Jadavpur, DTU, NSUT, BITS (for stipends).</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ADMISSIONS (COAP & CCMT) -->
+      <section id="admissions" class="section searchable">
+        <span class="section-tag">Admissions</span>
+        <h2 class="section-title">Admission Flows</h2>
+        
+        <div class="card">
+          <h3 class="text-cyan">IIT / IISc Admissions (via COAP)</h3>
+          <p><b>COAP (Common Offer Acceptance Portal)</b> is where all participating IITs/IISc upload their admission offers.</p>
+          <div class="callout warning mt-3">
+            <span class="callout-title">⚠ COAP is NOT an application portal</span>
+            You must apply separately to each individual IIT/IISc. Only if they select you, they will push the offer to your COAP dashboard to Accept, Retain, or Reject.
+          </div>
+          <p>Selection may involve written coding tests and technical interviews, especially for MS (Research) and AI programs. A high GATE score shortlists you, but doesn't guarantee the seat.</p>
+        </div>
+
+        <div class="card mt-4">
+          <h3 class="text-blue">NIT / IIIT / CFTI Admissions (via CCMT)</h3>
+          <p><b>CCMT</b> is highly centralized. You register once, pay a single fee, and create a preference list of institutes.</p>
+          <div class="callout info mt-3">
+            <span class="callout-title">Centralized Flow</span>
+            Registration → Choice Filling → Locking → Seat Allotment (Algorithmic based on GATE score) → Upgradation/Float → Document Verification → Reporting.
+          </div>
+          <div class="callout warning">
+            <span class="callout-title">⚠ CCMT Changes</span>
+            Participating institutes and program mappings can change every year. Always refer to the latest brochure.
+          </div>
+        </div>
+      </section>
+
+      <!-- PSU -->
+      <section id="psu" class="section searchable">
+        <span class="section-tag">Careers</span>
+        <h2 class="section-title">PSU Recruitment for CSE</h2>
+        
+        <div class="callout danger mb-4">
+          <span class="callout-title">⚠ GATE Qualification does NOT guarantee a PSU job</span>
+          CSE students have fewer PSU vacancies compared to Electrical or Mechanical. Do not assume every PSU recruits CSE every year. Wait for official recruitment notifications. You typically need an AIR under 150 to secure an interview call.
+        </div>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Organization</th>
+                <th>Sector</th>
+                <th>GATE Usage for CS/IT</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>NIC</b></td>
+                <td>Govt IT</td>
+                <td>Used CS, EC, DA explicitly in recent cycle</td>
+                <td><span class="badge high">Verified Route</span></td>
+              </tr>
+              <tr>
+                <td><b>POWERGRID</b></td>
+                <td>Power</td>
+                <td>Engineer Trainees included CS in 2026</td>
+                <td><span class="badge high">Verified Route</span></td>
+              </tr>
+              <tr>
+                <td><b>DRDO / RAC</b></td>
+                <td>Defence R&D</td>
+                <td>Scientist B shortlisting via GATE</td>
+                <td><span class="badge medium">Notice-Dependent</span></td>
+              </tr>
+              <tr>
+                <td><b>ONGC / IOCL</b></td>
+                <td>Oil & Gas</td>
+                <td>Historically recruited Programming/IS Officers</td>
+                <td><span class="badge notverified">Not verified for 2027</span></td>
+              </tr>
+              <tr>
+                <td><b>BARC (OCES)</b></td>
+                <td>Nuclear R&D</td>
+                <td>Scientific Officer (GATE or separate exam)</td>
+                <td><span class="badge medium">Notice-Dependent</span></td>
+              </tr>
+              <tr>
+                <td><b>GAIL</b></td>
+                <td>Gas</td>
+                <td>Advertised GATE recruitment for 2027</td>
+                <td><span class="badge notverified">CS Not Assumed</span></td>
+              </tr>
+              <tr>
+                <td><b>NPCIL / EIL</b></td>
+                <td>Various</td>
+                <td>Recent notices listed CE/ME/EE etc., but NOT CS</td>
+                <td><span class="badge notverified">CS Not Eligible recently</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SCHOLARSHIP -->
+      <section id="scholarship" class="section searchable">
+        <span class="section-tag">Finance</span>
+        <h2 class="section-title">Scholarships & Stipends</h2>
+        
+        <div class="card">
+          <h3 class="text-success mb-2">₹12,400 per month</h3>
+          <p>Current official M.Tech financial assistance (generally for 22-24 months) standardized by AICTE/MoE.</p>
+          
+          <div class="callout warning mt-3">
+            <span class="callout-title">⚠ GATE qualification ≠ automatic stipend</span>
+            Simply passing GATE does not deposit money. You must:
+            <ul class="checklist mt-2">
+              <li>Have a valid GATE score.</li>
+              <li>Be admitted to an eligible full-time M.Tech program at an AICTE/MoE-supported institute.</li>
+              <li>Often perform Teaching Assistant (TA) duties (e.g., 8 hours/week grading, lab duties).</li>
+            </ul>
+            Self-financed seats and some private institutes may not be covered.
+          </div>
+        </div>
+      </section>
+
+      <!-- FOREIGN -->
+      <section id="foreign" class="section searchable">
+        <span class="section-tag">Abroad</span>
+        <h2 class="section-title">Foreign Universities</h2>
+        
+        <div class="callout warning mb-4">
+          <span class="callout-title">⚠ Do not overestimate this pathway</span>
+          GATE is fundamentally an India-focused examination. Foreign acceptance of GATE scores is narrow, historically inconsistent, and program-specific. It is NOT a universal replacement for GRE.
+        </div>
+
+        <div class="card">
+          <p class="mb-2"><b>Singapore:</b> NUS & NTU</p>
+          <p class="text-muted mb-3">Accept GATE for specified research programs. Requires extremely high percentile (often >90th), excellent CGPA, and TOEFL/IELTS.</p>
+          
+          <p class="mb-2"><b>Germany:</b> TU Munich (TUM) & RWTH Aachen</p>
+          <p class="text-muted">GATE serves to fulfill subject-competency requirements for Indian bachelor degree holders. High scores improve chances. IELTS/TOEFL remains mandatory.</p>
+        </div>
+      </section>
+
+      <!-- ROADMAP -->
+      <section id="roadmap" class="section searchable">
+        <span class="section-tag">Strategy</span>
+        <h2 class="section-title">Your Personalized Roadmap</h2>
+        
+        <p class="mb-4">Designed for a 2nd-Year B.Tech CSE student targeting GATE 2028 (first attempt in 3rd year).</p>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h3 class="timeline-title">Year 2 (Current) - Foundation</h3>
+              <p><b>Goal:</b> Master college subjects. Do not rush to 4th-year topics.</p>
+              <ul class="checklist mt-2">
+                <li>Prioritize: C, Data Structures, Algorithms, Discrete Math, Digital Logic.</li>
+                <li>Action: Solve basic topic-wise PYQs matching your college lectures.</li>
+                <li>Keep B.Tech CGPA strong!</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h3 class="timeline-title">Summer (Post 2nd Year) - Consolidation</h3>
+              <p><b>Goal:</b> Repair weak prerequisites.</p>
+              <ul class="checklist mt-2">
+                <li>Revise Programming, DS, Math.</li>
+                <li>Build a consistent daily study habit.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h3 class="timeline-title">Year 3 - The Core Grind</h3>
+              <p><b>Goal:</b> Complete 80% of the syllabus.</p>
+              <ul class="checklist mt-2">
+                <li>Prioritize: OS, DBMS, TOC, Compiler, COA, CN.</li>
+                <li>Action: Register and appear for GATE in Feb for experience. Take topic/subject mock tests.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h3 class="timeline-title">Year 4 - Execution & Mocks</h3>
+              <p><b>Goal:</b> Rank refinement and maximizing speed/accuracy.</p>
+              <ul class="checklist mt-2">
+                <li>Action: Identify weak areas. Shift entirely to Full-Length Mock Tests by November.</li>
+                <li>Maintain an Error Notebook.</li>
+                <li>Manage college placements simultaneously as a backup.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="mt-4 mb-3">Weekly Study Planner</h3>
+        <div class="dashboard-cards">
+          <div class="card">
+            <h4 class="text-cyan mb-2">1 Hour / Day</h4>
+            <p class="text-muted mb-2">Best for: 2nd Year / College Weeks</p>
+            <p>40 min concepts + 20 min PYQs</p>
+          </div>
+          <div class="card">
+            <h4 class="text-blue mb-2">2 Hours / Day</h4>
+            <p class="text-muted mb-2">Best for: Consistent Growth</p>
+            <p>70 min concepts + 40 min PYQs + 10 min error log</p>
+          </div>
+          <div class="card">
+            <h4 class="text-cyan mb-2">3 Hours / Day</h4>
+            <p class="text-muted mb-2">Best for: 3rd Year Grind</p>
+            <p>90 min concepts + 60 min PYQs/Test + 30 min revision</p>
+          </div>
+          <div class="card">
+            <h4 class="text-blue mb-2">4+ Hours / Day</h4>
+            <p class="text-muted mb-2">Best for: Vacations</p>
+            <p>Do NOT encourage unhealthy overworking. Sleep and college matter.</p>
+          </div>
+        </div>
+        
+        <h3 class="mt-4 mb-2">PYQ & Mock Strategy</h3>
+        <div class="card">
+          <p><b>Pass 1:</b> Topic-wise immediately after learning.</p>
+          <p><b>Pass 2:</b> Subject-wise tests.</p>
+          <p><b>Pass 3:</b> Full-length mocks (Start by December of final year). Attempt strictly in the real 3-hour time slot.</p>
+          <p class="mt-2 text-warning"><b>Error Notebook:</b> Document concept gaps, calculation errors, misread questions, and careless errors after every mock test.</p>
+        </div>
+      </section>
+      
+      <!-- TARGETS -->
+      <section id="targets" class="section searchable">
+        <span class="section-tag">Targets</span>
+        <h2 class="section-title">CSE Rank Targets</h2>
+        
+        <div class="callout info mb-4">
+          <span class="callout-title">Strategy Guidance, Not Official Cutoffs</span>
+          These are broad historical zones for General Category CS to help you plan. Category-wise reservations exist, and actual cutoffs shift every year based on difficulty and seat counts.
+        </div>
+
+        <div class="targets-grid">
+          <div class="target-card">
+            <div class="target-num">01</div>
+            <h3 class="mb-2">Just Qualify</h3>
+            <p class="text-muted">Top 15,000 - 20,000 AIR. Yields a scorecard. Eligible for private/state colleges and basic stipends. No premier institutes.</p>
+          </div>
+          <div class="target-card">
+            <div class="target-num">02</div>
+            <h3 class="mb-2">Good NIT/IIIT</h3>
+            <p class="text-muted">AIR 1,500 - 3,500. Realistic chance at mid-tier/newer NITs and IIITs via CCMT.</p>
+          </div>
+          <div class="target-card">
+            <div class="target-num">03</div>
+            <h3 class="mb-2">Strong NIT / New IIT</h3>
+            <p class="text-muted">AIR 500 - 1,500. Top 3 NITs (Trichy, Surathkal, Warangal) and MS Research at older IITs.</p>
+          </div>
+          <div class="target-card">
+            <div class="target-num">04</div>
+            <h3 class="mb-2">Top IIT / IISc</h3>
+            <p class="text-muted">AIR 100 - 500. Direct M.Tech at Top 7 IITs (Bombay, Delhi, Madras, etc.) and IISc Bangalore.</p>
+          </div>
+          <div class="target-card">
+            <div class="target-num">05</div>
+            <h3 class="mb-2">Elite / PSU</h3>
+            <p class="text-muted">AIR 1 - 100. Direct interview calls for top PSUs (ONGC, IOCL). Utter dominance in IIT program choices.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- DECISION TREE -->
+      <section id="decision-tree" class="section searchable">
+        <span class="section-tag">Outcomes</span>
+        <h2 class="section-title">After GATE: What should I choose?</h2>
+        
+        <div class="card text-center" style="min-height: 250px; display: flex; flex-direction: column; justify-content: center;">
+          <h3 class="mb-4">How strong is your GATE result?</h3>
+          <div id="decision-content">
+            <!-- Populated by app.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- RESOURCES -->
+      <section id="resources" class="section searchable">
+        <span class="section-tag">Links</span>
+        <h2 class="section-title">Official Sources</h2>
+        
+        <div class="dashboard-cards">
+          <a href="https://gate2027.iitm.ac.in/" target="_blank" class="card" style="display:block; text-align:center;">
+            <h4 class="mb-2">GATE 2027 Official</h4>
+            <span class="text-cyan">Visit Portal ↗</span>
+          </a>
+          <a href="https://coap2026.iitr.ac.in/coap2026/" target="_blank" class="card" style="display:block; text-align:center;">
+            <h4 class="mb-2">COAP Portal</h4>
+            <span class="text-cyan">Visit Portal ↗</span>
+          </a>
+          <a href="https://ccmt.admissions.nic.in/" target="_blank" class="card" style="display:block; text-align:center;">
+            <h4 class="mb-2">CCMT Portal</h4>
+            <span class="text-cyan">Visit Portal ↗</span>
+          </a>
+          <a href="https://www.iisc.ac.in/admissions/" target="_blank" class="card" style="display:block; text-align:center;">
+            <h4 class="mb-2">IISc Admissions</h4>
+            <span class="text-cyan">Visit Portal ↗</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
