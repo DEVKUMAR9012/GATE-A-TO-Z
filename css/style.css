@@ -801,3 +801,109 @@ tr:hover { background-color: rgba(255, 255, 255, 0.02); }
   th, td { padding: 0.75rem 1rem; }
   .graph-container { padding: 1rem; overflow-x: auto; }
 }
+/* Institute Explorer Grid */
+.institute-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.institute-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    transition: var(--transition-bounce);
+    display: flex;
+    flex-direction: column;
+}
+
+.institute-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-primary);
+    box-shadow: 0 10px 20px rgba(110, 231, 183, 0.1);
+}
+
+.inst-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 160px;
+    background: var(--bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.inst-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.institute-card:hover .inst-img-wrapper img {
+    transform: scale(1.1);
+}
+
+.inst-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    backdrop-filter: blur(4px);
+}
+
+.inst-content {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.inst-name {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.inst-links {
+    margin-top: auto;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.inst-link {
+    flex: 1;
+    text-align: center;
+    padding: 0.5rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius-sm);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.inst-link:hover {
+    background: var(--accent-primary);
+    color: var(--bg-primary);
+    border-color: var(--accent-primary);
+}
+
+.filters {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.5rem 1.25rem;
+    border-radius: 20px;
+}
+.filter-btn.active {
+    background: var(--accent-primary);
+    color: var(--bg-primary);
+}

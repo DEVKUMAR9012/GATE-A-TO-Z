@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Institute Explorer | GATE A TO Z</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <header class="mobile-header">
+    <div class="logo">GATE A TO Z</div>
+    <button class="menu-toggle" id="menu-btn"><i class="fas fa-bars"></i></button>
+  </header>
+
+  <div class="app-container">
+    <nav class="sidebar" id="sidebar">
+      <!-- SIDEBAR_PLACEHOLDER -->
+    </nav>
+
+    <main class="main-content">
+      <section id="explorer" class="section searchable">
+        <span class="section-tag">Directory</span>
+        <h2 class="section-title">Institute Explorer</h2>
+        <p class="text-secondary mb-4">Explore all 23 IITs and 31 NITs offering M.Tech through GATE. Due to Wikipedia's strict rate limits on fetching 54 images at once, the images below are high-quality placeholders. Click 'Wiki' for the real campus info.</p>
+        
+        <div class="filters mb-4">
+            <button class="btn btn-primary filter-btn active" onclick="filterInst('all')">All</button>
+            <button class="btn btn-secondary filter-btn" onclick="filterInst('iit')">IITs</button>
+            <button class="btn btn-secondary filter-btn" onclick="filterInst('nit')">NITs</button>
+        </div>
+
+        <div class="institute-grid" id="inst-grid">
+
+          <div class="institute-card iit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/iit0/500/300" alt="IIT Kharagpur" loading="lazy">
+                <span class="inst-badge badge high">IIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">IIT Kharagpur</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Kharagpur" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Kharagpur%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card iit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/iit1/500/300" alt="IIT Bombay" loading="lazy">
+                <span class="inst-badge badge high">IIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">IIT Bombay</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Bombay" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Bombay%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card iit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/iit2/500/300" alt="IIT Madras" loading="lazy">
+                <span class="inst-badge badge high">IIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">IIT Madras</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Madras" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Madras%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card iit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/iit3/500/300" alt="IIT Kanpur" loading="lazy">
+                <span class="inst-badge badge high">IIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">IIT Kanpur</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Kanpur" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Kanpur%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card iit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/iit4/500/300" alt="IIT Delhi" loading="lazy">
+                <span class="inst-badge badge high">IIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">IIT Delhi</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Delhi" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Delhi%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card iit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/iit5/500/300" alt="IIT Guwahati" loading="lazy">
+                <span class="inst-badge badge high">IIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">IIT Guwahati</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Guwahati" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Guwahati%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card iit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/iit6/500/300" alt="IIT Roorkee" loading="lazy">
+                <span class="inst-badge badge high">IIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">IIT Roorkee</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Roorkee" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Roorkee%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card iit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/iit7/500/300" alt="IIT Ropar" loading="lazy">
+                <span class="inst-badge badge high">IIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">IIT Ropar</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Ropar" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Ropar%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card iit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/iit8/500/300" alt="IIT Bhubaneswar" loading="lazy">
+                <span class="inst-badge badge high">IIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">IIT Bhubaneswar</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Bhubaneswar" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Bhubaneswar%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card iit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/iit9/500/300" alt="IIT Gandhinagar" loading="lazy">
+                <span class="inst-badge badge high">IIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">IIT Gandhinagar</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Gandhinagar" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Gandhinagar%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card iit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/iit10/500/300" alt="IIT Hyderabad" loading="lazy">
+                <span class="inst-badge badge high">IIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">IIT Hyderabad</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Hyderabad" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Hyderabad%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card iit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/iit11/500/300" alt="IIT Jodhpur" loading="lazy">
+                <span class="inst-badge badge high">IIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">IIT Jodhpur</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Jodhpur" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Jodhpur%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card iit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/iit12/500/300" alt="IIT Patna" loading="lazy">
+                <span class="inst-badge badge high">IIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">IIT Patna</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Patna" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Patna%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card iit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/iit13/500/300" alt="IIT Indore" loading="lazy">
+                <span class="inst-badge badge high">IIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">IIT Indore</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Indore" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Indore%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card iit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/iit14/500/300" alt="IIT Mandi" loading="lazy">
+                <span class="inst-badge badge high">IIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">IIT Mandi</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Mandi" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Mandi%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card iit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/iit15/500/300" alt="IIT (BHU) BHU" loading="lazy">
+                <span class="inst-badge badge high">IIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">IIT (BHU) BHU</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20%28BHU%29%20Varanasi" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20%28BHU%29%20Varanasi%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card iit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/iit16/500/300" alt="IIT Palakkad" loading="lazy">
+                <span class="inst-badge badge high">IIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">IIT Palakkad</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Palakkad" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Palakkad%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card iit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/iit17/500/300" alt="IIT Tirupati" loading="lazy">
+                <span class="inst-badge badge high">IIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">IIT Tirupati</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Tirupati" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Tirupati%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card iit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/iit18/500/300" alt="IIT (ISM) ISM" loading="lazy">
+                <span class="inst-badge badge high">IIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">IIT (ISM) ISM</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20%28ISM%29%20Dhanbad" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20%28ISM%29%20Dhanbad%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card iit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/iit19/500/300" alt="IIT Bhilai" loading="lazy">
+                <span class="inst-badge badge high">IIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">IIT Bhilai</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Bhilai" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Bhilai%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card iit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/iit20/500/300" alt="IIT Goa" loading="lazy">
+                <span class="inst-badge badge high">IIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">IIT Goa</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Goa" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Goa%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card iit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/iit21/500/300" alt="IIT Jammu" loading="lazy">
+                <span class="inst-badge badge high">IIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">IIT Jammu</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Jammu" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Jammu%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card iit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/iit22/500/300" alt="IIT Dharwad" loading="lazy">
+                <span class="inst-badge badge high">IIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">IIT Dharwad</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Dharwad" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Dharwad%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card nit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/nit0/500/300" alt="NIT Tiruchirappalli" loading="lazy">
+                <span class="inst-badge badge medium">NIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">NIT Tiruchirappalli</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%2C%20Tiruchirappalli" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=NIT%20Tiruchirappalli%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card nit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/nit1/500/300" alt="NIT Karnataka" loading="lazy">
+                <span class="inst-badge badge medium">NIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">NIT Karnataka</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Karnataka" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=NIT%20Karnataka%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card nit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/nit2/500/300" alt="NIT Rourkela" loading="lazy">
+                <span class="inst-badge badge medium">NIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">NIT Rourkela</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Rourkela" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=NIT%20Rourkela%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card nit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/nit3/500/300" alt="NIT Warangal" loading="lazy">
+                <span class="inst-badge badge medium">NIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">NIT Warangal</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Warangal" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=NIT%20Warangal%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card nit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/nit4/500/300" alt="NIT Calicut" loading="lazy">
+                <span class="inst-badge badge medium">NIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">NIT Calicut</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Calicut" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=NIT%20Calicut%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card nit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/nit5/500/300" alt="VNIT Nagpur" loading="lazy">
+                <span class="inst-badge badge medium">NIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">VNIT Nagpur</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/Visvesvaraya%20National%20Institute%20of%20Technology" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=VNIT%20Nagpur%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card nit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/nit6/500/300" alt="MNIT Jaipur" loading="lazy">
+                <span class="inst-badge badge medium">NIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">MNIT Jaipur</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/Malaviya%20National%20Institute%20of%20Technology%20Jaipur" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=MNIT%20Jaipur%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card nit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/nit7/500/300" alt="NIT Kurukshetra" loading="lazy">
+                <span class="inst-badge badge medium">NIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">NIT Kurukshetra</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Kurukshetra" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=NIT%20Kurukshetra%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card nit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/nit8/500/300" alt="NIT Silchar" loading="lazy">
+                <span class="inst-badge badge medium">NIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">NIT Silchar</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Silchar" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=NIT%20Silchar%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card nit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/nit9/500/300" alt="NIT Durgapur" loading="lazy">
+                <span class="inst-badge badge medium">NIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">NIT Durgapur</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Durgapur" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=NIT%20Durgapur%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card nit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/nit10/500/300" alt="MNNIT Allahabad" loading="lazy">
+                <span class="inst-badge badge medium">NIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">MNNIT Allahabad</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/Motilal%20Nehru%20National%20Institute%20of%20Technology%20Allahabad" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=MNNIT%20Allahabad%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card nit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/nit11/500/300" alt="NIT Jalandhar" loading="lazy">
+                <span class="inst-badge badge medium">NIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">NIT Jalandhar</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/Dr.%20B.%20R.%20Ambedkar%20National%20Institute%20of%20Technology%20Jalandhar" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=NIT%20Jalandhar%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card nit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/nit12/500/300" alt="NIT Meghalaya" loading="lazy">
+                <span class="inst-badge badge medium">NIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">NIT Meghalaya</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Meghalaya" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=NIT%20Meghalaya%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card nit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/nit13/500/300" alt="MANIT Bhopal" loading="lazy">
+                <span class="inst-badge badge medium">NIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">MANIT Bhopal</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/Maulana%20Azad%20National%20Institute%20of%20Technology" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=MANIT%20Bhopal%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card nit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/nit14/500/300" alt="NIT Raipur" loading="lazy">
+                <span class="inst-badge badge medium">NIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">NIT Raipur</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Raipur" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=NIT%20Raipur%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card nit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/nit15/500/300" alt="NIT Agartala" loading="lazy">
+                <span class="inst-badge badge medium">NIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">NIT Agartala</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Agartala" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=NIT%20Agartala%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card nit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/nit16/500/300" alt="NIT Goa" loading="lazy">
+                <span class="inst-badge badge medium">NIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">NIT Goa</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Goa" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=NIT%20Goa%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card nit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/nit17/500/300" alt="NIT Jamshedpur" loading="lazy">
+                <span class="inst-badge badge medium">NIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">NIT Jamshedpur</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Jamshedpur" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=NIT%20Jamshedpur%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card nit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/nit18/500/300" alt="NIT Patna" loading="lazy">
+                <span class="inst-badge badge medium">NIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">NIT Patna</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Patna" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=NIT%20Patna%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card nit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/nit19/500/300" alt="NIT Hamirpur" loading="lazy">
+                <span class="inst-badge badge medium">NIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">NIT Hamirpur</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Hamirpur" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=NIT%20Hamirpur%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card nit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/nit20/500/300" alt="NIT Puducherry" loading="lazy">
+                <span class="inst-badge badge medium">NIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">NIT Puducherry</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Puducherry" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=NIT%20Puducherry%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card nit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/nit21/500/300" alt="NIT Manipur" loading="lazy">
+                <span class="inst-badge badge medium">NIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">NIT Manipur</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Manipur" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=NIT%20Manipur%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card nit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/nit22/500/300" alt="NIT Arunachal Pradesh" loading="lazy">
+                <span class="inst-badge badge medium">NIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">NIT Arunachal Pradesh</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Arunachal%20Pradesh" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=NIT%20Arunachal%20Pradesh%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card nit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/nit23/500/300" alt="NIT Srinagar" loading="lazy">
+                <span class="inst-badge badge medium">NIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">NIT Srinagar</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Srinagar" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=NIT%20Srinagar%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card nit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/nit24/500/300" alt="NIT Delhi" loading="lazy">
+                <span class="inst-badge badge medium">NIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">NIT Delhi</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Delhi" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=NIT%20Delhi%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card nit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/nit25/500/300" alt="NIT Mizoram" loading="lazy">
+                <span class="inst-badge badge medium">NIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">NIT Mizoram</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Mizoram" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=NIT%20Mizoram%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card nit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/nit26/500/300" alt="NIT Nagaland" loading="lazy">
+                <span class="inst-badge badge medium">NIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">NIT Nagaland</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Nagaland" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=NIT%20Nagaland%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card nit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/nit27/500/300" alt="NIT Sikkim" loading="lazy">
+                <span class="inst-badge badge medium">NIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">NIT Sikkim</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Sikkim" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=NIT%20Sikkim%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card nit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/nit28/500/300" alt="NIT Uttarakhand" loading="lazy">
+                <span class="inst-badge badge medium">NIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">NIT Uttarakhand</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Uttarakhand" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=NIT%20Uttarakhand%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card nit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/nit29/500/300" alt="NIT Andhra Pradesh" loading="lazy">
+                <span class="inst-badge badge medium">NIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">NIT Andhra Pradesh</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Andhra%20Pradesh" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=NIT%20Andhra%20Pradesh%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+          <div class="institute-card nit">
+            <div class="inst-img-wrapper">
+                <img src="https://picsum.photos/seed/nit30/500/300" alt="IIEST Shibpur" loading="lazy">
+                <span class="inst-badge badge medium">NIT</span>
+            </div>
+            <div class="inst-content">
+                <h4 class="inst-name">IIEST Shibpur</h4>
+                <div class="inst-links">
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Engineering%20Science%20and%20Technology%2C%20Shibpur" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://google.com/search?q=IIEST%20Shibpur%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                </div>
+            </div>
+          </div>
+        
+        </div>
+      </section>
+    </main>
+  </div>
+  
+  <script>
+    function filterInst(type) {
+        const cards = document.querySelectorAll('.institute-card');
+        const buttons = document.querySelectorAll('.filter-btn');
+        
+        buttons.forEach(btn => {
+            btn.classList.remove('btn-primary', 'active');
+            btn.classList.add('btn-secondary');
+        });
+        event.target.classList.remove('btn-secondary');
+        event.target.classList.add('btn-primary', 'active');
+
+        cards.forEach(card => {
+            if (type === 'all') {
+                card.style.display = 'flex';
+            } else if (card.classList.contains(type)) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+  </script>
+  <script src="js/app.js"></script>
+</body>
+</html>
