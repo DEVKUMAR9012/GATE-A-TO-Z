@@ -1,78 +1,206 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>GATE A TO Z | Complete Roadmap for CSE Students</title>
-<link href="css/style.css" rel="stylesheet"/>
-<!-- Icons -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IIT & NIT Admissions | GATE A TO Z</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-<!-- Mobile Header -->
-<header class="mobile-header">
-<div class="logo">GATE A TO Z</div>
-<button class="menu-toggle" id="menu-btn"><i class="fas fa-bars"></i></button>
-</header>
-<div class="app-container">
-<!-- Sidebar -->
-<nav class="sidebar" id="sidebar">
-<div class="sidebar-header">
-<div class="logo">GATE A TO Z</div>
-</div>
-<div class="search-container mb-4">
-<i class="fas fa-search search-icon"></i>
-<input class="search-input" id="global-search" placeholder="Search topics..." type="text"/>
-<div class="search-results-container" id="search-results"></div></div>
-<ul class="nav-list">
-<li class="nav-item"><a class="nav-link active" href="index.html"><i class="fas fa-home"></i> Overview</a></li>
-<li class="nav-item"><a class="nav-link" href="basics.html"><i class="fas fa-book"></i> GATE Basics</a></li>
-<li class="nav-item"><a class="nav-link" href="papers.html"><i class="fas fa-file-alt"></i> GATE Papers</a></li>
-<li class="nav-item"><a class="nav-link" href="syllabus.html"><i class="fas fa-laptop-code"></i> GATE CS</a></li>
-<li class="nav-item"><a class="nav-link" href="opportunities.html"><i class="fas fa-bullseye"></i> Opportunities</a></li>
-<li class="nav-item"><a class="nav-link active" href="admissions.html"><i class="fas fa-university"></i> IIT / NIT Admissions</a></li>
-<li class="nav-item"><a class="nav-link" href="psu.html"><i class="fas fa-building"></i> PSU Recruitment</a></li>
-<li class="nav-item"><a class="nav-link" href="scholarship.html"><i class="fas fa-money-bill-wave"></i> Scholarship</a></li>
-<li class="nav-item"><a class="nav-link" href="abroad.html"><i class="fas fa-globe"></i> Abroad</a></li>
-<li class="nav-item"><a class="nav-link" href="roadmap.html"><i class="fas fa-map-signs"></i> Roadmap &amp; Plan</a></li>
-<li class="nav-item"><a class="nav-link" href="decision-tree.html"><i class="fas fa-code-branch"></i> Decision Tree</a></li>
-<li class="nav-item"><a class="nav-link" href="targets.html"><i class="fas fa-crosshairs"></i> Targets</a></li>
-<li class="nav-item"><a class="nav-link" href="resources.html"><i class="fas fa-link"></i> Official Sources</a></li>
-<li class="nav-item mt-4">
-<a class="nav-link" href="login.html" style="border: 1px solid var(--accent-primary); border-radius: var(--border-radius-sm);">
-<i class="fas fa-sign-in-alt"></i> Join GAZ (Optional)
+
+  <!-- Mobile Header -->
+  <header class="mobile-header">
+    <div class="logo">GATE A TO Z</div>
+    <button class="menu-toggle" id="menu-btn"><i class="fas fa-bars"></i></button>
+  </header>
+
+  <div class="app-container">
+    
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">GATE A TO Z</div>
+      </div>
+      <div class="search-container mb-4">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" class="search-input" id="global-search" placeholder="Search topics...">
+        <div class="search-results-container" id="search-results"></div>
+      </div>
+      <ul class="nav-list">
+        <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Overview</a></li>
+        <li class="nav-item"><a href="basics.html" class="nav-link"><i class="fas fa-book"></i> GATE Basics</a></li>
+        <li class="nav-item"><a href="papers.html" class="nav-link"><i class="fas fa-file-alt"></i> GATE Papers</a></li>
+        <li class="nav-item"><a href="syllabus.html" class="nav-link"><i class="fas fa-laptop-code"></i> GATE CS</a></li>
+        <li class="nav-item"><a href="opportunities.html" class="nav-link"><i class="fas fa-bullseye"></i> Opportunities</a></li>
+        <li class="nav-item"><a href="admissions.html" class="nav-link active"><i class="fas fa-university"></i> IIT / NIT Admissions</a></li>
+        <li class="nav-item"><a href="psu.html" class="nav-link"><i class="fas fa-building"></i> PSU Recruitment</a></li>
+        <li class="nav-item"><a href="scholarship.html" class="nav-link"><i class="fas fa-money-bill-wave"></i> Scholarship</a></li>
+        <li class="nav-item"><a href="abroad.html" class="nav-link"><i class="fas fa-globe"></i> Abroad</a></li>
+        <li class="nav-item"><a href="roadmap.html" class="nav-link"><i class="fas fa-map-signs"></i> Roadmap & Plan</a></li>
+        <li class="nav-item"><a href="decision-tree.html" class="nav-link"><i class="fas fa-code-branch"></i> Decision Tree</a></li>
+        <li class="nav-item"><a href="targets.html" class="nav-link"><i class="fas fa-crosshairs"></i> Targets</a></li>
+        <li class="nav-item"><a href="resources.html" class="nav-link"><i class="fas fa-link"></i> Official Sources</a></li>
+        <li class="nav-item mt-4">
+            <a href="login.html" class="nav-link" style="border: 1px solid var(--accent-primary); border-radius: var(--border-radius-sm);">
+                <i class="fas fa-sign-in-alt"></i> Join GAZ (Optional)
             </a>
-</li>
-</ul>
-</nav>
-<!-- Main Content -->
-<main class="main-content"><section class="section searchable" id="admissions">
-<span class="section-tag">Admissions</span>
-<h2 class="section-title">Admission Flows</h2>
-<div class="card">
-<h3 class="text-cyan">IIT / IISc Admissions (via COAP)</h3>
-<p><b>COAP (Common Offer Acceptance Portal)</b> is where all participating IITs/IISc upload their admission offers.</p>
-<div class="callout warning mt-3">
-<span class="callout-title">⚠ COAP is NOT an application portal</span>
-            You must apply separately to each individual IIT/IISc. Only if they select you, they will push the offer to your COAP dashboard to Accept, Retain, or Reject.
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      
+      <section id="admissions" class="section searchable">
+        <span class="section-tag">Post-GATE</span>
+        <h2 class="section-title">IIT & NIT Admissions Guide</h2>
+        <p class="text-secondary mb-4">Securing a rank is only half the battle. You must understand how the decentralized IIT counseling (COAP) and centralized NIT counseling (CCMT) processes work. Below are the historical cutoffs for GATE CSE.</p>
+
+        <div class="callout info mb-4">
+          <span class="callout-title">Understanding GATE Score vs Rank</span>
+          Cutoffs for admissions are almost always declared in terms of <strong>GATE Score (Out of 1000)</strong>, not AIR (Rank) or raw marks. A score above 750 is considered excellent for Top IITs.
+        </div>
+
+        <h3 class="mt-4 mb-3" style="color:var(--text-primary); font-family:var(--font-display); text-transform:uppercase;">COAP: Common Offer Acceptance Portal (For IITs)</h3>
+        <p class="text-secondary mb-3">COAP is <strong>NOT</strong> an application portal. You must apply to each IIT individually on their respective websites. COAP is merely a dashboard where all IITs upload their offers so you can accept or reject them in real-time.</p>
+        
+        <div class="table-container mb-4">
+          <table>
+            <thead>
+              <tr>
+                <th>Top IIT / Institute</th>
+                <th>Program</th>
+                <th>Avg. Safe Score (Gen)</th>
+                <th>Selection Process</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>IISc Bangalore</td>
+                <td>M.Tech CSE</td>
+                <td class="text-cyan font-bold">850+</td>
+                <td>70% GATE + 30% Interview/Test</td>
+              </tr>
+              <tr>
+                <td>IIT Bombay</td>
+                <td>M.Tech CSE</td>
+                <td class="text-cyan font-bold">780+</td>
+                <td>Direct Admission based on Score</td>
+              </tr>
+              <tr>
+                <td>IIT Delhi</td>
+                <td>M.Tech CSE</td>
+                <td class="text-cyan font-bold">780+</td>
+                <td>Direct / Interview</td>
+              </tr>
+              <tr>
+                <td>IIT Kanpur</td>
+                <td>M.Tech CSE</td>
+                <td class="text-cyan font-bold">750+</td>
+                <td>Written Test + Interview</td>
+              </tr>
+              <tr>
+                <td>IIT Madras</td>
+                <td>M.Tech CSE</td>
+                <td class="text-cyan font-bold">770+</td>
+                <td>Direct Admission</td>
+              </tr>
+              <tr>
+                <td>IIT Kharagpur / Roorkee</td>
+                <td>M.Tech CSE</td>
+                <td class="text-cyan font-bold">700+</td>
+                <td>Direct Admission</td>
+              </tr>
+              <tr>
+                <td>New IITs (Hyderabad, Gandhinagar)</td>
+                <td>M.Tech CSE</td>
+                <td class="text-cyan font-bold">650+</td>
+                <td>Direct / Interview</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="mt-4 mb-3" style="color:var(--text-primary); font-family:var(--font-display); text-transform:uppercase;">CCMT: Centralized Counseling (For NITs & IIITs)</h3>
+        <p class="text-secondary mb-3">Unlike IITs, you do not apply individually to NITs. You fill out a single preference form on the CCMT portal, and seats are allocated automatically across multiple rounds based on your GATE score.</p>
+        
+        <div class="table-container mb-4">
+          <table>
+            <thead>
+              <tr>
+                <th>Top NIT / Institute</th>
+                <th>Program</th>
+                <th>Avg. Safe Score (Gen)</th>
+                <th>Placements (Avg CTC)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>NIT Trichy</td>
+                <td>M.Tech CSE</td>
+                <td class="text-cyan font-bold">680+</td>
+                <td>~18-22 LPA</td>
+              </tr>
+              <tr>
+                <td>NIT Surathkal (Karnataka)</td>
+                <td>M.Tech CSE / IT</td>
+                <td class="text-cyan font-bold">650+</td>
+                <td>~16-20 LPA</td>
+              </tr>
+              <tr>
+                <td>NIT Warangal</td>
+                <td>M.Tech CSE</td>
+                <td class="text-cyan font-bold">650+</td>
+                <td>~16-20 LPA</td>
+              </tr>
+              <tr>
+                <td>MNIT Allahabad</td>
+                <td>M.Tech CSE</td>
+                <td class="text-cyan font-bold">600+</td>
+                <td>~14-16 LPA</td>
+              </tr>
+              <tr>
+                <td>Mid-Tier NITs (Calicut, Rourkela)</td>
+                <td>M.Tech CSE</td>
+                <td class="text-cyan font-bold">500+</td>
+                <td>~10-14 LPA</td>
+              </tr>
+              <tr>
+                <td>IIITs via CCMT (Pune, Gwalior)</td>
+                <td>M.Tech CSE</td>
+                <td class="text-cyan font-bold">450+</td>
+                <td>~10-12 LPA</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="mt-4 mb-3" style="color:var(--text-primary); font-family:var(--font-display); text-transform:uppercase;">M.Tech vs MS (Research)</h3>
+        <div class="dashboard-cards">
+          <div class="card">
+            <h4 class="text-cyan mb-2">M.Tech (Master of Technology)</h4>
+            <ul class="checklist">
+              <li>Duration: Exactly 2 years.</li>
+              <li>Focus: Coursework and placements.</li>
+              <li>Cutoff: Very High (750+ at top IITs).</li>
+            </ul>
           </div>
-<p>Selection may involve written coding tests and technical interviews, especially for MS (Research) and AI programs. A high GATE score shortlists you, but doesn't guarantee the seat.</p>
-</div>
-<div class="card mt-4">
-<h3 class="text-blue">NIT / IIIT / CFTI Admissions (via CCMT)</h3>
-<p><b>CCMT</b> is highly centralized. You register once, pay a single fee, and create a preference list of institutes.</p>
-<div class="callout info mt-3">
-<span class="callout-title">Centralized Flow</span>
-            Registration → Choice Filling → Locking → Seat Allotment (Algorithmic based on GATE score) → Upgradation/Float → Document Verification → Reporting.
+          <div class="card">
+            <h4 class="text-cyan mb-2">MS (Master of Science by Research)</h4>
+            <ul class="checklist">
+              <li>Duration: 2.5 to 3 years.</li>
+              <li>Focus: Deep research and thesis work.</li>
+              <li>Cutoff: Comparatively lower (600+ at top IITs). Requires heavy interview/test prep.</li>
+            </ul>
           </div>
-<div class="callout warning">
-<span class="callout-title">⚠ CCMT Changes</span>
-            Participating institutes and program mappings can change every year. Always refer to the latest brochure.
-          </div>
-</div>
-</section></main>
-</div>
-<script src="js/app.js"></script>
+        </div>
+
+      </section>
+
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
 </body>
 </html>
