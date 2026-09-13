@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Close sidebar on click outside on mobile
   document.addEventListener('click', (e) => {
     if (window.innerWidth <= 1024) {
-      if (!sidebar.contains(e.target) && !menuBtn.contains(e.target) && sidebar.classList.contains('open')) {
+      if (sidebar && menuBtn && !sidebar.contains(e.target) && !menuBtn.contains(e.target) && sidebar.classList.contains('open')) {
         sidebar.classList.remove('open');
       }
     }
@@ -27,39 +27,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Active navigation link highlighting on scroll
-  const sections = document.querySelectorAll('.section, .hero');
-  const navLinks = document.querySelectorAll('.nav-link');
-
-  window.addEventListener('scroll', () => {
-    let current = '';
-    const scrollY = window.pageYOffset;
-
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
-      if (scrollY >= (sectionTop - 150)) {
-        current = section.getAttribute('id');
-      }
-    });
-
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('active');
-      }
-    });
-  });
-
-  // Search functionality
+  // Search functionality (Local page only)
   const searchInput = document.getElementById('global-search');
   if (searchInput) {
     searchInput.addEventListener('input', function(e) {
       const term = e.target.value.toLowerCase();
-      // Simple search implementation hiding/showing sections or cards based on term
-      // A more robust implementation would require a dedicated search index array.
       
-      const searchableElements = document.querySelectorAll('.searchable');
+      const searchableElements = document.querySelectorAll('.searchable, .accordion-item, .card, .timeline-item, .target-card');
       searchableElements.forEach(el => {
         const text = el.innerText.toLowerCase();
         if (text.includes(term)) {
@@ -73,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Interactive Decision Tree
   const renderDecisionTree = (nodeId) => {
-    // Simple mock logic for demonstration
     const contentArea = document.getElementById('decision-content');
     if (!contentArea) return;
     
@@ -114,6 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Expose to window for inline onclicks
   window.renderTree = renderDecisionTree;
   
-  // Initial render
-  renderDecisionTree('start');
+  // Initial render if decision tree exists on this page
+  if (document.getElementById('decision-content')) {
+    renderDecisionTree('start');
+  }
 });
