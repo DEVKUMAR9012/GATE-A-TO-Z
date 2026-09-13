@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Institute Explorer | GATE A TO Z</title>
+  <meta name="description" content="Explore all 23 IITs and 31 NITs with real campus photos, GATE CSE cutoffs, and official websites.">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -16,804 +17,936 @@
 
   <div class="app-container">
     <nav class="sidebar" id="sidebar">
-      <!-- SIDEBAR_PLACEHOLDER -->
+
+      <div class="sidebar-header">
+        <div class="logo">GATE A TO Z</div>
+      </div>
+      <div class="search-container mb-4">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" class="search-input" id="global-search" placeholder="Search topics...">
+        <div class="search-results-container" id="search-results"></div>
+      </div>
+      <ul class="nav-list">
+        <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Overview</a></li>
+        <li class="nav-item"><a href="basics.html" class="nav-link"><i class="fas fa-book"></i> GATE Basics</a></li>
+        <li class="nav-item"><a href="papers.html" class="nav-link"><i class="fas fa-file-alt"></i> GATE Papers</a></li>
+        <li class="nav-item"><a href="syllabus.html" class="nav-link"><i class="fas fa-laptop-code"></i> GATE CS</a></li>
+        <li class="nav-item"><a href="opportunities.html" class="nav-link"><i class="fas fa-bullseye"></i> Opportunities</a></li>
+        <li class="nav-item"><a href="admissions.html" class="nav-link"><i class="fas fa-university"></i> IIT / NIT Admissions</a></li>
+        <li class="nav-item"><a href="institutes.html" class="nav-link active"><i class="fas fa-landmark"></i> Institute Explorer</a></li>
+        <li class="nav-item"><a href="psu.html" class="nav-link"><i class="fas fa-building"></i> PSU Recruitment</a></li>
+        <li class="nav-item"><a href="scholarship.html" class="nav-link"><i class="fas fa-money-bill-wave"></i> Scholarship</a></li>
+        <li class="nav-item"><a href="abroad.html" class="nav-link"><i class="fas fa-globe"></i> Abroad</a></li>
+        <li class="nav-item"><a href="roadmap.html" class="nav-link"><i class="fas fa-map-signs"></i> Roadmap & Plan</a></li>
+        <li class="nav-item"><a href="decision-tree.html" class="nav-link"><i class="fas fa-code-branch"></i> Decision Tree</a></li>
+        <li class="nav-item"><a href="targets.html" class="nav-link"><i class="fas fa-crosshairs"></i> Targets</a></li>
+        <li class="nav-item"><a href="resources.html" class="nav-link"><i class="fas fa-link"></i> Official Sources</a></li>
+        <li class="nav-item mt-4">
+            <a href="login.html" class="nav-link" style="border: 1px solid var(--accent-primary); border-radius: var(--border-radius-sm);">
+                <i class="fas fa-sign-in-alt"></i> Join GAZ (Optional)
+            </a>
+        </li>
+      </ul>
+
     </nav>
 
     <main class="main-content">
       <section id="explorer" class="section searchable">
         <span class="section-tag">Directory</span>
         <h2 class="section-title">Institute Explorer</h2>
-        <p class="text-secondary mb-4">Explore all 23 IITs and 31 NITs offering M.Tech through GATE. Due to Wikipedia's strict rate limits on fetching 54 images at once, the images below are high-quality placeholders. Click 'Wiki' for the real campus info.</p>
+        <p class="text-secondary mb-4">
+          Explore all <strong>23 IITs</strong> and <strong>31 NITs</strong> offering M.Tech through GATE. 
+          Includes official websites, Wikipedia links, and approximate GATE CS score cutoffs.
+        </p>
         
         <div class="filters mb-4">
-            <button class="btn btn-primary filter-btn active" onclick="filterInst('all')">All</button>
-            <button class="btn btn-secondary filter-btn" onclick="filterInst('iit')">IITs</button>
-            <button class="btn btn-secondary filter-btn" onclick="filterInst('nit')">NITs</button>
+            <button class="filter-btn active" onclick="filterInst('all', this)">All (54)</button>
+            <button class="filter-btn" onclick="filterInst('iit', this)">IITs (23)</button>
+            <button class="filter-btn" onclick="filterInst('nit', this)">NITs / Others (31)</button>
         </div>
 
         <div class="institute-grid" id="inst-grid">
 
           <div class="institute-card iit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/iit0/500/300" alt="IIT Kharagpur" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/IIT_Kharagpur_August_2007.jpg/640px-IIT_Kharagpur_August_2007.jpg" alt="IIT Kharagpur campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge high">IIT</span>
+                <span class="cutoff-tag">GATE: 720+</span>
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">IIT Kharagpur</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Kharagpur" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Kharagpur%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="http://www.iitkgp.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Kharagpur" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Kharagpur%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card iit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/iit1/500/300" alt="IIT Bombay" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/IIT_Bombay_-_Main_Building.jpg/640px-IIT_Bombay_-_Main_Building.jpg" alt="IIT Bombay campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge high">IIT</span>
+                <span class="cutoff-tag">GATE: 780+</span>
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">IIT Bombay</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Bombay" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Bombay%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="http://www.iitb.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Bombay" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Bombay%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card iit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/iit2/500/300" alt="IIT Madras" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/IIT_Madras.jpg/640px-IIT_Madras.jpg" alt="IIT Madras campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge high">IIT</span>
+                <span class="cutoff-tag">GATE: 770+</span>
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">IIT Madras</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Madras" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Madras%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.iitm.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Madras" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Madras%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card iit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/iit3/500/300" alt="IIT Kanpur" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/IIT_Kanpur_main_building.jpg/640px-IIT_Kanpur_main_building.jpg" alt="IIT Kanpur campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge high">IIT</span>
+                <span class="cutoff-tag">GATE: 750+</span>
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">IIT Kanpur</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Kanpur" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Kanpur%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.iitk.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Kanpur" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Kanpur%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card iit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/iit4/500/300" alt="IIT Delhi" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/IITD_Campus.jpg/640px-IITD_Campus.jpg" alt="IIT Delhi campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge high">IIT</span>
+                <span class="cutoff-tag">GATE: 780+</span>
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">IIT Delhi</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Delhi" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Delhi%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://home.iitd.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Delhi" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Delhi%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card iit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/iit5/500/300" alt="IIT Guwahati" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/IITG_Academic_Complex.JPG/640px-IITG_Academic_Complex.JPG" alt="IIT Guwahati campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge high">IIT</span>
+                <span class="cutoff-tag">GATE: 700+</span>
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">IIT Guwahati</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Guwahati" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Guwahati%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.iitg.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Guwahati" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Guwahati%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card iit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/iit6/500/300" alt="IIT Roorkee" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/IITRoorkee.jpg/640px-IITRoorkee.jpg" alt="IIT Roorkee campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge high">IIT</span>
+                <span class="cutoff-tag">GATE: 720+</span>
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">IIT Roorkee</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Roorkee" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Roorkee%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.iitr.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Roorkee" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Roorkee%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card iit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/iit7/500/300" alt="IIT Ropar" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/IIT_Ropar_gate.jpg/640px-IIT_Ropar_gate.jpg" alt="IIT Ropar campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge high">IIT</span>
+                
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">IIT Ropar</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Ropar" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Ropar%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.iitrpr.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Ropar" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Ropar%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card iit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/iit8/500/300" alt="IIT Bhubaneswar" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/IIT_Bhubaneswar_New_Campus.jpg/640px-IIT_Bhubaneswar_New_Campus.jpg" alt="IIT Bhubaneswar campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge high">IIT</span>
+                
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">IIT Bhubaneswar</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Bhubaneswar" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Bhubaneswar%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.iitbbs.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Bhubaneswar" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Bhubaneswar%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card iit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/iit9/500/300" alt="IIT Gandhinagar" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/IIT_Gandhinagar_new_campus.jpg/640px-IIT_Gandhinagar_new_campus.jpg" alt="IIT Gandhinagar campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge high">IIT</span>
+                
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">IIT Gandhinagar</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Gandhinagar" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Gandhinagar%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.iitgn.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Gandhinagar" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Gandhinagar%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card iit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/iit10/500/300" alt="IIT Hyderabad" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/IIT_Hyderabad_campus.jpg/640px-IIT_Hyderabad_campus.jpg" alt="IIT Hyderabad campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge high">IIT</span>
+                <span class="cutoff-tag">GATE: 670+</span>
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">IIT Hyderabad</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Hyderabad" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Hyderabad%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.iith.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Hyderabad" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Hyderabad%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card iit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/iit11/500/300" alt="IIT Jodhpur" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/IIT_Jodhpur_permanent_campus.jpg/640px-IIT_Jodhpur_permanent_campus.jpg" alt="IIT Jodhpur campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge high">IIT</span>
+                
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">IIT Jodhpur</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Jodhpur" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Jodhpur%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.iitj.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Jodhpur" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Jodhpur%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card iit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/iit12/500/300" alt="IIT Patna" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/IIT_Patna_Main_Gate.jpg/640px-IIT_Patna_Main_Gate.jpg" alt="IIT Patna campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge high">IIT</span>
+                
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">IIT Patna</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Patna" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Patna%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.iitp.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Patna" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Patna%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card iit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/iit13/500/300" alt="IIT Indore" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/IIT_Indore_-_Main_Building.jpg/640px-IIT_Indore_-_Main_Building.jpg" alt="IIT Indore campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge high">IIT</span>
+                
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">IIT Indore</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Indore" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Indore%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.iiti.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Indore" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Indore%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card iit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/iit14/500/300" alt="IIT Mandi" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/IIT_Mandi_Kamand_Campus.jpg/640px-IIT_Mandi_Kamand_Campus.jpg" alt="IIT Mandi campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge high">IIT</span>
+                
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">IIT Mandi</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Mandi" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Mandi%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.iitmandi.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Mandi" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Mandi%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card iit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/iit15/500/300" alt="IIT (BHU) BHU" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Indian_Institute_of_Technology_%28BHU%29_Varanasi%2C_Main_Building.jpg/640px-Indian_Institute_of_Technology_%28BHU%29_Varanasi%2C_Main_Building.jpg" alt="IIT (BHU) Varanasi campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge high">IIT</span>
+                <span class="cutoff-tag">GATE: 660+</span>
             </div>
             <div class="inst-content">
-                <h4 class="inst-name">IIT (BHU) BHU</h4>
+                <h4 class="inst-name">IIT (BHU) Varanasi</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20%28BHU%29%20Varanasi" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20%28BHU%29%20Varanasi%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.iitbhu.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20%28BHU%29%20Varanasi" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20%28BHU%29%20Varanasi%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card iit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/iit16/500/300" alt="IIT Palakkad" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/IITPKD.jpg/640px-IITPKD.jpg" alt="IIT Palakkad campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge high">IIT</span>
+                
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">IIT Palakkad</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Palakkad" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Palakkad%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.iitpkd.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Palakkad" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Palakkad%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card iit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/iit17/500/300" alt="IIT Tirupati" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/IIT_Tirupati.jpg/640px-IIT_Tirupati.jpg" alt="IIT Tirupati campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge high">IIT</span>
+                
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">IIT Tirupati</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Tirupati" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Tirupati%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.iittp.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Tirupati" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Tirupati%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card iit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/iit18/500/300" alt="IIT (ISM) ISM" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Indian_School_of_Mines%2C_Dhanbad_Administrative_Block.jpg/640px-Indian_School_of_Mines%2C_Dhanbad_Administrative_Block.jpg" alt="IIT (ISM) Dhanbad campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge high">IIT</span>
+                <span class="cutoff-tag">GATE: 640+</span>
             </div>
             <div class="inst-content">
-                <h4 class="inst-name">IIT (ISM) ISM</h4>
+                <h4 class="inst-name">IIT (ISM) Dhanbad</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20%28ISM%29%20Dhanbad" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20%28ISM%29%20Dhanbad%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.iitism.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20%28ISM%29%20Dhanbad" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20%28ISM%29%20Dhanbad%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card iit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/iit19/500/300" alt="IIT Bhilai" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/IIT_Bhilai_GEC_campus.jpg/640px-IIT_Bhilai_GEC_campus.jpg" alt="IIT Bhilai campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge high">IIT</span>
+                
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">IIT Bhilai</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Bhilai" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Bhilai%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.iitbhilai.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Bhilai" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Bhilai%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card iit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/iit20/500/300" alt="IIT Goa" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/IIT_Goa_campus.jpg/640px-IIT_Goa_campus.jpg" alt="IIT Goa campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge high">IIT</span>
+                
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">IIT Goa</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Goa" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Goa%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.iitgoa.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Goa" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Goa%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card iit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/iit21/500/300" alt="IIT Jammu" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/IIT_Jammu_campus.jpg/640px-IIT_Jammu_campus.jpg" alt="IIT Jammu campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge high">IIT</span>
+                
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">IIT Jammu</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Jammu" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Jammu%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.iitjammu.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Jammu" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Jammu%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card iit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/iit22/500/300" alt="IIT Dharwad" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/IIT_Dharwad_Permanent_campus.jpg/640px-IIT_Dharwad_Permanent_campus.jpg" alt="IIT Dharwad campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge high">IIT</span>
+                
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">IIT Dharwad</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Dharwad" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Dharwad%20MTech%20cutoffs%20COAP" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.iitdh.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Technology%20Dharwad" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Technology%20Dharwad%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card nit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/nit0/500/300" alt="NIT Tiruchirappalli" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/NIT_Trichy_Central_Library.jpg/640px-NIT_Trichy_Central_Library.jpg" alt="NIT Tiruchirappalli campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge medium">NIT</span>
+                <span class="cutoff-tag">GATE: 680+</span>
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">NIT Tiruchirappalli</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%2C%20Tiruchirappalli" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=NIT%20Tiruchirappalli%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.nitt.edu" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%2C%20Tiruchirappalli" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=National%20Institute%20of%20Technology%2C%20Tiruchirappalli%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card nit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/nit1/500/300" alt="NIT Karnataka" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/NITK_Admin_Block.jpg/640px-NITK_Admin_Block.jpg" alt="NIT Karnataka (Surathkal) campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge medium">NIT</span>
+                <span class="cutoff-tag">GATE: 660+</span>
             </div>
             <div class="inst-content">
-                <h4 class="inst-name">NIT Karnataka</h4>
+                <h4 class="inst-name">NIT Karnataka (Surathkal)</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Karnataka" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=NIT%20Karnataka%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.nitk.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Karnataka" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=National%20Institute%20of%20Technology%20Karnataka%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card nit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/nit2/500/300" alt="NIT Rourkela" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/NIT_ROURKELA_MAIN_BUILDING.jpg/640px-NIT_ROURKELA_MAIN_BUILDING.jpg" alt="NIT Rourkela campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge medium">NIT</span>
+                <span class="cutoff-tag">GATE: 650+</span>
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">NIT Rourkela</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Rourkela" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=NIT%20Rourkela%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.nitrkl.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Rourkela" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=National%20Institute%20of%20Technology%20Rourkela%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card nit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/nit3/500/300" alt="NIT Warangal" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/NIT_Warangal.jpg/640px-NIT_Warangal.jpg" alt="NIT Warangal campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge medium">NIT</span>
+                <span class="cutoff-tag">GATE: 650+</span>
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">NIT Warangal</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Warangal" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=NIT%20Warangal%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.nitw.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Warangal" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=National%20Institute%20of%20Technology%20Warangal%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card nit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/nit4/500/300" alt="NIT Calicut" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NIT_Calicut_Administrative_Building.jpg/640px-NIT_Calicut_Administrative_Building.jpg" alt="NIT Calicut campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge medium">NIT</span>
+                <span class="cutoff-tag">GATE: 640+</span>
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">NIT Calicut</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Calicut" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=NIT%20Calicut%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.nitc.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Calicut" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=National%20Institute%20of%20Technology%20Calicut%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card nit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/nit5/500/300" alt="VNIT Nagpur" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/VNIT_Nagpur_Main_Building.jpg/640px-VNIT_Nagpur_Main_Building.jpg" alt="VNIT Nagpur campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge medium">NIT</span>
+                
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">VNIT Nagpur</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/Visvesvaraya%20National%20Institute%20of%20Technology" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=VNIT%20Nagpur%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.vnit.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/Visvesvaraya%20National%20Institute%20of%20Technology" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=Visvesvaraya%20National%20Institute%20of%20Technology%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card nit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/nit6/500/300" alt="MNIT Jaipur" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Malaviya_National_Institute_of_Technology%2C_Jaipur.jpg/640px-Malaviya_National_Institute_of_Technology%2C_Jaipur.jpg" alt="MNIT Jaipur campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge medium">NIT</span>
+                <span class="cutoff-tag">GATE: 620+</span>
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">MNIT Jaipur</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/Malaviya%20National%20Institute%20of%20Technology%20Jaipur" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=MNIT%20Jaipur%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.mnit.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/Malaviya%20National%20Institute%20of%20Technology%20Jaipur" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=Malaviya%20National%20Institute%20of%20Technology%20Jaipur%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card nit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/nit7/500/300" alt="NIT Kurukshetra" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/NIT_Kurukshetra.jpg/640px-NIT_Kurukshetra.jpg" alt="NIT Kurukshetra campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge medium">NIT</span>
+                <span class="cutoff-tag">GATE: 600+</span>
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">NIT Kurukshetra</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Kurukshetra" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=NIT%20Kurukshetra%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.nitkkr.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Kurukshetra" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=National%20Institute%20of%20Technology%20Kurukshetra%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card nit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/nit8/500/300" alt="NIT Silchar" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/NIT_Silchar_Main_Building.jpg/640px-NIT_Silchar_Main_Building.jpg" alt="NIT Silchar campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge medium">NIT</span>
+                
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">NIT Silchar</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Silchar" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=NIT%20Silchar%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.nits.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Silchar" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=National%20Institute%20of%20Technology%20Silchar%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card nit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/nit9/500/300" alt="NIT Durgapur" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/NIT_Durgapur.jpg/640px-NIT_Durgapur.jpg" alt="NIT Durgapur campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge medium">NIT</span>
+                
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">NIT Durgapur</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Durgapur" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=NIT%20Durgapur%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://nitdgp.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Durgapur" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=National%20Institute%20of%20Technology%20Durgapur%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card nit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/nit10/500/300" alt="MNNIT Allahabad" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/MNNIT_Main_Building.jpg/640px-MNNIT_Main_Building.jpg" alt="MNNIT Allahabad campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge medium">NIT</span>
+                <span class="cutoff-tag">GATE: 610+</span>
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">MNNIT Allahabad</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/Motilal%20Nehru%20National%20Institute%20of%20Technology%20Allahabad" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=MNNIT%20Allahabad%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.mnnit.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/Motilal%20Nehru%20National%20Institute%20of%20Technology%20Allahabad" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=Motilal%20Nehru%20National%20Institute%20of%20Technology%20Allahabad%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card nit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/nit11/500/300" alt="NIT Jalandhar" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/NIT_Jalandhar_Main_Gate.jpg/640px-NIT_Jalandhar_Main_Gate.jpg" alt="NIT Jalandhar campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge medium">NIT</span>
+                
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">NIT Jalandhar</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/Dr.%20B.%20R.%20Ambedkar%20National%20Institute%20of%20Technology%20Jalandhar" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=NIT%20Jalandhar%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.nitj.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/Dr.%20B.%20R.%20Ambedkar%20National%20Institute%20of%20Technology%20Jalandhar" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=Dr.%20B.%20R.%20Ambedkar%20National%20Institute%20of%20Technology%20Jalandhar%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card nit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/nit12/500/300" alt="NIT Meghalaya" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/NIT_Meghalaya.jpg/640px-NIT_Meghalaya.jpg" alt="NIT Meghalaya campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge medium">NIT</span>
+                
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">NIT Meghalaya</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Meghalaya" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=NIT%20Meghalaya%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.nitm.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Meghalaya" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=National%20Institute%20of%20Technology%20Meghalaya%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card nit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/nit13/500/300" alt="MANIT Bhopal" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/MANIT_Bhopal_Building.jpg/640px-MANIT_Bhopal_Building.jpg" alt="MANIT Bhopal campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge medium">NIT</span>
+                
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">MANIT Bhopal</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/Maulana%20Azad%20National%20Institute%20of%20Technology" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=MANIT%20Bhopal%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.manit.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/Maulana%20Azad%20National%20Institute%20of%20Technology" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=Maulana%20Azad%20National%20Institute%20of%20Technology%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card nit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/nit14/500/300" alt="NIT Raipur" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/NIT_Raipur_Main_Gate.jpg/640px-NIT_Raipur_Main_Gate.jpg" alt="NIT Raipur campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge medium">NIT</span>
+                
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">NIT Raipur</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Raipur" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=NIT%20Raipur%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.nitrr.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Raipur" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=National%20Institute%20of%20Technology%20Raipur%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card nit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/nit15/500/300" alt="NIT Agartala" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/NIT_Agartala.jpg/640px-NIT_Agartala.jpg" alt="NIT Agartala campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge medium">NIT</span>
+                
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">NIT Agartala</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Agartala" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=NIT%20Agartala%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.nita.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Agartala" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=National%20Institute%20of%20Technology%20Agartala%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card nit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/nit16/500/300" alt="NIT Goa" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/NIT_Goa_building.jpg/640px-NIT_Goa_building.jpg" alt="NIT Goa campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge medium">NIT</span>
+                
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">NIT Goa</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Goa" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=NIT%20Goa%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.nitgoa.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Goa" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=National%20Institute%20of%20Technology%20Goa%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card nit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/nit17/500/300" alt="NIT Jamshedpur" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/NIT_JSR.jpg/640px-NIT_JSR.jpg" alt="NIT Jamshedpur campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge medium">NIT</span>
+                
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">NIT Jamshedpur</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Jamshedpur" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=NIT%20Jamshedpur%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.nitjsr.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Jamshedpur" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=National%20Institute%20of%20Technology%20Jamshedpur%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card nit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/nit18/500/300" alt="NIT Patna" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/NIT_Patna_Main_Building.jpg/640px-NIT_Patna_Main_Building.jpg" alt="NIT Patna campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge medium">NIT</span>
+                
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">NIT Patna</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Patna" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=NIT%20Patna%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.nitp.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Patna" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=National%20Institute%20of%20Technology%20Patna%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card nit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/nit19/500/300" alt="NIT Hamirpur" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/NIT_Hamirpur.jpg/640px-NIT_Hamirpur.jpg" alt="NIT Hamirpur campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge medium">NIT</span>
+                
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">NIT Hamirpur</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Hamirpur" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=NIT%20Hamirpur%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.nith.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Hamirpur" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=National%20Institute%20of%20Technology%20Hamirpur%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card nit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/nit20/500/300" alt="NIT Puducherry" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/NIT_Puducherry.jpg/640px-NIT_Puducherry.jpg" alt="NIT Puducherry campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge medium">NIT</span>
+                
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">NIT Puducherry</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Puducherry" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=NIT%20Puducherry%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.nitpy.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Puducherry" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=National%20Institute%20of%20Technology%20Puducherry%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card nit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/nit21/500/300" alt="NIT Manipur" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/NIT_Manipur.jpg/640px-NIT_Manipur.jpg" alt="NIT Manipur campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge medium">NIT</span>
+                
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">NIT Manipur</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Manipur" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=NIT%20Manipur%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.nitmanipur.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Manipur" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=National%20Institute%20of%20Technology%20Manipur%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card nit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/nit22/500/300" alt="NIT Arunachal Pradesh" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/NIT_Arunachal_Pradesh.jpg/640px-NIT_Arunachal_Pradesh.jpg" alt="NIT Arunachal Pradesh campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge medium">NIT</span>
+                
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">NIT Arunachal Pradesh</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Arunachal%20Pradesh" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=NIT%20Arunachal%20Pradesh%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.nitap.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Arunachal%20Pradesh" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=National%20Institute%20of%20Technology%20Arunachal%20Pradesh%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card nit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/nit23/500/300" alt="NIT Srinagar" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/NIT_Srinagar.jpg/640px-NIT_Srinagar.jpg" alt="NIT Srinagar campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge medium">NIT</span>
+                
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">NIT Srinagar</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Srinagar" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=NIT%20Srinagar%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.nitsri.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Srinagar" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=National%20Institute%20of%20Technology%20Srinagar%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card nit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/nit24/500/300" alt="NIT Delhi" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/NIT_Delhi_main_building.jpg/640px-NIT_Delhi_main_building.jpg" alt="NIT Delhi campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge medium">NIT</span>
+                
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">NIT Delhi</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Delhi" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=NIT%20Delhi%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.nitdelhi.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Delhi" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=National%20Institute%20of%20Technology%20Delhi%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card nit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/nit25/500/300" alt="NIT Mizoram" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/NIT_Mizoram.jpg/640px-NIT_Mizoram.jpg" alt="NIT Mizoram campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge medium">NIT</span>
+                
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">NIT Mizoram</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Mizoram" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=NIT%20Mizoram%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.nitmz.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Mizoram" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=National%20Institute%20of%20Technology%20Mizoram%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card nit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/nit26/500/300" alt="NIT Nagaland" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/NIT_Nagaland.jpg/640px-NIT_Nagaland.jpg" alt="NIT Nagaland campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge medium">NIT</span>
+                
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">NIT Nagaland</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Nagaland" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=NIT%20Nagaland%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.nitnagaland.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Nagaland" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=National%20Institute%20of%20Technology%20Nagaland%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card nit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/nit27/500/300" alt="NIT Sikkim" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/NIT_Sikkim.jpg/640px-NIT_Sikkim.jpg" alt="NIT Sikkim campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge medium">NIT</span>
+                
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">NIT Sikkim</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Sikkim" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=NIT%20Sikkim%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.nitsikkim.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Sikkim" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=National%20Institute%20of%20Technology%20Sikkim%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card nit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/nit28/500/300" alt="NIT Uttarakhand" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/NIT_Uttarakhand.jpg/640px-NIT_Uttarakhand.jpg" alt="NIT Uttarakhand campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge medium">NIT</span>
+                
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">NIT Uttarakhand</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Uttarakhand" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=NIT%20Uttarakhand%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.nituk.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Uttarakhand" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=National%20Institute%20of%20Technology%20Uttarakhand%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card nit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/nit29/500/300" alt="NIT Andhra Pradesh" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/NIT_Andhra_Pradesh.jpg/640px-NIT_Andhra_Pradesh.jpg" alt="NIT Andhra Pradesh campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge medium">NIT</span>
+                
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">NIT Andhra Pradesh</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Andhra%20Pradesh" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=NIT%20Andhra%20Pradesh%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.nitandhra.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/National%20Institute%20of%20Technology%20Andhra%20Pradesh" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=National%20Institute%20of%20Technology%20Andhra%20Pradesh%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
           <div class="institute-card nit">
             <div class="inst-img-wrapper">
-                <img src="https://picsum.photos/seed/nit30/500/300" alt="IIEST Shibpur" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/IIEST_Shibpur_Main_Building.jpg/640px-IIEST_Shibpur_Main_Building.jpg" alt="IIEST Shibpur campus" loading="lazy"
+                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gatto_europeo4.jpg/320px-Gatto_europeo4.jpg'">
                 <span class="inst-badge badge medium">NIT</span>
+                
             </div>
             <div class="inst-content">
                 <h4 class="inst-name">IIEST Shibpur</h4>
                 <div class="inst-links">
-                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Engineering%20Science%20and%20Technology%2C%20Shibpur" target="_blank" class="inst-link">Wiki <i class="fas fa-external-link-alt"></i></a>
-                    <a href="https://google.com/search?q=IIEST%20Shibpur%20MTech%20cutoffs%20CCMT" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
+                    <a href="https://www.iiest.ac.in" target="_blank" class="inst-link">Official <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/Indian%20Institute%20of%20Engineering%20Science%20and%20Technology%2C%20Shibpur" target="_blank" class="inst-link">Wiki <i class="fas fa-wikipedia-w"></i></a>
+                    <a href="https://google.com/search?q=Indian%20Institute%20of%20Engineering%20Science%20and%20Technology%2C%20Shibpur%20MTech%20CSE%20admission%20cutoffs%202024" target="_blank" class="inst-link">Cutoffs <i class="fas fa-search"></i></a>
                 </div>
             </div>
           </div>
-        
         </div>
       </section>
     </main>
   </div>
   
   <script>
-    function filterInst(type) {
+    function filterInst(type, btn) {
         const cards = document.querySelectorAll('.institute-card');
         const buttons = document.querySelectorAll('.filter-btn');
-        
-        buttons.forEach(btn => {
-            btn.classList.remove('btn-primary', 'active');
-            btn.classList.add('btn-secondary');
-        });
-        event.target.classList.remove('btn-secondary');
-        event.target.classList.add('btn-primary', 'active');
-
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        let count = 0;
         cards.forEach(card => {
-            if (type === 'all') {
-                card.style.display = 'flex';
-            } else if (card.classList.contains(type)) {
-                card.style.display = 'flex';
-            } else {
-                card.style.display = 'none';
-            }
+            const show = type === 'all' || card.classList.contains(type);
+            card.style.display = show ? 'flex' : 'none';
+            if (show) count++;
         });
     }
   </script>
