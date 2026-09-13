@@ -47,16 +47,18 @@
 </ul>
 </nav>
 <!-- Main Content -->
-<main class="main-content"><section class="section searchable" id="decision-tree">
-<span class="section-tag">Outcomes</span>
-<h2 class="section-title">After GATE: What should I choose?</h2>
-<div class="card text-center" style="min-height: 250px; display: flex; flex-direction: column; justify-content: center;">
-<h3 class="mb-4">How strong is your GATE result?</h3>
-<div id="decision-content">
-<!-- Populated by app.js -->
-</div>
-</div>
-</section></main>
+<main class="main-content">
+      <!-- DECISION TREE WIZARD -->
+      <section id="decision-tree" class="section searchable" style="border:none;">
+        <span class="section-tag">Interactive Wizard</span>
+        <h2 class="section-title">The GATE Outcome Navigator</h2>
+        
+        <div class="card" style="min-height: 450px; display: flex; align-items: center; justify-content: center; padding: 3rem;">
+          <div id="decision-content" class="wizard-container">
+            <!-- Populated by app.js wizard logic -->
+          </div>
+        </div>
+      </section></main>
 </div>
 <script src="js/app.js"></script>
 </body>

@@ -45,43 +45,166 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Interactive Decision Tree
+  // Interactive Decision Tree Wizard
+  const wizardData = {
+    start: {
+      question: "How strong is your GATE Result?",
+      choices: [
+        { id: 'top', title: 'Top Rank', desc: 'AIR < 500', next: 'top_goal' },
+        { id: 'mid', title: 'Mid Rank', desc: 'AIR 500 - 2500', next: 'mid_goal' },
+        { id: 'qual', title: 'Qualified', desc: 'AIR 2500+', next: 'qual_goal' },
+        { id: 'fail', title: 'Not Qualified', desc: 'Below Cutoff', next: 'out_fail' }
+      ]
+    },
+    top_goal: {
+      question: "What is your primary goal?",
+      choices: [
+        { id: 't1', title: 'High Salary / Core Job', desc: 'Direct employment', next: 'out_psu' },
+        { id: 't2', title: 'Premier Education', desc: 'M.Tech / Direct PhD', next: 'out_top_iit' },
+        { id: 't3', title: 'Study Abroad', desc: 'Singapore / Germany', next: 'out_abroad' }
+      ]
+    },
+    mid_goal: {
+      question: "What is your preference?",
+      choices: [
+        { id: 'm1', title: 'Best Available M.Tech', desc: 'New IITs / Top NITs', next: 'out_mid_mtech' },
+        { id: 'm2', title: 'Research Focus', desc: 'MS (Research) at Old IITs', next: 'out_ms' }
+      ]
+    },
+    qual_goal: {
+      question: "What is your next move?",
+      choices: [
+        { id: 'q1', title: 'Join a College', desc: 'State Gov / Private Univ', next: 'out_low_mtech' },
+        { id: 'q2', title: 'Try Again', desc: 'Prepare for next year', next: 'out_drop' }
+      ]
+    }
+  };
+
+  const outcomeData = {
+    out_psu: {
+      title: "PSU Executive Recruitment",
+      pros: ["Very high starting salary", "Job security (Government)", "Great perks and allowances"],
+      cons: ["Fewer vacancies for CSE compared to Core", "Transferable jobs across India"],
+      links: [{ text: "View PSU Details", url: "psu.html", class: "btn-primary" }]
+    },
+    out_top_iit: {
+      title: "Top 5 IITs or IISc",
+      pros: ["World-class faculty & peers", "Elite placements (FAANG/HFT)", "Excellent alumni network"],
+      cons: ["Highly competitive coding rounds for MS/AI", "Rigorous academic schedule"],
+      links: [{ text: "View Admission Flow", url: "admissions.html", class: "btn-primary" }]
+    },
+    out_abroad: {
+      title: "Foreign Universities",
+      pros: ["Global exposure", "High-paying international roles", "Cutting-edge research"],
+      cons: ["Very expensive if no scholarship", "GATE is only accepted by a few (NUS/NTU/TUM)"],
+      links: [{ text: "View Abroad Options", url: "abroad.html", class: "btn-primary" }]
+    },
+    out_mid_mtech: {
+      title: "New IITs or Top NITs via CCMT",
+      pros: ["Solid placements (10-20LPA+)", "Good brand value", "M.Tech Stipend (₹12,400)"],
+      cons: ["May not match Old IIT elite status", "Location constraints for some New IITs"],
+      links: [{ text: "View CCMT Flow", url: "admissions.html", class: "btn-primary" }]
+    },
+    out_ms: {
+      title: "MS (Research) at Old IITs",
+      pros: ["Study at an Old IIT with lower cutoff", "Deep dive into a specific domain (AI/Systems)"],
+      cons: ["Duration is 2.5 to 3 years", "Heavy research workload"],
+      links: [{ text: "View Admission Flow", url: "admissions.html", class: "btn-primary" }]
+    },
+    out_low_mtech: {
+      title: "State Gov / Private Universities",
+      pros: ["Can still get the AICTE stipend", "Time to prepare for off-campus placements"],
+      cons: ["Average to poor on-campus placements", "Lower peer quality"],
+      links: [{ text: "View Stipend Details", url: "scholarship.html", class: "btn-primary" }, { text: "Restart Wizard", url: "#", class: "btn-secondary restart-btn" }]
+    },
+    out_drop: {
+      title: "Take a Drop / Reattempt",
+      pros: ["Chance to dramatically improve rank", "Better understanding of syllabus"],
+      cons: ["Gap year on resume", "Mental pressure and burnout risk"],
+      links: [{ text: "View Roadmap", url: "roadmap.html", class: "btn-primary" }]
+    },
+    out_fail: {
+      title: "Analyze & Pivot",
+      pros: ["Early realization allows quick pivot to other exams (TIFR, ISI, State) or Placements"],
+      cons: ["GATE specific opportunities closed for this year"],
+      links: [{ text: "View Next Targets", url: "targets.html", class: "btn-primary" }, { text: "View Roadmap", url: "roadmap.html", class: "btn-secondary" }]
+    }
+  };
+
   const renderDecisionTree = (nodeId) => {
     const contentArea = document.getElementById('decision-content');
     if (!contentArea) return;
     
-    let content = '';
+    // Clear and trigger animation restart
+    contentArea.innerHTML = '';
     
-    if (nodeId === 'start') {
-      content = `
-        <div class="decision-node" onclick="renderTree('strong')">Very Strong Score (AIR 1-300)</div>
-        <div class="decision-node" onclick="renderTree('good')">Good Score (AIR 300-1500)</div>
-        <div class="decision-node" onclick="renderTree('moderate')">Moderate Score (AIR 1500-4000)</div>
-      `;
-    } else if (nodeId === 'strong') {
-      content = `
-        <h4 class="mb-2 text-cyan">Top Choice</h4>
-        <p>Direct M.Tech in CSE/AI at Top 5 IITs or IISc.</p>
-        <p>PSU Executive Recruitment (ONGC, IOCL) if eligible.</p>
-        <button class="btn btn-secondary mt-4" onclick="renderTree('start')">Back</button>
-      `;
-    } else if (nodeId === 'good') {
-      content = `
-        <h4 class="mb-2 text-blue">Top Choice</h4>
-        <p>M.Tech at New IITs or Top NITs (Trichy, Surathkal, Warangal).</p>
-        <p>MS by Research at Top IITs.</p>
-        <button class="btn btn-secondary mt-4" onclick="renderTree('start')">Back</button>
-      `;
-    } else if (nodeId === 'moderate') {
-      content = `
-        <h4 class="mb-2 text-muted">Top Choice</h4>
-        <p>M.Tech at Mid-tier NITs or IIITs via CCMT.</p>
-        <p>Consider reattempt or focus on B.Tech placements.</p>
-        <button class="btn btn-secondary mt-4" onclick="renderTree('start')">Back</button>
-      `;
-    }
-    
-    contentArea.innerHTML = `<div style="display:flex; flex-direction:column; gap:1rem; align-items:center;">${content}</div>`;
+    setTimeout(() => {
+      let content = '';
+      
+      if (wizardData[nodeId]) {
+        // Render Question Step
+        const step = wizardData[nodeId];
+        let choicesHtml = step.choices.map(c => `
+          <div class="wizard-choice" onclick="renderTree('${c.next}')">
+            <h4>${c.title}</h4>
+            <p>${c.desc}</p>
+          </div>
+        `).join('');
+        
+        content = `
+          <div class="wizard-step">
+            <h3 class="wizard-question">${step.question}</h3>
+            <div class="wizard-choices">${choicesHtml}</div>
+            ${nodeId !== 'start' ? `<div style="text-align:center; margin-top:2rem;"><a href="#" onclick="event.preventDefault(); renderTree('start')" style="color:var(--text-muted); font-size:0.9rem;">← Start Over</a></div>` : ''}
+          </div>
+        `;
+      } else if (outcomeData[nodeId]) {
+        // Render Outcome Card
+        const outcome = outcomeData[nodeId];
+        
+        let prosHtml = outcome.pros.map(p => `<li style="color:var(--accent-primary);"><i class="fas fa-plus-circle" style="margin-right:8px;"></i>${p}</li>`).join('');
+        let consHtml = outcome.cons.map(c => `<li><i class="fas fa-minus-circle" style="margin-right:8px; color:var(--text-muted);"></i>${c}</li>`).join('');
+        let linksHtml = outcome.links.map(l => `<a href="${l.url}" class="btn ${l.class}">${l.text}</a>`).join('');
+        
+        content = `
+          <div class="wizard-step wizard-outcome">
+            <div class="wizard-outcome-header text-center">
+              <span class="badge high mb-2">Recommended Path</span>
+              <h3 style="color:var(--text-primary); font-size:2rem; margin:0;">${outcome.title}</h3>
+            </div>
+            
+            <div class="wizard-pros-cons">
+              <div>
+                <h4 class="mb-2" style="color:var(--text-primary);">Advantages</h4>
+                <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:0.5rem;">${prosHtml}</ul>
+              </div>
+              <div>
+                <h4 class="mb-2" style="color:var(--text-primary);">Challenges</h4>
+                <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:0.5rem;">${consHtml}</ul>
+              </div>
+            </div>
+            
+            <div class="wizard-outcome-actions">
+              ${linksHtml}
+            </div>
+            <div class="text-center mt-4">
+              <a href="#" onclick="event.preventDefault(); renderTree('start')" style="color:var(--text-muted); font-size:0.9rem;">← Start Over</a>
+            </div>
+          </div>
+        `;
+      }
+      
+      contentArea.innerHTML = content;
+      
+      // Re-attach listener for restart-btn if used in outcome links
+      const restartBtn = contentArea.querySelector('.restart-btn');
+      if (restartBtn) {
+        restartBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          renderTree('start');
+        });
+      }
+    }, 50); // slight delay to allow CSS animation re-trigger
   };
 
   // Expose to window for inline onclicks
