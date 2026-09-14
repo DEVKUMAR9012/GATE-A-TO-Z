@@ -3,19 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book Guide | GATE A TO Z</title>
+  <title>Best Books for GATE CS | GATE A TO Z</title>
+  <meta name="description" content="The definitive book guide for GATE CS — real covers, Goodreads ratings, and exact chapters to study for every subject.">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    .book-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; }
-    .book-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--border-radius-md); padding: 1.25rem; display: flex; flex-direction: column; transition: all 0.2s; }
-    .book-card:hover { border-color: var(--accent-primary); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(110,231,183,0.08); }
-    .book-subject { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
-    .book-title { color: var(--accent-primary); font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem; line-height: 1.3; }
-    .book-author { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.75rem; }
-    .book-rec { background: rgba(110,231,183,0.06); border: 1px solid rgba(110,231,183,0.15); border-radius: 6px; padding: 0.6rem 0.75rem; font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5; flex-grow: 1; margin-bottom: 0.75rem; }
-    .book-meta { display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; }
-    .difficulty-star { color: #f59e0b; font-size: 0.85rem; }
+    .books-table { width:100%; border-collapse: collapse; margin-bottom: 2rem; }
+    .books-table th, .books-table td { padding: 0.8rem 1rem; text-align:left; border-bottom: 1px solid var(--border); font-size:0.9rem; }
+    .books-table th { color:var(--accent-primary); font-family:var(--font-display); text-transform:uppercase; font-size:0.75rem; letter-spacing:0.08em; }
+    .books-table tr:hover td { background: rgba(110,231,183,0.03); }
+
+    .book-cards-grid { display:flex; flex-direction:column; gap:1.5rem; }
+    .book-card-v2 { display:flex; gap:1.75rem; background:var(--surface); border:1px solid var(--border); border-radius:var(--border-radius-md); padding:1.5rem; transition: all 0.3s; }
+    .book-card-v2:hover { border-color:var(--accent-primary); box-shadow: 0 8px 24px rgba(110,231,183,0.08); }
+    @media(max-width:640px){ .book-card-v2 { flex-direction:column; } }
+
+    .book-cover-wrap { width:130px; flex-shrink:0; height:180px; border-radius:8px; overflow:hidden; box-shadow: 4px 4px 16px rgba(0,0,0,0.4); position:relative; }
+    .book-cover-wrap img { width:100%; height:100%; object-fit:cover; }
+    .book-cover-fallback { width:100%; height:100%; background:linear-gradient(135deg,var(--accent-primary),#3b82f6); flex-direction:column; align-items:center; justify-content:center; color:var(--bg-primary); font-size:0.8rem; font-weight:700; text-align:center; padding:0.5rem; gap:0.5rem; }
+    .book-cover-fallback i { font-size:2rem; }
+
+    .book-info { flex:1; display:flex; flex-direction:column; gap:0.5rem; }
+    .book-subject-tag { font-size:0.72rem; color:var(--accent-primary); text-transform:uppercase; letter-spacing:0.1em; font-weight:700; }
+    .book-title-v2 { font-size:1.2rem; color:var(--text-primary); font-weight:700; line-height:1.3; margin:0; }
+    .book-authors-v2 { color:var(--text-secondary); font-size:0.85rem; margin:0; }
+    .book-edition { color:var(--text-muted); font-size:0.78rem; margin:0; }
+    .book-rating-row { display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap; }
+    .stars { color:#f59e0b; font-size:0.9rem; }
+    .book-rating-num { font-weight:700; color:#f59e0b; font-size:0.9rem; }
+    .book-votes { color:var(--text-muted); font-size:0.78rem; }
+    .book-priority-row { display:flex; gap:0.5rem; }
+    .book-chapters { background:rgba(110,231,183,0.04); border:1px solid rgba(110,231,183,0.12); border-radius:6px; padding:0.75rem 1rem; font-size:0.83rem; color:var(--text-secondary); }
+    .book-chapters-label { color:var(--accent-primary); font-size:0.72rem; text-transform:uppercase; letter-spacing:0.08em; font-weight:700; margin-bottom:0.3rem; }
+    .book-chapters p { margin:0; line-height:1.5; }
+    .book-tip { font-size:0.82rem; color:var(--text-muted); font-style:italic; line-height:1.5; }
+    .book-tip i { color:var(--accent-primary); margin-right:0.3rem; }
+    .book-buy-btn { display:inline-flex; align-items:center; gap:0.5rem; padding:0.45rem 1rem; background:#ff9900; color:#111; border-radius:6px; text-decoration:none; font-size:0.82rem; font-weight:700; transition:all 0.2s; width:fit-content; margin-top:0.25rem; }
+    .book-buy-btn:hover { background:#ffac31; transform:translateY(-1px); }
   </style>
 </head>
 <body>
@@ -33,6 +57,8 @@
       </div>
       <ul class="nav-list">
         <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Overview</a></li>
+        <li class="nav-item"><a href="basics.html" class="nav-link"><i class="fas fa-book"></i> GATE Basics</a></li>
+        <li class="nav-item"><a href="syllabus.html" class="nav-link"><i class="fas fa-laptop-code"></i> GATE CS</a></li>
         <li class="nav-item"><a href="predictor.html" class="nav-link"><i class="fas fa-magic"></i> College Predictor</a></li>
         <li class="nav-item"><a href="calculator.html" class="nav-link"><i class="fas fa-calculator"></i> Score Calculator</a></li>
         <li class="nav-item"><a href="tracker.html" class="nav-link"><i class="fas fa-tasks"></i> Progress Tracker</a></li>
@@ -41,92 +67,399 @@
         <li class="nav-item"><a href="books.html" class="nav-link active"><i class="fas fa-book-open"></i> Book Guide</a></li>
         <li class="nav-item"><a href="toppers.html" class="nav-link"><i class="fas fa-trophy"></i> Topper Stories</a></li>
         <li class="nav-item"><a href="faq.html" class="nav-link"><i class="fas fa-question"></i> FAQ</a></li>
-        <li class="nav-item"><a href="syllabus.html" class="nav-link"><i class="fas fa-laptop-code"></i> GATE CS</a></li>
+        <li class="nav-item"><a href="institutes.html" class="nav-link"><i class="fas fa-landmark"></i> Institute Explorer</a></li>
+        <li class="nav-item"><a href="psu.html" class="nav-link"><i class="fas fa-building"></i> PSU Recruitment</a></li>
+        <li class="nav-item"><a href="admissions.html" class="nav-link"><i class="fas fa-university"></i> IIT / NIT Admissions</a></li>
+        <li class="nav-item"><a href="roadmap.html" class="nav-link"><i class="fas fa-map-signs"></i> Roadmap</a></li>
         <li class="nav-item mt-4"><a href="login.html" class="nav-link" style="border:1px solid var(--accent-primary);border-radius:var(--border-radius-sm);"><i class="fas fa-sign-in-alt"></i> Join GAZ</a></li>
       </ul>
     </nav>
     <main class="main-content">
       <section class="section">
         <span class="section-tag">Resources</span>
-        <h2 class="section-title">The GATE CS Book Arsenal</h2>
-        <p class="text-secondary mb-4">The definitive guide to which books to use for each subject, what chapters to focus on, and exactly how much of the book you actually need for GATE.</p>
+        <h2 class="section-title">GATE CS Book Arsenal</h2>
+        <p class="text-secondary mb-4">The only books you need for GATE CS, with real covers, community ratings, and the exact chapters that matter. Don't read cover-to-cover — use the chapter guides below.</p>
 
         <div class="callout warning mb-4">
-          <span class="callout-title">⚠️ Don't Read Books Cover-to-Cover</span>
-          No GATE topper reads an entire textbook. Focus on <strong>selected chapters only</strong>. The weightage column tells you how many marks each subject is worth — prioritize accordingly.
+          <span class="callout-title">⚠️ Golden Rule</span>
+          No GATE topper reads books cover-to-cover. Identify the high-yield chapters, study them deeply, then immediately practice PYQs on that topic. Repeat. Books are a reference, not a syllabus.
         </div>
 
-        <div class="book-grid">
-          <div class="book-card">
-            <div class="book-subject">Algorithms · ~10–13 Marks</div>
-            <div class="book-title">Introduction to Algorithms (CLRS)</div>
-            <div class="book-author">Cormen, Leiserson, Rivest, Stein</div>
-            <div class="book-rec">📌 Focus: Ch. 2-4 (Sorting, Recurrence), Ch. 15 (DP), Ch. 16 (Greedy), Ch. 22-24 (Graphs). Skip proofs — focus on understanding and time complexity derivations.</div>
-            <div class="book-meta"><span class="badge high">Must Have</span><span class="difficulty-star">★★★★★</span></div>
+        <div class="table-container mb-4">
+          <table class="books-table">
+            <thead><tr><th>Subject</th><th>Recommended Book</th><th>Author(s)</th><th>Rating</th><th>Priority</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Algorithms</strong></td><td>Introduction to Algorithms</td><td>Thomas H. Cormen, Charles Leiserson, Ronald Rivest, Clifford Stein</td><td style="color:#f59e0b;font-weight:700">⭐ 4.4</td><td><span class="badge high" style="font-size:0.7rem">Must Have 🔥</span></td></tr><tr><td><strong>Data Structures</strong></td><td>Fundamentals of Data Structures in C</td><td>Ellis Horowitz, Sartaj Sahni, Susan Anderson-Freed</td><td style="color:#f59e0b;font-weight:700">⭐ 4.1</td><td><span class="badge high" style="font-size:0.7rem">Recommended</span></td></tr><tr><td><strong>Discrete Mathematics</strong></td><td>Discrete Mathematics and Its Applications</td><td>Kenneth H. Rosen</td><td style="color:#f59e0b;font-weight:700">⭐ 3.9</td><td><span class="badge high" style="font-size:0.7rem">Recommended</span></td></tr><tr><td><strong>Theory of Computation</strong></td><td>An Introduction to Formal Languages and Automata</td><td>Peter Linz</td><td style="color:#f59e0b;font-weight:700">⭐ 4.0</td><td><span class="badge high" style="font-size:0.7rem">Best for GATE</span></td></tr><tr><td><strong>Compiler Design</strong></td><td>Compilers: Principles, Techniques, and Tools</td><td>Alfred V. Aho, Monica S. Lam, Ravi Sethi, Jeffrey D. Ullman</td><td style="color:#f59e0b;font-weight:700">⭐ 4.0</td><td><span class="badge medium" style="font-size:0.7rem">Selective Chapters</span></td></tr><tr><td><strong>Digital Logic</strong></td><td>Digital Design</td><td>M. Morris Mano</td><td style="color:#f59e0b;font-weight:700">⭐ 4.2</td><td><span class="badge high" style="font-size:0.7rem">Must Have 🔥</span></td></tr><tr><td><strong>Computer Organization (COA)</strong></td><td>Computer Organization and Embedded Systems</td><td>Carl Hamacher, Zvonko Vranesic, Safwat Zaky, Naraig Manjikian</td><td style="color:#f59e0b;font-weight:700">⭐ 3.9</td><td><span class="badge high" style="font-size:0.7rem">Recommended</span></td></tr><tr><td><strong>Operating Systems</strong></td><td>Operating System Concepts</td><td>Abraham Silberschatz, Peter B. Galvin, Greg Gagne</td><td style="color:#f59e0b;font-weight:700">⭐ 4.1</td><td><span class="badge high" style="font-size:0.7rem">Must Have 🔥</span></td></tr><tr><td><strong>Databases (DBMS)</strong></td><td>Database System Concepts</td><td>Abraham Silberschatz, Henry F. Korth, S. Sudarshan</td><td style="color:#f59e0b;font-weight:700">⭐ 4.0</td><td><span class="badge high" style="font-size:0.7rem">Must Have 🔥</span></td></tr><tr><td><strong>Computer Networks</strong></td><td>Data Communications and Networking</td><td>Behrouz A. Forouzan</td><td style="color:#f59e0b;font-weight:700">⭐ 4.0</td><td><span class="badge high" style="font-size:0.7rem">Must Have 🔥</span></td></tr><tr><td><strong>Engineering Mathematics</strong></td><td>Higher Engineering Mathematics</td><td>B.S. Grewal</td><td style="color:#f59e0b;font-weight:700">⭐ 4.3</td><td><span class="badge high" style="font-size:0.7rem">India's Favourite</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 style="font-family:var(--font-display);text-transform:uppercase;color:var(--text-primary);margin-bottom:1.25rem;">Detailed Book Cards</h3>
+        <div class="book-cards-grid">
+
+        <div class="book-card-v2">
+          <div class="book-cover-wrap">
+            <img src="img/books/0262033844.jpg" alt="Introduction to Algorithms cover" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="book-cover-fallback" style="display:none">
+              <i class="fas fa-book"></i>
+              <span>CLRS</span>
+            </div>
           </div>
-          <div class="book-card">
-            <div class="book-subject">Data Structures · ~8–10 Marks</div>
-            <div class="book-title">Data Structures & Algorithm Analysis in C</div>
-            <div class="book-author">Mark Allen Weiss</div>
-            <div class="book-rec">📌 Focus: Trees (Ch. 4), Hashing (Ch. 5), Graphs (Ch. 9). Very well-written for GATE. Excellent for BST, AVL, and Heap questions.</div>
-            <div class="book-meta"><span class="badge high">Recommended</span><span class="difficulty-star">★★★★☆</span></div>
+          <div class="book-info">
+            <div class="book-subject-tag">Algorithms &bull; 10–13 Marks</div>
+            <h3 class="book-title-v2">Introduction to Algorithms</h3>
+            <p class="book-authors-v2">Thomas H. Cormen, Charles Leiserson, Ronald Rivest, Clifford Stein</p>
+            <p class="book-edition">3rd Edition</p>
+            <div class="book-rating-row">
+              <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></span>
+              <span class="book-rating-num">4.4/5</span>
+              <span class="book-votes">(28,000+ ratings)</span>
+            </div>
+            <div class="book-priority-row">
+              <span class="badge high">Must Have 🔥</span>
+            </div>
+            <div class="book-chapters">
+              <div class="book-chapters-label"><i class="fas fa-bookmark"></i> Key Chapters for GATE</div>
+              <p>Ch. 2–4 (Sorting), Ch. 6 (Heaps), Ch. 15 (DP), Ch. 16 (Greedy), Ch. 22–24 (Graph Algorithms)</p>
+            </div>
+            <div class="book-tip">
+              <i class="fas fa-lightbulb"></i> Don't read proofs — understand the algorithms and time complexity derivations. Solve end-of-chapter problems.
+            </div>
+            <a href="https://www.amazon.in/s?k=Introduction+to+Algorithms+CLRS" target="_blank" class="book-buy-btn">
+              <i class="fab fa-amazon"></i> Find on Amazon
+            </a>
           </div>
-          <div class="book-card">
-            <div class="book-subject">Operating Systems · ~8–10 Marks</div>
-            <div class="book-title">Operating System Concepts (Dinosaur Book)</div>
-            <div class="book-author">Silberschatz, Galvin, Gagne</div>
-            <div class="book-rec">📌 Focus: Ch. 5 (CPU Scheduling), Ch. 6 (Synchronization), Ch. 7 (Deadlocks), Ch. 8-9 (Memory Management). Most GATE OS questions come directly from these chapters.</div>
-            <div class="book-meta"><span class="badge high">Must Have</span><span class="difficulty-star">★★★★☆</span></div>
+        </div>
+        <div class="book-card-v2">
+          <div class="book-cover-wrap">
+            <img src="img/books/0929306406.jpg" alt="Fundamentals of Data Structures in C cover" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="book-cover-fallback" style="display:none">
+              <i class="fas fa-book"></i>
+              <span>Horowitz & Sahni</span>
+            </div>
           </div>
-          <div class="book-card">
-            <div class="book-subject">DBMS · ~8–10 Marks</div>
-            <div class="book-title">Database System Concepts</div>
-            <div class="book-author">Korth, Silberschatz, Sudarshan</div>
-            <div class="book-rec">📌 Focus: Ch. 2-4 (Relational Model, SQL), Ch. 7 (Normalization), Ch. 15 (Indexing & B Trees), Ch. 17-18 (Transactions). Skip Ch. 20+ (Advanced topics rarely appear).</div>
-            <div class="book-meta"><span class="badge high">Must Have</span><span class="difficulty-star">★★★★☆</span></div>
+          <div class="book-info">
+            <div class="book-subject-tag">Data Structures &bull; 8–10 Marks</div>
+            <h3 class="book-title-v2">Fundamentals of Data Structures in C</h3>
+            <p class="book-authors-v2">Ellis Horowitz, Sartaj Sahni, Susan Anderson-Freed</p>
+            <p class="book-edition">2nd Edition</p>
+            <div class="book-rating-row">
+              <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span>
+              <span class="book-rating-num">4.1/5</span>
+              <span class="book-votes">(5,200+ ratings)</span>
+            </div>
+            <div class="book-priority-row">
+              <span class="badge high">Recommended</span>
+            </div>
+            <div class="book-chapters">
+              <div class="book-chapters-label"><i class="fas fa-bookmark"></i> Key Chapters for GATE</div>
+              <p>Ch. 3 (Stacks/Queues), Ch. 4 (Linked Lists), Ch. 5 (Trees), Ch. 6 (Graphs), Ch. 7 (Sorting)</p>
+            </div>
+            <div class="book-tip">
+              <i class="fas fa-lightbulb"></i> Also supplement with Mark Allen Weiss for AVL trees and hashing. Both together cover all DS GATE questions.
+            </div>
+            <a href="https://www.amazon.in/s?k=Fundamentals+of+Data+Structures+in+C+Horowitz" target="_blank" class="book-buy-btn">
+              <i class="fab fa-amazon"></i> Find on Amazon
+            </a>
           </div>
-          <div class="book-card">
-            <div class="book-subject">Computer Networks · ~8–10 Marks</div>
-            <div class="book-title">Computer Networking: A Top-Down Approach</div>
-            <div class="book-author">Kurose & Ross</div>
-            <div class="book-rec">📌 Focus: Ch. 1 (Intro), Ch. 3 (Transport/TCP), Ch. 4-5 (Network/IP), Ch. 6 (Data Link). The subnetting questions require heavy practice with IP addressing — do lots of problems.</div>
-            <div class="book-meta"><span class="badge high">Must Have</span><span class="difficulty-star">★★★★☆</span></div>
+        </div>
+        <div class="book-card-v2">
+          <div class="book-cover-wrap">
+            <img src="img/books/0072899050.jpg" alt="Discrete Mathematics and Its Applications cover" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="book-cover-fallback" style="display:none">
+              <i class="fas fa-book"></i>
+              <span>Rosen</span>
+            </div>
           </div>
-          <div class="book-card">
-            <div class="book-subject">Theory of Computation · ~6–8 Marks</div>
-            <div class="book-title">Introduction to Automata Theory, Languages & Computation</div>
-            <div class="book-author">Hopcroft, Motwani, Ullman</div>
-            <div class="book-rec">📌 Focus: Ch. 2 (DFA/NFA), Ch. 3 (Regular Expressions), Ch. 5 (CFG), Ch. 6 (PDA), Ch. 8-9 (Turing Machines, Undecidability). This book is dense — go slow.</div>
-            <div class="book-meta"><span class="badge high">Must Have</span><span class="difficulty-star">★★★★★</span></div>
+          <div class="book-info">
+            <div class="book-subject-tag">Discrete Mathematics &bull; 8–10 Marks</div>
+            <h3 class="book-title-v2">Discrete Mathematics and Its Applications</h3>
+            <p class="book-authors-v2">Kenneth H. Rosen</p>
+            <p class="book-edition">7th Edition</p>
+            <div class="book-rating-row">
+              <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></span>
+              <span class="book-rating-num">3.9/5</span>
+              <span class="book-votes">(9,800+ ratings)</span>
+            </div>
+            <div class="book-priority-row">
+              <span class="badge high">Recommended</span>
+            </div>
+            <div class="book-chapters">
+              <div class="book-chapters-label"><i class="fas fa-bookmark"></i> Key Chapters for GATE</div>
+              <p>Ch. 1 (Logic/Propositions), Ch. 5 (Induction), Ch. 8 (Relations), Ch. 10–11 (Graph Theory), Ch. 6 (Combinatorics)</p>
+            </div>
+            <div class="book-tip">
+              <i class="fas fa-lightbulb"></i> For probability, use Sheldon Ross 'Introduction to Probability Models' Ch. 1–4 as a supplement.
+            </div>
+            <a href="https://www.amazon.in/s?k=Discrete+Mathematics+Rosen" target="_blank" class="book-buy-btn">
+              <i class="fab fa-amazon"></i> Find on Amazon
+            </a>
           </div>
-          <div class="book-card">
-            <div class="book-subject">Compiler Design · ~5–7 Marks</div>
-            <div class="book-title">Compilers: Principles, Techniques & Tools (Dragon Book)</div>
-            <div class="book-author">Aho, Lam, Sethi, Ullman</div>
-            <div class="book-rec">📌 Focus: Ch. 2-4 (Lexical Analysis, Parsing — LL/LR). The Dragon Book is advanced; for GATE, Ullman's lecture notes online are simpler. Parsing tables are frequently tested.</div>
-            <div class="book-meta"><span class="badge medium">Selective Reading</span><span class="difficulty-star">★★★★★</span></div>
+        </div>
+        <div class="book-card-v2">
+          <div class="book-cover-wrap">
+            <img src="img/books/0763774952.jpg" alt="Peter Linz book cover" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="book-cover-fallback" style="display:none">
+              <i class="fas fa-book"></i>
+              <span>Peter Linz</span>
+            </div>
           </div>
-          <div class="book-card">
-            <div class="book-subject">COA · ~5–7 Marks</div>
-            <div class="book-title">Computer Organization & Architecture</div>
-            <div class="book-author">William Stallings</div>
-            <div class="book-rec">📌 Focus: Pipelining, Cache Memory (mapping techniques), I/O (DMA, Interrupts). Numerical problems on cache hit/miss ratio are very common in GATE.</div>
-            <div class="book-meta"><span class="badge high">Recommended</span><span class="difficulty-star">★★★★☆</span></div>
+          <div class="book-info">
+            <div class="book-subject-tag">Theory of Computation &bull; 6–8 Marks</div>
+            <h3 class="book-title-v2">An Introduction to Formal Languages and Automata</h3>
+            <p class="book-authors-v2">Peter Linz</p>
+            <p class="book-edition">5th Edition</p>
+            <div class="book-rating-row">
+              <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span>
+              <span class="book-rating-num">4.0/5</span>
+              <span class="book-votes">(3,400+ ratings)</span>
+            </div>
+            <div class="book-priority-row">
+              <span class="badge high">Best for GATE</span>
+            </div>
+            <div class="book-chapters">
+              <div class="book-chapters-label"><i class="fas fa-bookmark"></i> Key Chapters for GATE</div>
+              <p>Ch. 2–3 (DFA, NFA, Regex), Ch. 4–5 (CFG, PDA), Ch. 8–9 (TM, Undecidability)</p>
+            </div>
+            <div class="book-tip">
+              <i class="fas fa-lightbulb"></i> Linz is easier to understand than Hopcroft/Ullman for GATE purposes. Use Hopcroft only for very specific proofs.
+            </div>
+            <a href="https://www.amazon.in/s?k=Formal+Languages+Automata+Peter+Linz" target="_blank" class="book-buy-btn">
+              <i class="fab fa-amazon"></i> Find on Amazon
+            </a>
           </div>
-          <div class="book-card">
-            <div class="book-subject">Engineering Mathematics · ~13 Marks</div>
-            <div class="book-title">Discrete Mathematics & Its Applications</div>
-            <div class="book-author">Kenneth H. Rosen</div>
-            <div class="book-rec">📌 Focus: Ch. 1 (Logic), Ch. 5 (Induction), Ch. 8 (Relations), Ch. 10-11 (Graph Theory). For Probability, use Sheldon Ross "Introduction to Probability Models" (just Ch. 1-4).</div>
-            <div class="book-meta"><span class="badge high">Recommended</span><span class="difficulty-star">★★★★☆</span></div>
+        </div>
+        <div class="book-card-v2">
+          <div class="book-cover-wrap">
+            <img src="img/books/0321486811.jpg" alt="Compilers: Principles, Techniques, and Tools cover" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="book-cover-fallback" style="display:none">
+              <i class="fas fa-book"></i>
+              <span>Dragon Book</span>
+            </div>
           </div>
-          <div class="book-card">
-            <div class="book-subject">All Subjects · Practice</div>
-            <div class="book-title">GATE Overflow (gateoverflow.in)</div>
-            <div class="book-author">Community Platform</div>
-            <div class="book-rec">📌 This is NOT a book, but it is THE most important resource. Every single GATE PYQ with detailed community solutions, multiple explanations, and error corrections. Use it daily for practice.</div>
-            <div class="book-meta"><span class="badge high">Holy Grail 🔥</span><span class="difficulty-star">★★★★★</span></div>
+          <div class="book-info">
+            <div class="book-subject-tag">Compiler Design &bull; 5–7 Marks</div>
+            <h3 class="book-title-v2">Compilers: Principles, Techniques, and Tools</h3>
+            <p class="book-authors-v2">Alfred V. Aho, Monica S. Lam, Ravi Sethi, Jeffrey D. Ullman</p>
+            <p class="book-edition">2nd Edition</p>
+            <div class="book-rating-row">
+              <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span>
+              <span class="book-rating-num">4.0/5</span>
+              <span class="book-votes">(11,500+ ratings)</span>
+            </div>
+            <div class="book-priority-row">
+              <span class="badge medium">Selective Chapters</span>
+            </div>
+            <div class="book-chapters">
+              <div class="book-chapters-label"><i class="fas fa-bookmark"></i> Key Chapters for GATE</div>
+              <p>Ch. 2 (Lexical Analysis), Ch. 4 (Parsing — LL, LR, SLR, LALR), Ch. 5 (Syntax Directed Translation)</p>
+            </div>
+            <div class="book-tip">
+              <i class="fas fa-lightbulb"></i> This book is very dense. For GATE, focus only on parsing sections. Lecture slides from Ullman are simpler and freely available online.
+            </div>
+            <a href="https://www.amazon.in/s?k=Compilers+Principles+Techniques+Dragon+Book" target="_blank" class="book-buy-btn">
+              <i class="fab fa-amazon"></i> Find on Amazon
+            </a>
           </div>
+        </div>
+        <div class="book-card-v2">
+          <div class="book-cover-wrap">
+            <img src="img/books/0131989243.jpg" alt="Digital Design cover" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="book-cover-fallback" style="display:none">
+              <i class="fas fa-book"></i>
+              <span>Morris Mano</span>
+            </div>
+          </div>
+          <div class="book-info">
+            <div class="book-subject-tag">Digital Logic &bull; 5–6 Marks</div>
+            <h3 class="book-title-v2">Digital Design</h3>
+            <p class="book-authors-v2">M. Morris Mano</p>
+            <p class="book-edition">4th Edition</p>
+            <div class="book-rating-row">
+              <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span>
+              <span class="book-rating-num">4.2/5</span>
+              <span class="book-votes">(7,600+ ratings)</span>
+            </div>
+            <div class="book-priority-row">
+              <span class="badge high">Must Have 🔥</span>
+            </div>
+            <div class="book-chapters">
+              <div class="book-chapters-label"><i class="fas fa-bookmark"></i> Key Chapters for GATE</div>
+              <p>Ch. 1 (Number Systems), Ch. 2 (Boolean Algebra), Ch. 3 (K-Maps), Ch. 4 (Combinational Circuits), Ch. 6 (Sequential Circuits), Ch. 8 (Registers)</p>
+            </div>
+            <div class="book-tip">
+              <i class="fas fa-lightbulb"></i> Solve ALL the K-map problems at end of chapters. Combinational and Sequential circuit questions repeat heavily in GATE.
+            </div>
+            <a href="https://www.amazon.in/s?k=Digital+Design+Morris+Mano" target="_blank" class="book-buy-btn">
+              <i class="fab fa-amazon"></i> Find on Amazon
+            </a>
+          </div>
+        </div>
+        <div class="book-card-v2">
+          <div class="book-cover-wrap">
+            <img src="img/books/0073380482.jpg" alt="Computer Organization and Embedded Systems cover" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="book-cover-fallback" style="display:none">
+              <i class="fas fa-book"></i>
+              <span>Carl Hamacher</span>
+            </div>
+          </div>
+          <div class="book-info">
+            <div class="book-subject-tag">Computer Organization (COA) &bull; 5–7 Marks</div>
+            <h3 class="book-title-v2">Computer Organization and Embedded Systems</h3>
+            <p class="book-authors-v2">Carl Hamacher, Zvonko Vranesic, Safwat Zaky, Naraig Manjikian</p>
+            <p class="book-edition">6th Edition</p>
+            <div class="book-rating-row">
+              <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></span>
+              <span class="book-rating-num">3.9/5</span>
+              <span class="book-votes">(4,100+ ratings)</span>
+            </div>
+            <div class="book-priority-row">
+              <span class="badge high">Recommended</span>
+            </div>
+            <div class="book-chapters">
+              <div class="book-chapters-label"><i class="fas fa-bookmark"></i> Key Chapters for GATE</div>
+              <p>Ch. 5 (CPU Design), Ch. 6 (Pipelining), Ch. 8 (Memory Hierarchy/Cache), Ch. 9 (I/O — DMA, Interrupts)</p>
+            </div>
+            <div class="book-tip">
+              <i class="fas fa-lightbulb"></i> Cache memory questions (mapping, replacement policies, hit ratio) are numerical-heavy. Practice at least 30 cache problems.
+            </div>
+            <a href="https://www.amazon.in/s?k=Computer+Organization+Hamacher" target="_blank" class="book-buy-btn">
+              <i class="fab fa-amazon"></i> Find on Amazon
+            </a>
+          </div>
+        </div>
+        <div class="book-card-v2">
+          <div class="book-cover-wrap">
+            <img src="img/books/1118063333.jpg" alt="Operating System Concepts cover" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="book-cover-fallback" style="display:none">
+              <i class="fas fa-book"></i>
+              <span>Dinosaur Book</span>
+            </div>
+          </div>
+          <div class="book-info">
+            <div class="book-subject-tag">Operating Systems &bull; 8–10 Marks</div>
+            <h3 class="book-title-v2">Operating System Concepts</h3>
+            <p class="book-authors-v2">Abraham Silberschatz, Peter B. Galvin, Greg Gagne</p>
+            <p class="book-edition">9th Edition</p>
+            <div class="book-rating-row">
+              <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span>
+              <span class="book-rating-num">4.1/5</span>
+              <span class="book-votes">(16,200+ ratings)</span>
+            </div>
+            <div class="book-priority-row">
+              <span class="badge high">Must Have 🔥</span>
+            </div>
+            <div class="book-chapters">
+              <div class="book-chapters-label"><i class="fas fa-bookmark"></i> Key Chapters for GATE</div>
+              <p>Ch. 5 (CPU Scheduling), Ch. 6 (Process Synchronization), Ch. 7 (Deadlocks), Ch. 8–9 (Memory: Paging, Segmentation, Virtual Memory), Ch. 12 (I/O)</p>
+            </div>
+            <div class="book-tip">
+              <i class="fas fa-lightbulb"></i> Every CPU scheduling algorithm (FCFS, SJF, Round Robin, Priority) has been asked in GATE multiple times. Practice Gantt charts until they're effortless.
+            </div>
+            <a href="https://www.amazon.in/s?k=Operating+System+Concepts+Silberschatz+Galvin" target="_blank" class="book-buy-btn">
+              <i class="fab fa-amazon"></i> Find on Amazon
+            </a>
+          </div>
+        </div>
+        <div class="book-card-v2">
+          <div class="book-cover-wrap">
+            <img src="img/books/0073523321.jpg" alt="Database System Concepts cover" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="book-cover-fallback" style="display:none">
+              <i class="fas fa-book"></i>
+              <span>Korth & Sudarshan</span>
+            </div>
+          </div>
+          <div class="book-info">
+            <div class="book-subject-tag">Databases (DBMS) &bull; 8–10 Marks</div>
+            <h3 class="book-title-v2">Database System Concepts</h3>
+            <p class="book-authors-v2">Abraham Silberschatz, Henry F. Korth, S. Sudarshan</p>
+            <p class="book-edition">6th Edition</p>
+            <div class="book-rating-row">
+              <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span>
+              <span class="book-rating-num">4.0/5</span>
+              <span class="book-votes">(8,900+ ratings)</span>
+            </div>
+            <div class="book-priority-row">
+              <span class="badge high">Must Have 🔥</span>
+            </div>
+            <div class="book-chapters">
+              <div class="book-chapters-label"><i class="fas fa-bookmark"></i> Key Chapters for GATE</div>
+              <p>Ch. 2–4 (Relational Model, SQL), Ch. 7 (Normalization 1NF–BCNF), Ch. 11 (Indexing, B/B+ Trees), Ch. 14–15 (Transactions, Concurrency)</p>
+            </div>
+            <div class="book-tip">
+              <i class="fas fa-lightbulb"></i> Normalization (finding candidate keys, decomposition) is a guaranteed 2-mark question every year. Master functional dependencies inside out.
+            </div>
+            <a href="https://www.amazon.in/s?k=Database+System+Concepts+Silberschatz+Korth" target="_blank" class="book-buy-btn">
+              <i class="fab fa-amazon"></i> Find on Amazon
+            </a>
+          </div>
+        </div>
+        <div class="book-card-v2">
+          <div class="book-cover-wrap">
+            <img src="img/books/0073376221.jpg" alt="Data Communications and Networking cover" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="book-cover-fallback" style="display:none">
+              <i class="fas fa-book"></i>
+              <span>Forouzan</span>
+            </div>
+          </div>
+          <div class="book-info">
+            <div class="book-subject-tag">Computer Networks &bull; 8–10 Marks</div>
+            <h3 class="book-title-v2">Data Communications and Networking</h3>
+            <p class="book-authors-v2">Behrouz A. Forouzan</p>
+            <p class="book-edition">5th Edition</p>
+            <div class="book-rating-row">
+              <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span>
+              <span class="book-rating-num">4.0/5</span>
+              <span class="book-votes">(12,400+ ratings)</span>
+            </div>
+            <div class="book-priority-row">
+              <span class="badge high">Must Have 🔥</span>
+            </div>
+            <div class="book-chapters">
+              <div class="book-chapters-label"><i class="fas fa-bookmark"></i> Key Chapters for GATE</div>
+              <p>Ch. 3 (Data Link: Error Detection), Ch. 5 (Network/IP/Subnetting), Ch. 6 (Transport/TCP/UDP), Ch. 7 (Application: DNS, HTTP, FTP), Ch. 12 (Routing Protocols)</p>
+            </div>
+            <div class="book-tip">
+              <i class="fas fa-lightbulb"></i> Subnetting and IP addressing is mandatory. Also Kurose & Ross 'Top-Down Approach' is a great alternate — many prefer it for TCP/congestion control.
+            </div>
+            <a href="https://www.amazon.in/s?k=Data+Communications+Networking+Forouzan" target="_blank" class="book-buy-btn">
+              <i class="fab fa-amazon"></i> Find on Amazon
+            </a>
+          </div>
+        </div>
+        <div class="book-card-v2">
+          <div class="book-cover-wrap">
+            <img src="img/books/8174091955.jpg" alt="Higher Engineering Mathematics cover" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="book-cover-fallback" style="display:none">
+              <i class="fas fa-book"></i>
+              <span>B.S. Grewal</span>
+            </div>
+          </div>
+          <div class="book-info">
+            <div class="book-subject-tag">Engineering Mathematics &bull; 12–15 Marks</div>
+            <h3 class="book-title-v2">Higher Engineering Mathematics</h3>
+            <p class="book-authors-v2">B.S. Grewal</p>
+            <p class="book-edition">44th Edition</p>
+            <div class="book-rating-row">
+              <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span>
+              <span class="book-rating-num">4.3/5</span>
+              <span class="book-votes">(14,700+ ratings)</span>
+            </div>
+            <div class="book-priority-row">
+              <span class="badge high">India's Favourite</span>
+            </div>
+            <div class="book-chapters">
+              <div class="book-chapters-label"><i class="fas fa-bookmark"></i> Key Chapters for GATE</div>
+              <p>Unit 4 (Probability & Statistics), Unit 5 (Complex Variables — skip for GATE usually), Ch. on Matrices and Linear Algebra (very important for GATE)</p>
+            </div>
+            <div class="book-tip">
+              <i class="fas fa-lightbulb"></i> Grewal is a supplementary reference. For GATE Engg. Math (Discrete Math focus), Rosen's Discrete Math is more targeted. Use Grewal for Calculus, Probability, and Linear Algebra only.
+            </div>
+            <a href="https://www.amazon.in/s?k=Higher+Engineering+Mathematics+Grewal" target="_blank" class="book-buy-btn">
+              <i class="fab fa-amazon"></i> Find on Amazon
+            </a>
+          </div>
+        </div>
         </div>
       </section>
     </main>
