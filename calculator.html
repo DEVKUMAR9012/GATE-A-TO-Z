@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GATE Score Calculator | GATE A TO Z</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    @media(max-width:768px){ .calc-grid { grid-template-columns: 1fr; } }
+    .calc-panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--border-radius-md); padding: 1.75rem; }
+    .marks-row { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 0; border-bottom: 1px solid var(--border); }
+    .marks-row:last-child { border-bottom: none; }
+    .marks-label { color: var(--text-secondary); font-size: 0.9rem; }
+    .marks-input-wrap { display: flex; gap: 0.5rem; align-items: center; }
+    .marks-input { width: 70px; padding: 0.4rem 0.6rem; background: var(--bg-primary); border: 1px solid var(--border); border-radius: 6px; color: var(--text-primary); font-size: 0.95rem; text-align: center; }
+    .marks-input:focus { outline: none; border-color: var(--accent-primary); }
+    .max-marks { color: var(--text-muted); font-size: 0.8rem; }
+    .calc-btn { width: 100%; padding: 1rem; background: var(--accent-primary); color: var(--bg-primary); border: none; border-radius: var(--border-radius-sm); font-size: 1.1rem; font-weight: 700; font-family: var(--font-display); text-transform: uppercase; cursor: pointer; transition: all 0.3s; margin-top: 1.5rem; letter-spacing: 0.1em; }
+    .calc-btn:hover { background: #34d399; box-shadow: 0 8px 20px rgba(110,231,183,0.3); }
+    .result-panel { display: none; }
+    .result-panel.show { display: block; }
+    .big-number { font-size: 5rem; font-family: var(--font-display); color: var(--accent-primary); line-height: 1; margin: 1rem 0 0.25rem; }
+    .big-label { color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; }
+    .stat-row { display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 0; border-bottom: 1px solid var(--border); }
+    .stat-row:last-child { border-bottom: none; }
+    .stat-label { color: var(--text-secondary); }
+    .stat-val { font-weight: 700; color: var(--accent-primary); }
+    .formula-box { background: rgba(110,231,183,0.05); border: 1px solid rgba(110,231,183,0.2); border-radius: var(--border-radius-sm); padding: 1rem 1.25rem; margin-top: 1rem; font-family: monospace; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.8; }
+    .neg-mark { color: #ef4444; }
+  </style>
+</head>
+<body>
+  <header class="mobile-header">
+    <div class="logo">GATE A TO Z</div>
+    <button class="menu-toggle" id="menu-btn"><i class="fas fa-bars"></i></button>
+  </header>
+  <div class="app-container">
+    <nav class="sidebar" id="sidebar">
+      <div class="sidebar-header"><div class="logo">GATE A TO Z</div></div>
+      <div class="search-container mb-4">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" class="search-input" id="global-search" placeholder="Search topics...">
+        <div class="search-results-container" id="search-results"></div>
+      </div>
+      <ul class="nav-list">
+        <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Overview</a></li>
+        <li class="nav-item"><a href="basics.html" class="nav-link"><i class="fas fa-book"></i> GATE Basics</a></li>
+        <li class="nav-item"><a href="syllabus.html" class="nav-link"><i class="fas fa-laptop-code"></i> GATE CS</a></li>
+        <li class="nav-item"><a href="predictor.html" class="nav-link"><i class="fas fa-magic"></i> College Predictor</a></li>
+        <li class="nav-item"><a href="calculator.html" class="nav-link active"><i class="fas fa-calculator"></i> Score Calculator</a></li>
+        <li class="nav-item"><a href="tracker.html" class="nav-link"><i class="fas fa-tasks"></i> Progress Tracker</a></li>
+        <li class="nav-item"><a href="stats.html" class="nav-link"><i class="fas fa-chart-bar"></i> GATE Stats</a></li>
+        <li class="nav-item"><a href="pyq.html" class="nav-link"><i class="fas fa-question-circle"></i> PYQ Explorer</a></li>
+        <li class="nav-item"><a href="books.html" class="nav-link"><i class="fas fa-book-open"></i> Book Guide</a></li>
+        <li class="nav-item"><a href="toppers.html" class="nav-link"><i class="fas fa-trophy"></i> Topper Stories</a></li>
+        <li class="nav-item"><a href="faq.html" class="nav-link"><i class="fas fa-question"></i> FAQ</a></li>
+        <li class="nav-item"><a href="institutes.html" class="nav-link"><i class="fas fa-landmark"></i> Institute Explorer</a></li>
+        <li class="nav-item"><a href="psu.html" class="nav-link"><i class="fas fa-building"></i> PSU Recruitment</a></li>
+        <li class="nav-item mt-4"><a href="login.html" class="nav-link" style="border:1px solid var(--accent-primary);border-radius:var(--border-radius-sm);"><i class="fas fa-sign-in-alt"></i> Join GAZ</a></li>
+      </ul>
+    </nav>
+    <main class="main-content">
+      <section class="section">
+        <span class="section-tag">Tool</span>
+        <h2 class="section-title">GATE Score Calculator</h2>
+        <p class="text-secondary mb-4">Enter your expected marks and get your predicted GATE Score (out of 1000) and approximate All India Rank using the official IIT formula.</p>
+
+        <div class="callout info mb-4">
+          <span class="callout-title">Official GATE Scoring Formula</span>
+          <strong>GATE Score = 350 + 650 × (M − M<sub>q</sub>) / (M̄<sub>t</sub> − M<sub>q</sub>)</strong><br>
+          Where M = your raw marks, Mq = qualifying cutoff (~25), M̄t = average marks of top 0.1% candidates (~80+). This calculator uses approximate reference values.
+        </div>
+
+        <div class="calc-grid">
+          <div class="calc-panel">
+            <h4 class="text-cyan mb-3" style="font-family:var(--font-display); text-transform:uppercase;">Enter Your Expected Marks</h4>
+            <p class="text-secondary text-sm mb-3">GATE CS: 65 questions, 100 marks total</p>
+
+            <div class="marks-row">
+              <span class="marks-label">1-Mark MCQ Correct</span>
+              <div class="marks-input-wrap">
+                <input type="number" class="marks-input" id="mcq1-correct" value="0" min="0" max="25"> <span class="max-marks">/ 25</span>
+              </div>
+            </div>
+            <div class="marks-row">
+              <span class="marks-label"><span class="neg-mark">MCQ 1-Mark Wrong</span> (−⅓)</span>
+              <div class="marks-input-wrap">
+                <input type="number" class="marks-input" id="mcq1-wrong" value="0" min="0" max="25"> <span class="max-marks">/ 25</span>
+              </div>
+            </div>
+            <div class="marks-row">
+              <span class="marks-label">2-Mark MCQ Correct</span>
+              <div class="marks-input-wrap">
+                <input type="number" class="marks-input" id="mcq2-correct" value="0" min="0" max="30"> <span class="max-marks">/ 30</span>
+              </div>
+            </div>
+            <div class="marks-row">
+              <span class="marks-label"><span class="neg-mark">MCQ 2-Mark Wrong</span> (−⅔)</span>
+              <div class="marks-input-wrap">
+                <input type="number" class="marks-input" id="mcq2-wrong" value="0" min="0" max="30"> <span class="max-marks">/ 30</span>
+              </div>
+            </div>
+            <div class="marks-row">
+              <span class="marks-label">NAT 1-Mark Correct</span>
+              <div class="marks-input-wrap">
+                <input type="number" class="marks-input" id="nat1" value="0" min="0" max="5"> <span class="max-marks">/ 5</span>
+              </div>
+            </div>
+            <div class="marks-row">
+              <span class="marks-label">NAT 2-Mark Correct</span>
+              <div class="marks-input-wrap">
+                <input type="number" class="marks-input" id="nat2" value="0" min="0" max="10"> <span class="max-marks">/ 10</span>
+              </div>
+            </div>
+            <div class="marks-row">
+              <span class="marks-label">GA (General Aptitude)</span>
+              <div class="marks-input-wrap">
+                <input type="number" class="marks-input" id="ga" value="0" min="0" max="15"> <span class="max-marks">/ 15</span>
+              </div>
+            </div>
+            <button class="calc-btn" onclick="calculate()"><i class="fas fa-calculator"></i>&nbsp; Calculate My Score</button>
+          </div>
+
+          <div class="calc-panel result-panel" id="result-panel">
+            <h4 class="text-cyan mb-2" style="font-family:var(--font-display); text-transform:uppercase;">Your Results</h4>
+            <div class="big-number" id="res-score">—</div>
+            <div class="big-label">GATE Score (out of 1000)</div>
+            <div style="margin-top: 1.5rem;">
+              <div class="stat-row"><span class="stat-label">Raw Marks</span><span class="stat-val" id="res-raw">—</span></div>
+              <div class="stat-row"><span class="stat-label">Approximate AIR</span><span class="stat-val" id="res-air">—</span></div>
+              <div class="stat-row"><span class="stat-label">Approx. Percentile</span><span class="stat-val" id="res-pct">—</span></div>
+              <div class="stat-row"><span class="stat-label">Qualification Status</span><span class="stat-val" id="res-qual">—</span></div>
+              <div class="stat-row"><span class="stat-label">PSU Eligibility</span><span class="stat-val" id="res-psu">—</span></div>
+            </div>
+            <div class="formula-box" id="formula-box"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    function calculate() {
+      const m1c = +document.getElementById('mcq1-correct').value || 0;
+      const m1w = +document.getElementById('mcq1-wrong').value || 0;
+      const m2c = +document.getElementById('mcq2-correct').value || 0;
+      const m2w = +document.getElementById('mcq2-wrong').value || 0;
+      const n1  = +document.getElementById('nat1').value || 0;
+      const n2  = +document.getElementById('nat2').value || 0;
+      const ga  = +document.getElementById('ga').value || 0;
+
+      const rawMarks = (m1c * 1) - (m1w * (1/3)) + (m2c * 2) - (m2w * (2/3)) + (n1 * 1) + (n2 * 2) + ga;
+      const M = Math.max(0, rawMarks);
+
+      // Official formula approximation
+      const Mq = 25;   // qualifying marks
+      const Mt = 82;   // avg of top 0.1%
+      let gateScore = 350 + 650 * (M - Mq) / (Mt - Mq);
+      gateScore = Math.min(1000, Math.max(0, Math.round(gateScore)));
+
+      // AIR estimate (based on 2024 CS data: ~1.6L appeared)
+      let air = 0;
+      if (M >= 80) air = Math.round(Math.random()*30 + 1);
+      else if (M >= 70) air = Math.round((82-M)*150);
+      else if (M >= 60) air = Math.round((82-M)*400);
+      else if (M >= 50) air = Math.round((82-M)*800);
+      else if (M >= 40) air = Math.round((82-M)*1500);
+      else if (M >= 30) air = Math.round((82-M)*3000);
+      else air = 150000;
+
+      const totalApprox = 160000;
+      const pct = Math.max(0, Math.min(100, (1 - air/totalApprox)*100)).toFixed(2);
+      const qualified = M >= 25;
+      const psuEligible = air < 500;
+
+      document.getElementById('res-score').textContent = gateScore;
+      document.getElementById('res-raw').textContent = M.toFixed(2) + ' / 100';
+      document.getElementById('res-air').textContent = air > 100000 ? '> 1,00,000' : air.toLocaleString();
+      document.getElementById('res-pct').textContent = pct + ' %ile';
+      document.getElementById('res-qual').textContent = qualified ? '✅ Qualified' : '❌ Not Qualified';
+      document.getElementById('res-psu').textContent = psuEligible ? '✅ Eligible (AIR < 500)' : `❌ Need AIR < 200-500 for PSUs`;
+      document.getElementById('formula-box').innerHTML = 
+        `📐 Raw Marks = ${m1c}×1 - ${m1w}×⅓ + ${m2c}×2 - ${m2w}×⅔ + ${n1}×1 + ${n2}×2 + ${ga}(GA)<br>
+         = <strong>${M.toFixed(2)}</strong><br>
+         Score = 350 + 650 × (${M.toFixed(2)} − 25) / (82 − 25)<br>
+         = <strong>${gateScore}</strong>`;
+
+      document.getElementById('result-panel').classList.add('show');
+    }
+  </script>
+  <script src="js/app.js"></script>
+</body>
+</html>

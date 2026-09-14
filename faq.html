@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ | GATE A TO Z</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .faq-category { margin-bottom: 2.5rem; }
+    .faq-category-title { font-family: var(--font-display); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent-primary); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--border-radius-sm); margin-bottom: 0.5rem; overflow: hidden; transition: border-color 0.2s; }
+    .faq-item:hover { border-color: var(--accent-secondary); }
+    .faq-item.open { border-color: var(--accent-primary); }
+    .faq-question { padding: 1rem 1.25rem; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .faq-question-text { color: var(--text-primary); font-weight: 500; font-size: 0.95rem; }
+    .faq-chevron { color: var(--text-muted); transition: transform 0.3s; flex-shrink: 0; }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); color: var(--accent-primary); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .faq-item.open .faq-answer { max-height: 600px; }
+    .faq-answer-inner { padding: 0 1.25rem 1.25rem; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.75; border-top: 1px solid var(--border); padding-top: 1rem; }
+    .faq-answer-inner strong { color: var(--text-primary); }
+    .faq-answer-inner a { color: var(--accent-primary); }
+  </style>
+</head>
+<body>
+  <header class="mobile-header">
+    <div class="logo">GATE A TO Z</div>
+    <button class="menu-toggle" id="menu-btn"><i class="fas fa-bars"></i></button>
+  </header>
+  <div class="app-container">
+    <nav class="sidebar" id="sidebar">
+      <div class="sidebar-header"><div class="logo">GATE A TO Z</div></div>
+      <div class="search-container mb-4">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" class="search-input" id="global-search" placeholder="Search topics...">
+        <div class="search-results-container" id="search-results"></div>
+      </div>
+      <ul class="nav-list">
+        <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Overview</a></li>
+        <li class="nav-item"><a href="predictor.html" class="nav-link"><i class="fas fa-magic"></i> College Predictor</a></li>
+        <li class="nav-item"><a href="calculator.html" class="nav-link"><i class="fas fa-calculator"></i> Score Calculator</a></li>
+        <li class="nav-item"><a href="tracker.html" class="nav-link"><i class="fas fa-tasks"></i> Progress Tracker</a></li>
+        <li class="nav-item"><a href="stats.html" class="nav-link"><i class="fas fa-chart-bar"></i> GATE Stats</a></li>
+        <li class="nav-item"><a href="pyq.html" class="nav-link"><i class="fas fa-question-circle"></i> PYQ Explorer</a></li>
+        <li class="nav-item"><a href="books.html" class="nav-link"><i class="fas fa-book-open"></i> Book Guide</a></li>
+        <li class="nav-item"><a href="toppers.html" class="nav-link"><i class="fas fa-trophy"></i> Topper Stories</a></li>
+        <li class="nav-item"><a href="faq.html" class="nav-link active"><i class="fas fa-question"></i> FAQ</a></li>
+        <li class="nav-item"><a href="syllabus.html" class="nav-link"><i class="fas fa-laptop-code"></i> GATE CS</a></li>
+        <li class="nav-item"><a href="institutes.html" class="nav-link"><i class="fas fa-landmark"></i> Institute Explorer</a></li>
+        <li class="nav-item"><a href="psu.html" class="nav-link"><i class="fas fa-building"></i> PSU Recruitment</a></li>
+        <li class="nav-item mt-4"><a href="login.html" class="nav-link" style="border:1px solid var(--accent-primary);border-radius:var(--border-radius-sm);"><i class="fas fa-sign-in-alt"></i> Join GAZ</a></li>
+      </ul>
+    </nav>
+    <main class="main-content">
+      <section class="section">
+        <span class="section-tag">Help</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="text-secondary mb-4">Answers to the most common GATE doubts, myths, and strategy questions — compiled from forums, toppers, and years of community experience.</p>
+
+        <div id="faq-container"></div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const faqs = [
+      {
+        category: "About GATE",
+        items: [
+          { q: "What is the full form and purpose of GATE?", a: "GATE stands for <strong>Graduate Aptitude Test in Engineering</strong>. It is conducted jointly by IISc and 7 IITs (on a rotation basis). It serves two main purposes: (1) Admission to M.Tech/M.E./Ph.D. programs at IITs, NITs, and other central universities, and (2) Shortlisting candidates for PSU (Public Sector Undertaking) jobs." },
+          { q: "How many times can I appear for GATE?", a: "There is <strong>no limit</strong> on the number of attempts. You can appear for GATE as many times as you want, as long as you are eligible. There is no age limit either. Many toppers give GATE 2-3 times before cracking it." },
+          { q: "What is the validity of a GATE score?", a: "A GATE score is valid for <strong>3 years</strong> from the date of announcement of results. So if you scored well in GATE 2024, you can use it for admissions and PSU applications till 2027." },
+          { q: "Can a diploma holder or lateral entry student appear for GATE?", a: "Yes! B.Sc. (Post Diploma) and B.Sc. Research students in their final year are eligible. Also, students currently in their 3rd year or higher of a relevant bachelor's program can appear. Check the exact eligibility on the official GATE website each year as it gets updated." },
+        ]
+      },
+      {
+        category: "Preparation Strategy",
+        items: [
+          { q: "Can I crack GATE in 6 months?", a: "Yes, <strong>6 months is sufficient</strong> if you are a full-time student with no other major commitments. The key is starting with a plan: spend the first 4 months studying subjects (6-8 hours/day), and the last 2 months on revision + mock tests. Do NOT underestimate Engineering Mathematics and General Aptitude — they constitute 28 marks combined." },
+          { q: "Should I join coaching or self-study?", a: "Both work. <strong>Self-study with GATE Overflow + standard textbooks</strong> has produced countless AIR &lt;100 rankers. Coaching (Made Easy, ACE, Unacademy) works if you lack discipline or need structured guidance. Many toppers use coaching for structure but supplement with self-study. Online coaching is generally as good as offline and cheaper." },
+          { q: "Which subjects should I prioritize?", a: "By marks weightage (approx):<br><br><strong>High Priority (13+ marks): Engg. Math, Algorithms, GA</strong><br>Medium Priority (8-10 marks each): OS, DBMS, CN, DS<br>Complete: TOC, Compiler Design, COA<br><br>Never skip any subject completely — even low-weight subjects have appeared for 6+ marks in some years." },
+          { q: "Is coaching material enough or do I need textbooks?", a: "Coaching material is a <strong>summary</strong>, not a replacement. For most subjects, coaching notes are enough for the basic concepts. But for deep topics like TOC, Algorithms, and DBMS, you will need to supplement with the actual textbooks (Hopcroft for TOC, CLRS for Algorithms, Korth for DBMS). Use textbooks selectively — just the relevant chapters." },
+          { q: "How many mock tests should I give?", a: "You should give a minimum of <strong>20-25 full-length mock tests</strong> before GATE day. Start in November, give 2-3 tests per week. More important than the number: spend equal time ANALYZING each test as you did giving it. One analyzed test > Three unanalyzed tests." },
+        ]
+      },
+      {
+        category: "After GATE",
+        items: [
+          { q: "What GATE score is needed for IIT Bombay/Delhi/Madras?", a: "For M.Tech CSE at the top IITs (Bombay, Delhi, Madras, Kanpur), you generally need a <strong>GATE Score of 750-820+</strong> for General category, which corresponds to roughly AIR 100-500. These numbers vary yearly. Use our <a href='predictor.html'>College Predictor</a> for a more personalized estimate." },
+          { q: "What is COAP? How does admission work?", a: "<strong>COAP (Common Offer Acceptance Portal)</strong> is the centralized portal used by all IITs for M.Tech admissions. After GATE results, IITs release their own shortlists. You receive offers through COAP, and you accept/reject them in multiple rounds. You can hold an offer from one IIT while waiting for a better one — but be careful about deadlines." },
+          { q: "Can I get into IIT with a lower GATE score through research/PhD programs?", a: "Yes! IIT PhD programs have <strong>lower GATE score requirements</strong> than M.Tech. Additionally, some IITs offer M.Tech by Research which also has relaxed criteria. If you're interested in research, explore these pathways — you can get into IIT Bombay for a Ph.D. with a score that won't get you M.Tech admission there." },
+          { q: "Which PSUs directly recruit through GATE for CS?", a: "Active PSU recruiters for CS/IT through GATE include: <strong>ONGC, IOCL, POSOCO, DRDO, BARC, CRIS, ISRO, BHEL, HPCL, BPCL, GAIL, NTPC</strong>. For detailed cutoffs and salary, see our <a href='psu.html'>PSU Recruitment</a> page." },
+          { q: "Is an M.Tech from an NIT worth it? Should I prefer NIT over a job?", a: "<strong>It depends on your goal:</strong><br>• If you want research → Any IIT or top NIT (NIT Trichy, Warangal, Surathkal) is worth it<br>• If you want a better job → IIT degree gives massive brand value (₹20-30L+ packages from IITs vs ₹6-10L from industry for a B.Tech NIT grad)<br>• If you have a 15L+ offer already → Carefully evaluate if the M.Tech investment (2 years + ₹2-5L fees) will give proportional returns." },
+        ]
+      },
+      {
+        category: "Common Myths",
+        items: [
+          { q: "Myth: You need a 10 CGPA or a top college B.Tech to crack GATE", a: "<strong>FALSE.</strong> GATE is a completely objective, college-blind exam. Your B.Tech college, marks, and branch (beyond eligibility) don't matter at all. GATE rank solely determines your admission. Many AIR &lt;100 holders are from unknown colleges. Your preparation quality is the only variable." },
+          { q: "Myth: GATE is only useful for M.Tech admissions", a: "<strong>FALSE.</strong> GATE score is also used for: (1) PSU recruitment, (2) Junior Research Fellowship (JRF) at CSIR labs, (3) BARC's OCES/DGFS program, (4) Some private companies shortlist for jobs using GATE scores, (5) Ph.D. admissions at IITs/IISc/NITs/TIFR/ISI." },
+          { q: "Myth: GATE is impossible to crack without 1+ year of preparation", a: "<strong>FALSE.</strong> Many candidates crack GATE with 5-6 months of serious preparation. The key is preparation quality, not duration. A focused 6-month plan beats a lazy 12-month plan every time." },
+        ]
+      }
+    ];
+
+    const container = document.getElementById('faq-container');
+    faqs.forEach(cat => {
+      const catDiv = document.createElement('div');
+      catDiv.className = 'faq-category';
+      catDiv.innerHTML = `<div class="faq-category-title"><i class="fas fa-folder-open" style="margin-right:0.5rem;"></i>${cat.category}</div>`;
+      cat.items.forEach(item => {
+        const faqItem = document.createElement('div');
+        faqItem.className = 'faq-item';
+        faqItem.innerHTML = `
+          <div class="faq-question" onclick="toggleFAQ(this.parentElement)">
+            <span class="faq-question-text">${item.q}</span>
+            <i class="fas fa-chevron-down faq-chevron"></i>
+          </div>
+          <div class="faq-answer"><div class="faq-answer-inner">${item.a}</div></div>`;
+        catDiv.appendChild(faqItem);
+      });
+      container.appendChild(catDiv);
+    });
+
+    function toggleFAQ(el) {
+      el.classList.toggle('open');
+    }
+  </script>
+  <script src="js/app.js"></script>
+</body>
+</html>

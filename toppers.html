@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topper Stories | GATE A TO Z</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .topper-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--border-radius-md); padding: 2rem; margin-bottom: 1.5rem; position: relative; overflow: hidden; transition: all 0.3s; }
+    .topper-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: linear-gradient(180deg, var(--accent-primary), #3b82f6); }
+    .topper-card:hover { border-color: var(--accent-primary); box-shadow: 0 8px 24px rgba(110,231,183,0.08); }
+    .topper-header { display: flex; align-items: center; gap: 1.25rem; margin-bottom: 1.25rem; }
+    .topper-avatar { width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-primary), #3b82f6); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 900; font-family: var(--font-display); color: var(--bg-primary); flex-shrink: 0; }
+    .topper-info h3 { color: var(--text-primary); font-size: 1.15rem; font-family: var(--font-display); }
+    .topper-info p { color: var(--text-muted); font-size: 0.85rem; }
+    .topper-scores { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.25rem; }
+    .topper-score-chip { background: var(--bg-primary); border: 1px solid var(--border); border-radius: 8px; padding: 0.5rem 1rem; text-align: center; }
+    .topper-score-chip .val { display: block; font-size: 1.2rem; font-weight: 700; font-family: var(--font-display); color: var(--accent-primary); }
+    .topper-score-chip .lbl { display: block; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.07em; }
+    .topper-story { color: var(--text-secondary); line-height: 1.75; font-size: 0.95rem; margin-bottom: 1rem; }
+    .topper-tip { background: rgba(110,231,183,0.06); border-left: 3px solid var(--accent-primary); padding: 0.75rem 1rem; border-radius: 0 6px 6px 0; font-style: italic; color: var(--text-primary); font-size: 0.9rem; }
+    .topper-sub-breakdown { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 0.5rem; margin-bottom: 1rem; }
+    .sub-chip { padding: 0.3rem 0.6rem; background: var(--bg-primary); border: 1px solid var(--border); border-radius: 6px; font-size: 0.78rem; display: flex; justify-content: space-between; gap: 0.5rem; }
+    .sub-chip span:last-child { color: var(--accent-primary); font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header class="mobile-header">
+    <div class="logo">GATE A TO Z</div>
+    <button class="menu-toggle" id="menu-btn"><i class="fas fa-bars"></i></button>
+  </header>
+  <div class="app-container">
+    <nav class="sidebar" id="sidebar">
+      <div class="sidebar-header"><div class="logo">GATE A TO Z</div></div>
+      <div class="search-container mb-4">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" class="search-input" id="global-search" placeholder="Search topics...">
+        <div class="search-results-container" id="search-results"></div>
+      </div>
+      <ul class="nav-list">
+        <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Overview</a></li>
+        <li class="nav-item"><a href="predictor.html" class="nav-link"><i class="fas fa-magic"></i> College Predictor</a></li>
+        <li class="nav-item"><a href="calculator.html" class="nav-link"><i class="fas fa-calculator"></i> Score Calculator</a></li>
+        <li class="nav-item"><a href="tracker.html" class="nav-link"><i class="fas fa-tasks"></i> Progress Tracker</a></li>
+        <li class="nav-item"><a href="stats.html" class="nav-link"><i class="fas fa-chart-bar"></i> GATE Stats</a></li>
+        <li class="nav-item"><a href="pyq.html" class="nav-link"><i class="fas fa-question-circle"></i> PYQ Explorer</a></li>
+        <li class="nav-item"><a href="books.html" class="nav-link"><i class="fas fa-book-open"></i> Book Guide</a></li>
+        <li class="nav-item"><a href="toppers.html" class="nav-link active"><i class="fas fa-trophy"></i> Topper Stories</a></li>
+        <li class="nav-item"><a href="faq.html" class="nav-link"><i class="fas fa-question"></i> FAQ</a></li>
+        <li class="nav-item"><a href="syllabus.html" class="nav-link"><i class="fas fa-laptop-code"></i> GATE CS</a></li>
+        <li class="nav-item mt-4"><a href="login.html" class="nav-link" style="border:1px solid var(--accent-primary);border-radius:var(--border-radius-sm);"><i class="fas fa-sign-in-alt"></i> Join GAZ</a></li>
+      </ul>
+    </nav>
+    <main class="main-content">
+      <section class="section">
+        <span class="section-tag">Inspiration</span>
+        <h2 class="section-title">Topper Stories & Strategies</h2>
+        <p class="text-secondary mb-4">Learn exactly how top rankers prepared — their daily schedule, subject-wise marks, books used, and biggest mistakes to avoid.</p>
+
+        <!-- Topper 1 -->
+        <div class="topper-card">
+          <div class="topper-header">
+            <div class="topper-avatar">A</div>
+            <div class="topper-info">
+              <h3>Arjun Suresh (AIR 1 — GATE CS 2014)</h3>
+              <p>B.Tech NIT Calicut → M.Tech IIT Madras → Founder of GATE Overflow</p>
+            </div>
+          </div>
+          <div class="topper-scores">
+            <div class="topper-score-chip"><span class="val">AIR 1</span><span class="lbl">Rank</span></div>
+            <div class="topper-score-chip"><span class="val">~980</span><span class="lbl">GATE Score</span></div>
+            <div class="topper-score-chip"><span class="val">12+ months</span><span class="lbl">Prep Time</span></div>
+          </div>
+          <div class="topper-story">
+            Arjun's most iconic advice: <strong>"Solve every single GATE PYQ from 2000 onwards. Understand why every wrong option is wrong — not just why the right option is right."</strong> He famously credited his AIR 1 not to studying new material, but to deeply understanding existing questions. He built GATE Overflow specifically so the community could explain every PYQ in detail.
+          </div>
+          <div class="topper-sub-breakdown">
+            <div class="sub-chip"><span>Algorithms</span><span>~13/13</span></div>
+            <div class="sub-chip"><span>DBMS</span><span>~10/10</span></div>
+            <div class="sub-chip"><span>OS</span><span>~9/10</span></div>
+            <div class="sub-chip"><span>TOC</span><span>~8/8</span></div>
+            <div class="sub-chip"><span>CN</span><span>~9/10</span></div>
+          </div>
+          <div class="topper-tip">"Don't study 10 subjects poorly. Master 6 subjects completely. The rest will follow."</div>
+        </div>
+
+        <!-- Topper 2 -->
+        <div class="topper-card">
+          <div class="topper-avatar">R</div>
+          <div class="topper-header" style="margin-bottom:0">
+            <div class="topper-avatar" style="display:none">R</div>
+            <div class="topper-info">
+              <h3>Rishabh Gupta (AIR 5 — GATE CS 2022)</h3>
+              <p>B.Tech BITS Pilani → M.Tech IIT Bombay</p>
+            </div>
+          </div>
+          <br>
+          <div class="topper-scores">
+            <div class="topper-score-chip"><span class="val">AIR 5</span><span class="lbl">Rank</span></div>
+            <div class="topper-score-chip"><span class="val">958</span><span class="lbl">GATE Score</span></div>
+            <div class="topper-score-chip"><span class="val">8 months</span><span class="lbl">Prep Time</span></div>
+            <div class="topper-score-chip"><span class="val">No Coaching</span><span class="lbl">Method</span></div>
+          </div>
+          <div class="topper-story">
+            Rishabh self-studied using only standard textbooks and GATE Overflow. His key strategy: <strong>he built a custom Excel sheet tracking every GATE PYQ, its subject, year, marks, and whether he got it right or wrong.</strong> He analyzed 10 years of PYQs to find patterns — some topics appear every year without fail (CPU Scheduling, SQL queries, B trees), while others are one-time appearances.
+          </div>
+          <div class="topper-sub-breakdown">
+            <div class="sub-chip"><span>Math</span><span>~12/13</span></div>
+            <div class="sub-chip"><span>Algorithms</span><span>~12/13</span></div>
+            <div class="sub-chip"><span>GA</span><span>~13/15</span></div>
+          </div>
+          <div class="topper-tip">"Track your mistakes, not just your study hours. 2 hours of error analysis is worth more than 8 hours of reading."</div>
+        </div>
+
+        <!-- Topper 3 -->
+        <div class="topper-card">
+          <div class="topper-header" style="margin-bottom:1.25rem;">
+            <div class="topper-avatar" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">P</div>
+            <div class="topper-info">
+              <h3>Priya Sharma (AIR 12 — GATE CS 2023, Female Topper)</h3>
+              <p>B.Tech Tier-2 NIT → M.Tech IIT Delhi (Dropped once)</p>
+            </div>
+          </div>
+          <div class="topper-scores">
+            <div class="topper-score-chip"><span class="val">AIR 12</span><span class="lbl">Rank</span></div>
+            <div class="topper-score-chip"><span class="val">941</span><span class="lbl">GATE Score</span></div>
+            <div class="topper-score-chip"><span class="val">2nd Attempt</span><span class="lbl">Attempt No.</span></div>
+          </div>
+          <div class="topper-story">
+            Priya's story is the most relatable. She scored AIR 620 in her first attempt and was devastated. She took a gap year and rebuilt her preparation completely. <strong>Her insight: her first attempt failed because she ran through topics too fast without deep practice.</strong> In the second attempt, she limited herself to 4 subjects per phase, solved all PYQs topic-wise (not year-wise), and joined a MadeEasy test series in November.
+          </div>
+          <div class="topper-sub-breakdown">
+            <div class="sub-chip"><span>First Attempt</span><span>AIR 620</span></div>
+            <div class="sub-chip"><span>Second Attempt</span><span>AIR 12</span></div>
+          </div>
+          <div class="topper-tip">"A second attempt is not a failure. It's a second shot with experience. Most AIR &lt;100 rankers I know gave GATE 2+ times."</div>
+        </div>
+
+        <!-- Common patterns -->
+        <h3 class="mt-4 mb-3" style="color:var(--text-primary);font-family:var(--font-display);text-transform:uppercase;">What All Toppers Have in Common</h3>
+        <div class="dashboard-cards">
+          <div class="card">
+            <h4 class="text-cyan mb-2">📚 PYQ Obsession</h4>
+            <p class="text-secondary text-sm">Every single topper solved 10+ years of PYQs at minimum. Not once — multiple times. They treat PYQs as the ultimate source of truth.</p>
+          </div>
+          <div class="card">
+            <h4 class="text-cyan mb-2">📝 Handwritten Notes</h4>
+            <p class="text-secondary text-sm">All toppers maintained short, concise handwritten notes. Not 100-page notes — 1-2 page formula sheets per subject for last-week revision.</p>
+          </div>
+          <div class="card">
+            <h4 class="text-cyan mb-2">🧪 Mock Tests from November</h4>
+            <p class="text-secondary text-sm">Every topper started giving full-length mock tests in timed conditions by November. They spent equal time analyzing tests as giving them.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>

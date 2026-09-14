@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GATE Statistics | GATE A TO Z</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+    .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--border-radius-md); padding: 1.25rem; text-align: center; transition: all 0.2s; }
+    .stat-card:hover { border-color: var(--accent-primary); }
+    .stat-card-num { font-size: 2rem; font-family: var(--font-display); color: var(--accent-primary); }
+    .stat-card-label { font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.07em; margin-top: 0.25rem; }
+    .chart-container { background: var(--surface); border: 1px solid var(--border); border-radius: var(--border-radius-md); padding: 1.5rem; margin-bottom: 1.5rem; }
+    .chart-title { font-family: var(--font-display); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-secondary); margin-bottom: 1.25rem; }
+    .charts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem; }
+    @media(max-width:600px){ .charts-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header class="mobile-header">
+    <div class="logo">GATE A TO Z</div>
+    <button class="menu-toggle" id="menu-btn"><i class="fas fa-bars"></i></button>
+  </header>
+  <div class="app-container">
+    <nav class="sidebar" id="sidebar">
+      <div class="sidebar-header"><div class="logo">GATE A TO Z</div></div>
+      <div class="search-container mb-4">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" class="search-input" id="global-search" placeholder="Search topics...">
+        <div class="search-results-container" id="search-results"></div>
+      </div>
+      <ul class="nav-list">
+        <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Overview</a></li>
+        <li class="nav-item"><a href="predictor.html" class="nav-link"><i class="fas fa-magic"></i> College Predictor</a></li>
+        <li class="nav-item"><a href="calculator.html" class="nav-link"><i class="fas fa-calculator"></i> Score Calculator</a></li>
+        <li class="nav-item"><a href="tracker.html" class="nav-link"><i class="fas fa-tasks"></i> Progress Tracker</a></li>
+        <li class="nav-item"><a href="stats.html" class="nav-link active"><i class="fas fa-chart-bar"></i> GATE Stats</a></li>
+        <li class="nav-item"><a href="pyq.html" class="nav-link"><i class="fas fa-question-circle"></i> PYQ Explorer</a></li>
+        <li class="nav-item"><a href="books.html" class="nav-link"><i class="fas fa-book-open"></i> Book Guide</a></li>
+        <li class="nav-item"><a href="toppers.html" class="nav-link"><i class="fas fa-trophy"></i> Topper Stories</a></li>
+        <li class="nav-item"><a href="faq.html" class="nav-link"><i class="fas fa-question"></i> FAQ</a></li>
+        <li class="nav-item"><a href="syllabus.html" class="nav-link"><i class="fas fa-laptop-code"></i> GATE CS</a></li>
+        <li class="nav-item mt-4"><a href="login.html" class="nav-link" style="border:1px solid var(--accent-primary);border-radius:var(--border-radius-sm);"><i class="fas fa-sign-in-alt"></i> Join GAZ</a></li>
+      </ul>
+    </nav>
+    <main class="main-content">
+      <section class="section">
+        <span class="section-tag">Analytics</span>
+        <h2 class="section-title">GATE CS Statistics (2018–2024)</h2>
+        <p class="text-secondary mb-4">Historical data on candidates, cut-offs, difficulty trends, and subject-wise question distribution to help you strategize your preparation.</p>
+
+        <!-- Key Stats -->
+        <div class="stats-grid">
+          <div class="stat-card"><div class="stat-card-num">1.6L+</div><div class="stat-card-label">Appeared (2024)</div></div>
+          <div class="stat-card"><div class="stat-card-num">~16%</div><div class="stat-card-label">Qualification Rate</div></div>
+          <div class="stat-card"><div class="stat-card-num">65</div><div class="stat-card-label">Total Questions</div></div>
+          <div class="stat-card"><div class="stat-card-num">100</div><div class="stat-card-label">Total Marks</div></div>
+          <div class="stat-card"><div class="stat-card-num">3 hrs</div><div class="stat-card-label">Exam Duration</div></div>
+          <div class="stat-card"><div class="stat-card-num">~25</div><div class="stat-card-label">Gen Cutoff (Marks)</div></div>
+        </div>
+
+        <div class="charts-grid">
+          <!-- Appeared vs Qualified -->
+          <div class="chart-container">
+            <div class="chart-title"><i class="fas fa-users" style="color:var(--accent-primary)"></i> Candidates: Appeared vs Qualified (CS)</div>
+            <canvas id="chart-appeared" height="220"></canvas>
+          </div>
+          <!-- Year-wise cutoff -->
+          <div class="chart-container">
+            <div class="chart-title"><i class="fas fa-cut" style="color:var(--accent-primary)"></i> Year-wise Qualifying Marks (General)</div>
+            <canvas id="chart-cutoff" height="220"></canvas>
+          </div>
+        </div>
+
+        <div class="charts-grid">
+          <!-- Subject Weightage -->
+          <div class="chart-container">
+            <div class="chart-title"><i class="fas fa-pie-chart" style="color:var(--accent-primary)"></i> Subject-wise Avg. Weightage (Marks %)</div>
+            <canvas id="chart-subjects" height="250"></canvas>
+          </div>
+          <!-- Score distribution -->
+          <div class="chart-container">
+            <div class="chart-title"><i class="fas fa-chart-area" style="color:var(--accent-primary)"></i> Approx. Score Distribution (2024)</div>
+            <canvas id="chart-dist" height="250"></canvas>
+          </div>
+        </div>
+
+        <!-- Cutoff table -->
+        <h3 class="mt-4 mb-3" style="color:var(--text-primary);font-family:var(--font-display);text-transform:uppercase;">Year-wise Qualifying Cutoffs (CS/IT)</h3>
+        <div class="table-container mb-4">
+          <table>
+            <thead><tr><th>Year</th><th>General (Marks)</th><th>OBC-NCL</th><th>SC/ST/PH</th><th>Approx. GATE Score Cutoff</th><th>Difficulty</th></tr></thead>
+            <tbody>
+              <tr><td>2024</td><td class="text-cyan font-bold">24.9</td><td>22.4</td><td>16.6</td><td>~350</td><td><span class="badge medium">Moderate</span></td></tr>
+              <tr><td>2023</td><td class="text-cyan font-bold">25.0</td><td>22.5</td><td>16.7</td><td>~355</td><td><span class="badge medium">Moderate</span></td></tr>
+              <tr><td>2022</td><td class="text-cyan font-bold">27.0</td><td>24.3</td><td>18.0</td><td>~370</td><td><span class="badge high">Easier</span></td></tr>
+              <tr><td>2021</td><td class="text-cyan font-bold">25.0</td><td>22.5</td><td>16.7</td><td>~350</td><td><span class="badge medium">Moderate</span></td></tr>
+              <tr><td>2020</td><td class="text-cyan font-bold">28.5</td><td>25.6</td><td>19.0</td><td>~380</td><td><span class="badge high">Easier</span></td></tr>
+              <tr><td>2019</td><td class="text-cyan font-bold">29.5</td><td>26.5</td><td>19.6</td><td>~395</td><td><span class="badge high">Easier</span></td></tr>
+              <tr><td>2018</td><td class="text-cyan font-bold">25.0</td><td>22.5</td><td>16.7</td><td>~350</td><td><span class="badge notverified">Hard</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const CYAN = 'rgba(110,231,183,0.85)';
+    const BLUE = 'rgba(99,179,237,0.7)';
+    const RED  = 'rgba(239,68,68,0.7)';
+    const GRID = 'rgba(255,255,255,0.06)';
+    const TEXT = '#9ca3af';
+
+    const chartDefaults = {
+      color: TEXT,
+      plugins: { legend: { labels: { color: TEXT, font: { size: 12 } } } },
+      scales: {
+        x: { ticks: { color: TEXT }, grid: { color: GRID } },
+        y: { ticks: { color: TEXT }, grid: { color: GRID } }
+      }
+    };
+
+    // Chart 1: Appeared vs Qualified
+    new Chart(document.getElementById('chart-appeared'), {
+      type: 'bar',
+      data: {
+        labels: ['2018','2019','2020','2021','2022','2023','2024'],
+        datasets: [
+          { label: 'Appeared (thousands)', data: [108,115,125,115,130,145,162], backgroundColor: BLUE },
+          { label: 'Qualified (thousands)', data: [18, 20, 21, 19, 22, 24, 26], backgroundColor: CYAN }
+        ]
+      },
+      options: { ...chartDefaults, responsive: true }
+    });
+
+    // Chart 2: Year-wise cutoff
+    new Chart(document.getElementById('chart-cutoff'), {
+      type: 'line',
+      data: {
+        labels: ['2018','2019','2020','2021','2022','2023','2024'],
+        datasets: [
+          { label: 'General Cutoff (Marks)', data: [25.0,29.5,28.5,25.0,27.0,25.0,24.9], borderColor: CYAN, backgroundColor: 'rgba(110,231,183,0.1)', tension: 0.4, fill: true, pointBackgroundColor: CYAN },
+          { label: 'OBC Cutoff', data: [22.5,26.5,25.6,22.5,24.3,22.5,22.4], borderColor: BLUE, backgroundColor: 'rgba(99,179,237,0.05)', tension: 0.4, fill: false, borderDash: [5,5] },
+        ]
+      },
+      options: { ...chartDefaults, responsive: true }
+    });
+
+    // Chart 3: Subject weightage donut
+    new Chart(document.getElementById('chart-subjects'), {
+      type: 'doughnut',
+      data: {
+        labels: ['DS & Algorithms','OS','DBMS','CN','TOC','Compiler Design','COA','Engg. Math','Digital Logic','General Aptitude'],
+        datasets: [{ data: [15,10,10,10,8,7,7,13,5,15],
+          backgroundColor: ['#6ee7b7','#63b3ed','#f59e0b','#a78bfa','#f87171','#34d399','#60a5fa','#fbbf24','#c084fc','#4ade80'],
+          borderColor: '#0a0a0a', borderWidth: 2 }]
+      },
+      options: { responsive: true, plugins: { legend: { position: 'right', labels: { color: TEXT, font: { size: 11 }, boxWidth: 14 } } } }
+    });
+
+    // Chart 4: Score distribution
+    new Chart(document.getElementById('chart-dist'), {
+      type: 'bar',
+      data: {
+        labels: ['< 200','200-300','300-400','400-500','500-600','600-700','700-800','> 800'],
+        datasets: [{ label: 'Approx. Students (2024)', 
+          data: [5000, 18000, 35000, 40000, 32000, 18000, 8000, 2000],
+          backgroundColor: ['#ef4444','#f59e0b','#f59e0b','#3b82f6','#6ee7b7','#6ee7b7','#34d399','#22c55e'] }]
+      },
+      options: { ...chartDefaults, responsive: true, plugins: { legend: { display: false } } }
+    });
+  </script>
+  <script src="js/app.js"></script>
+</body>
+</html>

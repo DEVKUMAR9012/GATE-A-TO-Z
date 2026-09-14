@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Predictor | GATE A TO Z</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .predictor-form { background: var(--surface); border: 1px solid var(--border); border-radius: var(--border-radius-md); padding: 2rem; margin-bottom: 2rem; }
+    .form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem; }
+    .form-group label { display: block; font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+    .form-group input, .form-group select { width: 100%; padding: 0.75rem 1rem; background: var(--bg-primary); border: 1px solid var(--border); border-radius: var(--border-radius-sm); color: var(--text-primary); font-size: 1rem; outline: none; transition: border-color 0.2s; }
+    .form-group input:focus, .form-group select:focus { border-color: var(--accent-primary); }
+    .predict-btn { width: 100%; padding: 1rem; background: var(--accent-primary); color: var(--bg-primary); border: none; border-radius: var(--border-radius-sm); font-size: 1.1rem; font-weight: 700; font-family: var(--font-display); text-transform: uppercase; cursor: pointer; transition: all 0.3s; letter-spacing: 0.1em; }
+    .predict-btn:hover { background: #34d399; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(110,231,183,0.3); }
+    .results-section { display: none; }
+    .results-section.show { display: block; }
+    .result-header { display: flex; align-items: center; gap: 1rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(110,231,183,0.1), rgba(59,130,246,0.05)); border: 1px solid var(--accent-primary); border-radius: var(--border-radius-md); margin-bottom: 1.5rem; }
+    .score-circle { width: 80px; height: 80px; border-radius: 50%; background: conic-gradient(var(--accent-primary) 0deg, var(--border) 0deg); display: flex; align-items: center; justify-content: center; flex-shrink: 0; position: relative; }
+    .score-circle-inner { width: 64px; height: 64px; border-radius: 50%; background: var(--bg-primary); display: flex; align-items: center; justify-content: center; flex-direction: column; }
+    .score-circle-inner span { font-size: 1.1rem; font-weight: 700; color: var(--accent-primary); font-family: var(--font-display); }
+    .score-circle-inner small { font-size: 0.6rem; color: var(--text-muted); }
+    .result-stats { flex: 1; }
+    .result-stats h3 { font-size: 1.3rem; color: var(--text-primary); margin-bottom: 0.25rem; }
+    .result-stats p { color: var(--text-secondary); font-size: 0.9rem; }
+    .college-list { display: flex; flex-direction: column; gap: 0.75rem; }
+    .college-result-card { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.25rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--border-radius-sm); transition: all 0.2s; }
+    .college-result-card:hover { border-color: var(--accent-primary); }
+    .college-result-card.safe { border-left: 3px solid #22c55e; }
+    .college-result-card.moderate { border-left: 3px solid #f59e0b; }
+    .college-result-card.reach { border-left: 3px solid #ef4444; }
+    .college-rank { font-size: 0.8rem; color: var(--text-muted); width: 30px; }
+    .college-name-result { flex: 1; font-weight: 500; color: var(--text-primary); }
+    .college-cutoff-result { font-size: 0.85rem; color: var(--text-muted); }
+    .college-chance { font-size: 0.75rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; }
+    .chance-safe { background: rgba(34,197,94,0.15); color: #22c55e; }
+    .chance-moderate { background: rgba(245,158,11,0.15); color: #f59e0b; }
+    .chance-reach { background: rgba(239,68,68,0.15); color: #ef4444; }
+    .section-divider { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin: 1rem 0 0.5rem; padding-bottom: 0.25rem; border-bottom: 1px solid var(--border); }
+  </style>
+</head>
+<body>
+  <header class="mobile-header">
+    <div class="logo">GATE A TO Z</div>
+    <button class="menu-toggle" id="menu-btn"><i class="fas fa-bars"></i></button>
+  </header>
+  <div class="app-container">
+    <nav class="sidebar" id="sidebar">
+      <div class="sidebar-header"><div class="logo">GATE A TO Z</div></div>
+      <div class="search-container mb-4">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" class="search-input" id="global-search" placeholder="Search topics...">
+        <div class="search-results-container" id="search-results"></div>
+      </div>
+      <ul class="nav-list">
+        <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Overview</a></li>
+        <li class="nav-item"><a href="basics.html" class="nav-link"><i class="fas fa-book"></i> GATE Basics</a></li>
+        <li class="nav-item"><a href="syllabus.html" class="nav-link"><i class="fas fa-laptop-code"></i> GATE CS</a></li>
+        <li class="nav-item"><a href="predictor.html" class="nav-link active"><i class="fas fa-magic"></i> College Predictor</a></li>
+        <li class="nav-item"><a href="calculator.html" class="nav-link"><i class="fas fa-calculator"></i> Score Calculator</a></li>
+        <li class="nav-item"><a href="tracker.html" class="nav-link"><i class="fas fa-tasks"></i> Progress Tracker</a></li>
+        <li class="nav-item"><a href="stats.html" class="nav-link"><i class="fas fa-chart-bar"></i> GATE Stats</a></li>
+        <li class="nav-item"><a href="pyq.html" class="nav-link"><i class="fas fa-question-circle"></i> PYQ Explorer</a></li>
+        <li class="nav-item"><a href="books.html" class="nav-link"><i class="fas fa-book-open"></i> Book Guide</a></li>
+        <li class="nav-item"><a href="toppers.html" class="nav-link"><i class="fas fa-trophy"></i> Topper Stories</a></li>
+        <li class="nav-item"><a href="faq.html" class="nav-link"><i class="fas fa-question"></i> FAQ</a></li>
+        <li class="nav-item"><a href="institutes.html" class="nav-link"><i class="fas fa-landmark"></i> Institute Explorer</a></li>
+        <li class="nav-item"><a href="psu.html" class="nav-link"><i class="fas fa-building"></i> PSU Recruitment</a></li>
+        <li class="nav-item"><a href="admissions.html" class="nav-link"><i class="fas fa-university"></i> IIT / NIT Admissions</a></li>
+        <li class="nav-item"><a href="roadmap.html" class="nav-link"><i class="fas fa-map-signs"></i> Roadmap</a></li>
+        <li class="nav-item"><a href="decision-tree.html" class="nav-link"><i class="fas fa-code-branch"></i> Decision Tree</a></li>
+        <li class="nav-item mt-4"><a href="login.html" class="nav-link" style="border:1px solid var(--accent-primary);border-radius:var(--border-radius-sm);"><i class="fas fa-sign-in-alt"></i> Join GAZ</a></li>
+      </ul>
+    </nav>
+    <main class="main-content">
+      <section class="section">
+        <span class="section-tag">Tool</span>
+        <h2 class="section-title">College Predictor</h2>
+        <p class="text-secondary mb-4">Enter your GATE score and category to see which IITs and NITs you can realistically target, based on historical cutoff data (2022–2024).</p>
+
+        <div class="predictor-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your GATE Score (out of 1000)</label>
+              <input type="number" id="inp-score" min="0" max="1000" placeholder="e.g. 720" />
+            </div>
+            <div class="form-group">
+              <label>Category</label>
+              <select id="inp-category">
+                <option value="general">General (UR)</option>
+                <option value="obc">OBC-NCL</option>
+                <option value="sc">SC</option>
+                <option value="st">ST</option>
+                <option value="ews">EWS</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Preferred Type</label>
+              <select id="inp-type">
+                <option value="all">Both IIT & NIT</option>
+                <option value="iit">IITs Only</option>
+                <option value="nit">NITs Only</option>
+              </select>
+            </div>
+          </div>
+          <button class="predict-btn" onclick="predict()"><i class="fas fa-bolt"></i>&nbsp; Predict My Colleges</button>
+        </div>
+
+        <div class="results-section" id="results">
+          <div class="result-header">
+            <div class="score-circle" id="score-circle">
+              <div class="score-circle-inner">
+                <span id="display-score">-</span>
+                <small>SCORE</small>
+              </div>
+            </div>
+            <div class="result-stats">
+              <h3 id="result-headline">Your Results</h3>
+              <p id="result-subtext"></p>
+            </div>
+          </div>
+          <div id="college-output"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Cutoff data: [name, type, general_cutoff, obc_cutoff, sc_cutoff, st_cutoff, ews_cutoff]
+    const colleges = [
+      ["IISc Bangalore",        "iit", 850, 800, 720, 680, 820],
+      ["IIT Bombay",            "iit", 780, 730, 650, 600, 750],
+      ["IIT Delhi",             "iit", 780, 730, 640, 595, 750],
+      ["IIT Madras",            "iit", 770, 720, 640, 590, 745],
+      ["IIT Kanpur",            "iit", 750, 700, 620, 570, 720],
+      ["IIT Roorkee",           "iit", 720, 670, 590, 545, 695],
+      ["IIT Kharagpur",         "iit", 720, 670, 590, 545, 695],
+      ["IIT Guwahati",          "iit", 700, 650, 570, 520, 675],
+      ["IIT Hyderabad",         "iit", 670, 620, 545, 495, 645],
+      ["IIT (BHU) Varanasi",    "iit", 660, 610, 535, 490, 635],
+      ["IIT (ISM) Dhanbad",     "iit", 640, 590, 515, 465, 615],
+      ["IIT Indore",            "iit", 650, 600, 525, 475, 625],
+      ["IIT Gandhinagar",       "iit", 660, 610, 535, 485, 635],
+      ["IIT Jodhpur",           "iit", 640, 590, 515, 465, 615],
+      ["IIT Ropar",             "iit", 640, 590, 515, 465, 615],
+      ["IIT Patna",             "iit", 630, 580, 505, 455, 605],
+      ["IIT Mandi",             "iit", 620, 570, 495, 445, 595],
+      ["IIT Palakkad",          "iit", 620, 570, 495, 445, 595],
+      ["IIT Bhilai",            "iit", 590, 540, 465, 415, 565],
+      ["IIT Goa",               "iit", 580, 530, 455, 405, 555],
+      ["IIT Jammu",             "iit", 570, 520, 445, 395, 545],
+      ["IIT Tirupati",          "iit", 600, 550, 475, 425, 575],
+      ["IIT Dharwad",           "iit", 570, 520, 445, 395, 545],
+      ["NIT Tiruchirappalli",   "nit", 680, 630, 550, 500, 655],
+      ["NIT Karnataka",         "nit", 660, 610, 535, 485, 635],
+      ["NIT Rourkela",          "nit", 650, 600, 525, 475, 625],
+      ["NIT Warangal",          "nit", 650, 600, 525, 475, 625],
+      ["NIT Calicut",           "nit", 640, 590, 515, 465, 615],
+      ["VNIT Nagpur",           "nit", 620, 570, 495, 445, 595],
+      ["MNIT Jaipur",           "nit", 610, 560, 485, 435, 585],
+      ["MNNIT Allahabad",       "nit", 610, 560, 485, 435, 585],
+      ["NIT Kurukshetra",       "nit", 600, 550, 475, 425, 575],
+      ["NIT Silchar",           "nit", 560, 510, 435, 385, 535],
+      ["NIT Durgapur",          "nit", 560, 510, 435, 385, 535],
+      ["NIT Jalandhar",         "nit", 550, 500, 425, 375, 525],
+      ["MANIT Bhopal",          "nit", 580, 530, 455, 405, 555],
+      ["NIT Jamshedpur",        "nit", 520, 470, 395, 345, 495],
+      ["NIT Raipur",            "nit", 520, 470, 395, 345, 495],
+      ["NIT Patna",             "nit", 500, 450, 375, 325, 475],
+      ["NIT Hamirpur",          "nit", 490, 440, 365, 315, 465],
+      ["NIT Delhi",             "nit", 490, 440, 365, 315, 465],
+    ];
+
+    const catMap = { general: 0, obc: 1, sc: 2, st: 3, ews: 4 };
+    const catDiscount = { general: 0, obc: -50, sc: -130, st: -175, ews: -30 };
+
+    function predict() {
+      const score = parseInt(document.getElementById('inp-score').value);
+      const cat = document.getElementById('inp-category').value;
+      const type = document.getElementById('inp-type').value;
+      const catIdx = catMap[cat];
+
+      if (!score || score < 0 || score > 1000) {
+        alert('Please enter a valid GATE score (0-1000)');
+        return;
+      }
+
+      // Estimate AIR
+      let air = estimateAIR(score);
+
+      document.getElementById('display-score').textContent = score;
+      document.getElementById('result-headline').textContent = `Score: ${score} | Est. AIR: ~${air.toLocaleString()}`;
+      document.getElementById('result-subtext').textContent = `Category: ${cat.toUpperCase()} | Showing colleges based on ${cat === 'general' ? 'General' : cat.toUpperCase()} cutoffs`;
+
+      // Build results
+      let safe = [], moderate = [], reach = [];
+      const filtered = type === 'all' ? colleges : colleges.filter(c => c[1] === type);
+      filtered.forEach(c => {
+        const cutoff = c[2 + catIdx];
+        const diff = score - cutoff;
+        if (diff >= 20) safe.push([...c, cutoff, 'safe']);
+        else if (diff >= -40) moderate.push([...c, cutoff, 'moderate']);
+        else if (diff >= -100) reach.push([...c, cutoff, 'reach']);
+      });
+
+      let html = '';
+      if (safe.length) {
+        html += `<div class="section-divider">✅ Safe Colleges (${safe.length})</div><div class="college-list">`;
+        safe.forEach((c, i) => { html += collegeCard(c, i+1, 'safe'); });
+        html += '</div>';
+      }
+      if (moderate.length) {
+        html += `<div class="section-divider">⚡ Moderate Chances (${moderate.length})</div><div class="college-list">`;
+        moderate.forEach((c, i) => { html += collegeCard(c, i+1, 'moderate'); });
+        html += '</div>';
+      }
+      if (reach.length) {
+        html += `<div class="section-divider">🎯 Reach Colleges (${reach.length})</div><div class="college-list">`;
+        reach.forEach((c, i) => { html += collegeCard(c, i+1, 'reach'); });
+        html += '</div>';
+      }
+      if (!safe.length && !moderate.length && !reach.length) {
+        html = `<div class="callout warning"><span class="callout-title">Score Too Low</span>Your current score of ${score} is below the cutoffs of most listed institutes. Keep practicing and aim for 600+.</div>`;
+      }
+
+      document.getElementById('college-output').innerHTML = html;
+      const res = document.getElementById('results');
+      res.classList.add('show');
+      res.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function collegeCard(c, rank, level) {
+      const chanceLabel = level === 'safe' ? 'Safe ✅' : level === 'moderate' ? 'Likely ⚡' : 'Reach 🎯';
+      const chanceClass = `chance-${level}`;
+      const cardClass = level;
+      const cutoff = c[7];
+      return `<div class="college-result-card ${cardClass}">
+        <span class="college-rank">#${rank}</span>
+        <span class="college-name-result">${c[0]}</span>
+        <span class="college-cutoff-result">Cutoff: ${cutoff}</span>
+        <span class="college-chance ${chanceClass}">${chanceLabel}</span>
+      </div>`;
+    }
+
+    function estimateAIR(score) {
+      if (score >= 900) return Math.round(Math.random() * 20 + 1);
+      if (score >= 850) return Math.round(score * -0.5 + 500);
+      if (score >= 800) return Math.round((900 - score) * 8);
+      if (score >= 750) return Math.round((900 - score) * 20);
+      if (score >= 700) return Math.round((900 - score) * 40);
+      if (score >= 650) return Math.round((900 - score) * 80);
+      if (score >= 600) return Math.round((900 - score) * 150);
+      return Math.round((900 - score) * 250);
+    }
+  </script>
+  <script src="js/app.js"></script>
+</body>
+</html>

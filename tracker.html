@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Progress Tracker | GATE A TO Z</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .subject-block { background: var(--surface); border: 1px solid var(--border); border-radius: var(--border-radius-md); padding: 1.5rem; margin-bottom: 1.5rem; }
+    .subject-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+    .subject-name { font-family: var(--font-display); font-size: 1.1rem; text-transform: uppercase; color: var(--text-primary); letter-spacing: 0.05em; }
+    .subject-progress-bar { height: 6px; background: var(--border); border-radius: 3px; margin-bottom: 1rem; overflow: hidden; }
+    .subject-progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent-primary), #3b82f6); border-radius: 3px; transition: width 0.5s ease; }
+    .topic-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.5rem; }
+    .topic-item { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0.75rem; border-radius: 6px; cursor: pointer; transition: all 0.2s; border: 1px solid transparent; }
+    .topic-item:hover { background: rgba(110,231,183,0.05); border-color: var(--border); }
+    .topic-item.done { background: rgba(110,231,183,0.08); border-color: rgba(110,231,183,0.2); }
+    .topic-item input[type=checkbox] { width: 16px; height: 16px; accent-color: var(--accent-primary); cursor: pointer; flex-shrink: 0; }
+    .topic-label { font-size: 0.875rem; color: var(--text-secondary); cursor: pointer; transition: color 0.2s; }
+    .topic-item.done .topic-label { color: var(--accent-primary); text-decoration: line-through; text-decoration-color: rgba(110,231,183,0.5); }
+    .overall-bar-wrap { background: var(--surface); border: 1px solid var(--accent-primary); border-radius: var(--border-radius-md); padding: 1.5rem; margin-bottom: 2rem; }
+    .overall-pct { font-size: 4rem; font-family: var(--font-display); color: var(--accent-primary); line-height: 1; }
+    .overall-bar { height: 12px; background: var(--border); border-radius: 6px; margin: 1rem 0; overflow: hidden; }
+    .overall-fill { height: 100%; background: linear-gradient(90deg, var(--accent-primary), #3b82f6); border-radius: 6px; transition: width 0.5s ease; }
+    .reset-btn { padding: 0.4rem 1rem; background: transparent; border: 1px solid #ef4444; color: #ef4444; border-radius: var(--border-radius-sm); cursor: pointer; font-size: 0.85rem; transition: all 0.2s; }
+    .reset-btn:hover { background: #ef4444; color: #fff; }
+    .pct-badge { background: var(--bg-primary); border: 1px solid var(--border); border-radius: 6px; padding: 2px 8px; font-size: 0.8rem; color: var(--accent-primary); font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header class="mobile-header">
+    <div class="logo">GATE A TO Z</div>
+    <button class="menu-toggle" id="menu-btn"><i class="fas fa-bars"></i></button>
+  </header>
+  <div class="app-container">
+    <nav class="sidebar" id="sidebar">
+      <div class="sidebar-header"><div class="logo">GATE A TO Z</div></div>
+      <div class="search-container mb-4">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" class="search-input" id="global-search" placeholder="Search topics...">
+        <div class="search-results-container" id="search-results"></div>
+      </div>
+      <ul class="nav-list">
+        <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Overview</a></li>
+        <li class="nav-item"><a href="predictor.html" class="nav-link"><i class="fas fa-magic"></i> College Predictor</a></li>
+        <li class="nav-item"><a href="calculator.html" class="nav-link"><i class="fas fa-calculator"></i> Score Calculator</a></li>
+        <li class="nav-item"><a href="tracker.html" class="nav-link active"><i class="fas fa-tasks"></i> Progress Tracker</a></li>
+        <li class="nav-item"><a href="stats.html" class="nav-link"><i class="fas fa-chart-bar"></i> GATE Stats</a></li>
+        <li class="nav-item"><a href="pyq.html" class="nav-link"><i class="fas fa-question-circle"></i> PYQ Explorer</a></li>
+        <li class="nav-item"><a href="books.html" class="nav-link"><i class="fas fa-book-open"></i> Book Guide</a></li>
+        <li class="nav-item"><a href="toppers.html" class="nav-link"><i class="fas fa-trophy"></i> Topper Stories</a></li>
+        <li class="nav-item"><a href="faq.html" class="nav-link"><i class="fas fa-question"></i> FAQ</a></li>
+        <li class="nav-item"><a href="syllabus.html" class="nav-link"><i class="fas fa-laptop-code"></i> GATE CS</a></li>
+        <li class="nav-item"><a href="roadmap.html" class="nav-link"><i class="fas fa-map-signs"></i> Roadmap</a></li>
+        <li class="nav-item mt-4"><a href="login.html" class="nav-link" style="border:1px solid var(--accent-primary);border-radius:var(--border-radius-sm);"><i class="fas fa-sign-in-alt"></i> Join GAZ</a></li>
+      </ul>
+    </nav>
+    <main class="main-content">
+      <section class="section">
+        <span class="section-tag">Tool</span>
+        <h2 class="section-title">Study Progress Tracker</h2>
+        <p class="text-secondary mb-4">Track every GATE CS topic. Check off topics as you complete them. Your progress is automatically saved in your browser.</p>
+
+        <div class="overall-bar-wrap">
+          <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+            <div>
+              <div class="overall-pct" id="overall-pct">0%</div>
+              <div style="color:var(--text-muted);font-size:0.85rem;">Overall Syllabus Completion</div>
+            </div>
+            <div style="text-align:right;">
+              <div style="color:var(--text-secondary);font-size:0.9rem;" id="overall-count">0 / 0 topics done</div>
+              <button class="reset-btn" onclick="resetAll()">Reset All</button>
+            </div>
+          </div>
+          <div class="overall-bar"><div class="overall-fill" id="overall-fill" style="width:0%"></div></div>
+        </div>
+
+        <div id="subjects-container"></div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const syllabus = [
+      { name: "Engineering Mathematics", topics: ["Propositional Logic","Predicates & Quantifiers","Set Theory","Relations & Functions","Graph Theory - Trees","Graph Theory - Paths & Cycles","Combinatorics","Linear Algebra - Matrices","Eigenvalues & Eigenvectors","Calculus - Limits","Calculus - Maxima & Minima","Probability - Bayes Theorem","Probability - Distributions","Statistics - Mean/Variance"] },
+      { name: "Digital Logic", topics: ["Number Systems (Binary/Hex)","Boolean Algebra","Karnaugh Maps (K-Maps)","Logic Gates","Combinational Circuits (Adder, Mux)","Sequential Circuits (Flip-Flops)","Finite State Machines","Shift Registers & Counters"] },
+      { name: "Computer Organization (COA)", topics: ["Instruction Set Architecture","Addressing Modes","ALU Design","Control Unit (Hardwired & Micro)","Pipelining","Hazards in Pipelining","Memory Hierarchy (Cache, RAM)","Cache Mapping","Memory Interleaving","I/O Systems (DMA, Interrupts)"] },
+      { name: "Programming & Data Structures", topics: ["Arrays & Strings","Linked Lists (LL, DLL, CLL)","Stacks & Queues","Trees - Binary, BST","Trees - AVL, Heaps","Hashing","Graphs Representation","Recursion","C Pointers & Memory","Sorting - Bubble/Insertion/Selection","Sorting - Merge/Quick/Heap"] },
+      { name: "Algorithms", topics: ["Asymptotic Notations (Big-O)","Recurrence Relations","Divide & Conquer","Greedy Algorithms","Dynamic Programming","BFS & DFS","Shortest Path (Dijkstra, Bellman-Ford)","Minimum Spanning Tree","NP-Completeness Basics","String Matching (KMP, Rabin-Karp)"] },
+      { name: "Theory of Computation (TOC)", topics: ["Regular Languages & DFA","NFA to DFA Conversion","Regular Expressions","Context Free Grammars (CFG)","Pushdown Automata (PDA)","Turing Machines","Decidability & Undecidability","Pumping Lemma - Regular","Pumping Lemma - CFL"] },
+      { name: "Compiler Design", topics: ["Lexical Analysis & Regex","Parsing - Top Down (LL)","Parsing - Bottom Up (LR, SLR, LALR)","Syntax Directed Translation","Intermediate Code Generation","Code Optimization","Symbol Tables","Runtime Environments"] },
+      { name: "Operating Systems", topics: ["Process & Threads","CPU Scheduling (FCFS, SJF, RR)","Synchronization (Semaphores, Mutex)","Deadlock (Detection, Avoidance)","Memory Management - Paging","Memory Management - Segmentation","Virtual Memory & Page Replacement","File Systems","Disk Scheduling"] },
+      { name: "Databases (DBMS)", topics: ["ER Diagrams","Relational Model","Relational Algebra","SQL - SELECT Queries","SQL - Joins","SQL - Nested Queries & Aggregation","Normalization (1NF, 2NF, 3NF, BCNF)","Transaction Management","Concurrency Control (2PL, TS)","Indexing & B/B+ Trees"] },
+      { name: "Computer Networks (CN)", topics: ["OSI Model & Layers","TCP/IP Suite","IPv4 Addressing & Subnetting","IPv6 Basics","ARP & RARP","Routing - Distance Vector (RIP)","Routing - Link State (OSPF)","TCP Congestion Control","UDP vs TCP","HTTP, DNS, FTP","Error Detection & Correction","Sliding Window Protocols","Ethernet & MAC"] },
+      { name: "General Aptitude", topics: ["Verbal - Reading Comprehension","Verbal - Sentence Correction","Numerical - Percentage","Numerical - Ratio & Proportion","Numerical - Profit & Loss","Numerical - Time & Work","Numerical - Geometry","Data Interpretation","Logical Reasoning","Pattern Recognition"] },
+    ];
+
+    let state = JSON.parse(localStorage.getItem('gate-tracker') || '{}');
+
+    function saveState() { localStorage.setItem('gate-tracker', JSON.stringify(state)); }
+
+    function renderAll() {
+      const container = document.getElementById('subjects-container');
+      container.innerHTML = '';
+      let totalTopics = 0, totalDone = 0;
+
+      syllabus.forEach(subj => {
+        const done = subj.topics.filter(t => state[subj.name + ':' + t]).length;
+        totalTopics += subj.topics.length;
+        totalDone += done;
+        const pct = Math.round(done / subj.topics.length * 100);
+
+        const block = document.createElement('div');
+        block.className = 'subject-block';
+        block.innerHTML = `
+          <div class="subject-header">
+            <span class="subject-name"><i class="fas fa-microchip" style="color:var(--accent-primary);margin-right:0.5rem;"></i>${subj.name}</span>
+            <span class="pct-badge">${done}/${subj.topics.length} · ${pct}%</span>
+          </div>
+          <div class="subject-progress-bar"><div class="subject-progress-fill" style="width:${pct}%"></div></div>
+          <div class="topic-grid">
+            ${subj.topics.map(t => {
+              const key = subj.name + ':' + t;
+              const checked = state[key] ? 'checked' : '';
+              const doneClass = state[key] ? 'done' : '';
+              return `<label class="topic-item ${doneClass}" id="item-${btoa(key)}">
+                <input type="checkbox" ${checked} onchange="toggle('${subj.name}','${t}',this)">
+                <span class="topic-label">${t}</span>
+              </label>`;
+            }).join('')}
+          </div>`;
+        container.appendChild(block);
+      });
+
+      const overallPct = totalTopics ? Math.round(totalDone / totalTopics * 100) : 0;
+      document.getElementById('overall-pct').textContent = overallPct + '%';
+      document.getElementById('overall-fill').style.width = overallPct + '%';
+      document.getElementById('overall-count').textContent = `${totalDone} / ${totalTopics} topics done`;
+    }
+
+    function toggle(subj, topic, el) {
+      const key = subj + ':' + topic;
+      state[key] = el.checked;
+      saveState();
+      const item = el.closest('.topic-item');
+      if (el.checked) item.classList.add('done'); else item.classList.remove('done');
+      // Update just the subject block counter
+      renderAll();
+    }
+
+    function resetAll() {
+      if (confirm('Reset all progress? This cannot be undone.')) {
+        state = {};
+        saveState();
+        renderAll();
+      }
+    }
+
+    renderAll();
+  </script>
+  <script src="js/app.js"></script>
+</body>
+</html>
