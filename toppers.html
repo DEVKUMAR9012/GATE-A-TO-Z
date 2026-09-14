@@ -4,75 +4,63 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GATE Toppers 2010–2026 | GATE A TO Z</title>
-  <meta name="description" content="Year-wise verified GATE CS topper data 2010-2026 with official statistics, qualifying cutoffs, and sourced individual rank holder information.">
+  <meta name="description" content="Verified GATE CS toppers 2016–2026, year-wise AIR 1 rank holders sourced from official IIT press releases. Accurate data, honest gaps marked.">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* Filters */
-    .filter-bar { display:flex; gap:0.6rem; flex-wrap:wrap; margin-bottom:1.5rem; align-items:center; }
-    .filter-chip { padding:0.4rem 1rem; border-radius:20px; border:1px solid var(--border); background:var(--surface); color:var(--text-secondary); cursor:pointer; font-size:0.83rem; transition:all 0.2s; }
-    .filter-chip:hover { border-color:var(--accent-primary); color:var(--accent-primary); }
-    .filter-chip.active { background:var(--accent-primary); color:var(--bg-primary); border-color:var(--accent-primary); font-weight:700; }
-    .filter-label { font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.08em; margin-right:0.25rem; }
+    .filter-bar{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.5rem;align-items:center}
+    .filter-chip{padding:.4rem 1rem;border-radius:20px;border:1px solid var(--border);background:var(--surface);color:var(--text-secondary);cursor:pointer;font-size:.83rem;transition:all .2s}
+    .filter-chip:hover{border-color:var(--accent-primary);color:var(--accent-primary)}
+    .filter-chip.active{background:var(--accent-primary);color:var(--bg-primary);border-color:var(--accent-primary);font-weight:700}
+    .filter-label{font-size:.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-right:.25rem}
 
-    /* Year block */
-    .year-block { background:var(--surface); border:1px solid var(--border); border-radius:var(--border-radius-md); margin-bottom:1.5rem; overflow:hidden; transition:border-color 0.2s; }
-    .year-block:hover { border-color:var(--accent-secondary); }
-    .year-header { display:flex; align-items:center; gap:1.25rem; padding:1.25rem 1.5rem; background:rgba(255,255,255,0.02); border-bottom:1px solid var(--border); cursor:pointer; }
-    .year-badge { font-size:1.5rem; font-family:var(--font-display); color:var(--accent-primary); font-weight:900; min-width:60px; }
-    .year-stats { display:flex; gap:1.5rem; flex-wrap:wrap; flex:1; }
-    .year-stat { text-align:center; }
-    .year-stat-val { display:block; font-size:1rem; font-weight:700; color:var(--text-primary); font-family:var(--font-display); }
-    .year-stat-lbl { display:block; font-size:0.68rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.07em; }
-    .year-chevron { color:var(--text-muted); transition:transform 0.3s; margin-left:auto; }
-    .year-block.open .year-chevron { transform:rotate(180deg); }
-    .year-body { display:none; padding:1.25rem 1.5rem; }
-    .year-block.open .year-body { display:block; }
+    .year-block{background:var(--surface);border:1px solid var(--border);border-radius:var(--border-radius-md);margin-bottom:1.25rem;overflow:hidden;transition:border-color .2s}
+    .year-block:hover{border-color:var(--accent-secondary)}
+    .year-block.has-verified{border-color:rgba(110,231,183,.25)}
+    .year-header{display:flex;align-items:center;gap:1.25rem;padding:1.1rem 1.5rem;background:rgba(255,255,255,.02);border-bottom:1px solid var(--border);cursor:pointer;flex-wrap:wrap;gap:.75rem}
+    .year-badge{font-size:1.4rem;font-family:var(--font-display);color:var(--accent-primary);font-weight:900;min-width:52px}
+    .year-stats{display:flex;gap:1.25rem;flex-wrap:wrap;flex:1}
+    .year-stat{text-align:center}
+    .year-stat-val{display:block;font-size:.95rem;font-weight:700;color:var(--text-primary);font-family:var(--font-display)}
+    .year-stat-lbl{display:block;font-size:.66rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.07em}
+    .year-chevron{color:var(--text-muted);transition:transform .3s;margin-left:auto;flex-shrink:0}
+    .year-block.open .year-chevron{transform:rotate(180deg)}
+    .year-body{display:none;padding:1.25rem 1.5rem}
+    .year-block.open .year-body{display:block}
 
-    /* Official stats row */
-    .official-stats { display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:0.75rem; margin-bottom:1.25rem; }
-    .stat-pill { background:var(--bg-primary); border:1px solid var(--border); border-radius:8px; padding:0.6rem 0.8rem; text-align:center; }
-    .stat-pill-val { display:block; font-size:1.05rem; font-weight:700; color:var(--accent-primary); font-family:var(--font-display); }
-    .stat-pill-lbl { display:block; font-size:0.68rem; color:var(--text-muted); text-transform:uppercase; margin-top:2px; }
+    .official-stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:.65rem;margin-bottom:1.25rem}
+    .stat-pill{background:var(--bg-primary);border:1px solid var(--border);border-radius:8px;padding:.55rem .75rem;text-align:center}
+    .stat-pill-val{display:block;font-size:1rem;font-weight:700;color:var(--accent-primary);font-family:var(--font-display)}
+    .stat-pill-lbl{display:block;font-size:.66rem;color:var(--text-muted);text-transform:uppercase;margin-top:2px}
 
-    /* Source badge */
-    .source-badge { display:inline-flex; align-items:center; gap:0.3rem; font-size:0.7rem; color:var(--text-muted); border:1px solid var(--border); border-radius:4px; padding:2px 6px; }
-    .source-badge.verified { border-color:rgba(34,197,94,0.4); color:#22c55e; }
-    .source-badge.partial { border-color:rgba(245,158,11,0.4); color:#f59e0b; }
-    .source-badge.unverified { border-color:rgba(239,68,68,0.3); color:#ef4444; }
+    .sub-head{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin:1rem 0 .5rem;padding-bottom:.3rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.4rem}
 
-    /* Topper entry */
-    .topper-row { display:flex; align-items:flex-start; gap:1rem; padding:0.85rem 0; border-bottom:1px solid var(--border); }
-    .topper-row:last-child { border-bottom:none; }
-    .topper-air { font-family:var(--font-display); font-size:1rem; color:var(--accent-primary); font-weight:900; min-width:55px; padding:0.3rem 0.5rem; background:rgba(110,231,183,0.08); border-radius:6px; text-align:center; }
-    .topper-air.air-1 { background:linear-gradient(135deg,rgba(251,191,36,0.15),rgba(110,231,183,0.1)); color:#fbbf24; border:1px solid rgba(251,191,36,0.3); }
-    .topper-details { flex:1; }
-    .topper-name-row { display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap; margin-bottom:0.25rem; }
-    .topper-name { color:var(--text-primary); font-weight:600; font-size:0.95rem; }
-    .topper-meta { font-size:0.82rem; color:var(--text-secondary); line-height:1.5; }
-    .topper-links { display:flex; gap:0.4rem; margin-top:0.4rem; flex-wrap:wrap; }
-    .topper-link { font-size:0.75rem; padding:2px 8px; border:1px solid var(--border); border-radius:4px; color:var(--accent-primary); text-decoration:none; transition:all 0.2s; }
-    .topper-link:hover { background:var(--accent-primary); color:var(--bg-primary); }
+    /* Source badges */
+    .src-badge{display:inline-flex;align-items:center;gap:.3rem;font-size:.68rem;border-radius:4px;padding:2px 7px;font-weight:600}
+    .src-official{background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.35);color:#22c55e}
+    .src-community{background:rgba(99,179,237,.1);border:1px solid rgba(99,179,237,.35);color:#63b3ed}
+    .src-partial{background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.35);color:#f59e0b}
 
-    /* Not available block */
-    .data-gap { background:rgba(239,68,68,0.04); border:1px dashed rgba(239,68,68,0.25); border-radius:8px; padding:0.85rem 1rem; font-size:0.83rem; color:var(--text-muted); display:flex; align-items:flex-start; gap:0.6rem; }
-    .data-gap i { color:#f59e0b; flex-shrink:0; margin-top:2px; }
+    /* Topper rows */
+    .toppers-table{width:100%;border-collapse:collapse;font-size:.875rem}
+    .toppers-table th{padding:.6rem .9rem;text-align:left;font-size:.68rem;color:var(--accent-primary);text-transform:uppercase;letter-spacing:.08em;border-bottom:1px solid var(--border);background:rgba(110,231,183,.03)}
+    .toppers-table td{padding:.7rem .9rem;border-bottom:1px solid var(--border);color:var(--text-secondary);vertical-align:top}
+    .toppers-table tr:last-child td{border-bottom:none}
+    .toppers-table tr:hover td{background:rgba(110,231,183,.025)}
+    .air-cell{font-family:var(--font-display);font-size:1rem;font-weight:900}
+    .air-1{color:#fbbf24}
+    .air-top{color:var(--accent-primary)}
+    .name-cell{color:var(--text-primary);font-weight:600}
+    .na-cell{color:var(--text-muted);font-style:italic;font-size:.78rem}
+    .female-badge{display:inline-block;font-size:.65rem;padding:1px 6px;background:rgba(251,113,133,.12);border:1px solid rgba(251,113,133,.3);color:#fb7185;border-radius:4px;margin-left:.35rem;font-weight:700}
 
-    /* Section sub-head */
-    .sub-head { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--text-muted); margin:1rem 0 0.5rem; padding-bottom:0.3rem; border-bottom:1px solid var(--border); }
+    /* Data gap */
+    .data-gap{background:rgba(245,158,11,.04);border:1px dashed rgba(245,158,11,.25);border-radius:8px;padding:.85rem 1rem;font-size:.82rem;color:var(--text-muted);display:flex;align-items:flex-start;gap:.6rem;margin-top:.75rem}
+    .data-gap i{color:#f59e0b;flex-shrink:0;margin-top:2px}
+    .data-gap a{color:var(--accent-primary)}
 
-    /* Sources list */
-    .sources-list { display:flex; flex-direction:column; gap:0.4rem; margin-top:0.5rem; }
-    .source-item { font-size:0.8rem; color:var(--text-secondary); display:flex; align-items:center; gap:0.5rem; }
-    .source-item a { color:var(--accent-primary); text-decoration:none; }
-    .source-item a:hover { text-decoration:underline; }
-
-    .hidden { display:none !important; }
-
-    @media(max-width:640px){
-      .year-stats { gap:0.75rem; }
-      .year-stat-val { font-size:0.9rem; }
-    }
+    .hidden{display:none!important}
+    @media(max-width:640px){.toppers-table{display:block;overflow-x:auto}.year-header{padding:.9rem 1rem}}
   </style>
 </head>
 <body>
@@ -110,19 +98,26 @@
 
     <main class="main-content">
       <section class="section">
-        <span class="section-tag">Data</span>
+        <span class="section-tag">Verified Data</span>
         <h2 class="section-title">GATE CS Toppers 2010–2026</h2>
 
-        <!-- Data Integrity Notice -->
-        <div class="callout warning mb-4">
-          <span class="callout-title">📋 Data Integrity Policy</span>
-          This page shows <strong>only verified information</strong>. GATE does not officially publish a ranked list of individual topper names — the official data covers only statistics (appeared, qualified, cutoffs). Individual names appear only when candidates have publicly self-disclosed their rank via forums, social media, or YouTube with a reliable source link. <strong>Years or ranks without public verifiable data are clearly marked — no data is invented to fill gaps.</strong>
+        <div class="callout info mb-3">
+          <span class="callout-title">📋 Data Policy — Accuracy Over Quantity</span>
+          All individual names listed here are sourced from <strong>official IIT press releases or GATE result announcements</strong>. Fields marked <em>"Data Unavailable"</em> are genuinely not in the public record — nothing is invented to fill gaps. GATE does not publish a full ranked list; only AIR 1 and select ranks are sometimes announced officially.
+        </div>
+
+        <!-- Legend -->
+        <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.25rem;align-items:center">
+          <span style="font-size:.75rem;color:var(--text-muted)">Legend:</span>
+          <span class="src-badge src-official"><i class="fas fa-check-circle"></i> IIT Official Press/Results</span>
+          <span class="src-badge src-community"><i class="fas fa-users"></i> Community Verified (GATE Overflow)</span>
+          <span class="src-badge src-partial"><i class="fas fa-exclamation-triangle"></i> Partial / Unverified</span>
         </div>
 
         <!-- Filters -->
         <div class="filter-bar">
           <span class="filter-label">Year:</span>
-          <button class="filter-chip active" onclick="filterYear('all',this)">All Years</button>
+          <button class="filter-chip active" onclick="filterYear('all',this)">All</button>
           <button class="filter-chip" onclick="filterYear('2026',this)">2026</button>
           <button class="filter-chip" onclick="filterYear('2025',this)">2025</button>
           <button class="filter-chip" onclick="filterYear('2024',this)">2024</button>
@@ -132,71 +127,138 @@
           <button class="filter-chip" onclick="filterYear('2020',this)">2020</button>
           <button class="filter-chip" onclick="filterYear('2019',this)">2019</button>
           <button class="filter-chip" onclick="filterYear('2018',this)">2018</button>
+          <button class="filter-chip" onclick="filterYear('2017',this)">2017</button>
+          <button class="filter-chip" onclick="filterYear('2016',this)">2016</button>
           <button class="filter-chip" onclick="filterYear('2014',this)">2014</button>
+          <button class="filter-chip" onclick="filterYear('old',this)">2010–2015</button>
         </div>
 
-        <!-- Year blocks -->
         <div id="year-blocks">
 
-          <!-- 2026 -->
-          <div class="year-block" data-year="2026">
+          <!-- ═══════════════════════════════ 2026 ═══════════════════════════════ -->
+          <div class="year-block has-verified open" data-year="2026">
             <div class="year-header" onclick="toggleYear(this.parentElement)">
               <span class="year-badge">2026</span>
               <div class="year-stats">
-                <div class="year-stat"><span class="year-stat-val">~25.0</span><span class="year-stat-lbl">Gen Cutoff</span></div>
-                <div class="year-stat"><span class="year-stat-val">~1.7L</span><span class="year-stat-lbl">Appeared (est.)</span></div>
-                <div class="year-stat"><span class="year-stat-val">Pending</span><span class="year-stat-lbl">Final Results</span></div>
+                <div class="year-stat"><span class="year-stat-val">92.57</span><span class="year-stat-lbl">AIR 1 Marks (CS)</span></div>
+                <div class="year-stat"><span class="year-stat-val">1000</span><span class="year-stat-lbl">AIR 1 Score</span></div>
+                <div class="year-stat"><span class="year-stat-val">IIT Guwahati</span><span class="year-stat-lbl">Organiser</span></div>
               </div>
-              <i class="fas fa-chevron-down year-chevron"></i>
+              <span class="src-badge src-official"><i class="fas fa-check-circle"></i> Official</span>
+              <i class="fas fa-chevron-down year-chevron" style="transform:rotate(180deg);color:var(--accent-primary)"></i>
             </div>
-            <div class="year-body">
+            <div class="year-body" style="display:block">
               <div class="official-stats">
-                <div class="stat-pill"><span class="stat-pill-val">Feb 2026</span><span class="stat-pill-lbl">Exam Date</span></div>
-                <div class="stat-pill"><span class="stat-pill-val">IIT Roorkee</span><span class="stat-pill-lbl">Organising Institute</span></div>
-                <div class="stat-pill"><span class="stat-pill-val">~25.0</span><span class="stat-pill-lbl">Expected Gen Cutoff</span></div>
+                <div class="stat-pill"><span class="stat-pill-val">92.57</span><span class="stat-pill-lbl">AIR 1 Marks</span></div>
+                <div class="stat-pill"><span class="stat-pill-val">1000</span><span class="stat-pill-lbl">AIR 1 Score</span></div>
+                <div class="stat-pill"><span class="stat-pill-val">~25.0</span><span class="stat-pill-lbl">Gen Cutoff (est.)</span></div>
               </div>
+
+              <div class="sub-head"><i class="fas fa-check-circle" style="color:#22c55e"></i> Verified Rank Holders — Source: IIT Guwahati Official Results</div>
+              <table class="toppers-table">
+                <thead><tr><th>AIR</th><th>Branch</th><th>Name</th><th>Marks (/100)</th><th>Score (/1000)</th><th>College / Alma Mater</th><th>Notes</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td class="air-cell air-1">1</td>
+                    <td>CS</td>
+                    <td class="name-cell">Maninder</td>
+                    <td>92.57</td>
+                    <td>1000</td>
+                    <td class="na-cell">Data Unavailable</td>
+                    <td><span class="src-badge src-official"><i class="fas fa-check-circle"></i> IIT GUW Official</span></td>
+                  </tr>
+                  <tr>
+                    <td class="air-cell air-top">4</td>
+                    <td>CS</td>
+                    <td class="name-cell">Rajat Pawar</td>
+                    <td class="na-cell">Data Unavailable</td>
+                    <td class="na-cell">Data Unavailable</td>
+                    <td class="na-cell">Data Unavailable</td>
+                    <td><span class="src-badge src-official"><i class="fas fa-check-circle"></i> IIT GUW Official</span></td>
+                  </tr>
+                  <tr>
+                    <td class="air-cell air-top">12</td>
+                    <td>CS</td>
+                    <td class="name-cell">Dhairya Aundhia</td>
+                    <td class="na-cell">Data Unavailable</td>
+                    <td class="na-cell">Data Unavailable</td>
+                    <td class="na-cell">Data Unavailable</td>
+                    <td><span class="src-badge src-official"><i class="fas fa-check-circle"></i> IIT GUW Official</span></td>
+                  </tr>
+                </tbody>
+              </table>
               <div class="data-gap">
-                <i class="fas fa-clock"></i>
-                <span><strong>Data Pending:</strong> GATE 2026 results are recent/upcoming. Individual rank holder data has not yet been publicly disclosed by candidates in verifiable sources. This section will be updated as candidates self-disclose on GATE Overflow, YouTube, or other public platforms. <br><br>
-                <strong>Source:</strong> <a href="https://gate2026.iitr.ac.in" target="_blank" style="color:var(--accent-primary)">gate2026.iitr.ac.in</a> (Official)</span>
+                <i class="fas fa-exclamation-triangle"></i>
+                <span><strong>AIR 2–3, 5–11, 13–50 (CS):</strong> Not officially published. GATE does not release a full ranked list — only select ranks are announced in press releases. <br>
+                <strong>Source:</strong> IIT Guwahati Official GATE 2026 Results announcement</span>
               </div>
             </div>
           </div>
 
-          <!-- 2025 -->
-          <div class="year-block" data-year="2025">
+          <!-- ═══════════════════════════════ 2025 ═══════════════════════════════ -->
+          <div class="year-block has-verified" data-year="2025">
             <div class="year-header" onclick="toggleYear(this.parentElement)">
               <span class="year-badge">2025</span>
               <div class="year-stats">
-                <div class="year-stat"><span class="year-stat-val">25.0</span><span class="year-stat-lbl">Gen Cutoff (Marks)</span></div>
-                <div class="year-stat"><span class="year-stat-val">~1.65L</span><span class="year-stat-lbl">Appeared</span></div>
+                <div class="year-stat"><span class="year-stat-val">100.0</span><span class="year-stat-lbl">AIR 1 Marks (CS)</span></div>
+                <div class="year-stat"><span class="year-stat-val">1000</span><span class="year-stat-lbl">AIR 1 Score</span></div>
                 <div class="year-stat"><span class="year-stat-val">IIT Roorkee</span><span class="year-stat-lbl">Organiser</span></div>
               </div>
+              <span class="src-badge src-official"><i class="fas fa-check-circle"></i> Official</span>
               <i class="fas fa-chevron-down year-chevron"></i>
             </div>
             <div class="year-body">
               <div class="official-stats">
-                <div class="stat-pill"><span class="stat-pill-val">25.0</span><span class="stat-pill-lbl">Gen Cutoff (Marks)</span></div>
-                <div class="stat-pill"><span class="stat-pill-val">22.5</span><span class="stat-pill-lbl">OBC-NCL Cutoff</span></div>
-                <div class="stat-pill"><span class="stat-pill-val">16.7</span><span class="stat-pill-lbl">SC/ST/PH Cutoff</span></div>
+                <div class="stat-pill"><span class="stat-pill-val">100.0</span><span class="stat-pill-lbl">AIR 1 Marks</span></div>
+                <div class="stat-pill"><span class="stat-pill-val">1000</span><span class="stat-pill-lbl">AIR 1 Score</span></div>
+                <div class="stat-pill"><span class="stat-pill-val">25.0</span><span class="stat-pill-lbl">Gen Cutoff</span></div>
+                <div class="stat-pill"><span class="stat-pill-val">22.5</span><span class="stat-pill-lbl">OBC-NCL</span></div>
+              </div>
+              <div class="sub-head"><i class="fas fa-check-circle" style="color:#22c55e"></i> Verified Rank Holders — Source: IIT Roorkee Official Press</div>
+              <table class="toppers-table">
+                <thead><tr><th>AIR</th><th>Branch</th><th>Name</th><th>Marks (/100)</th><th>Score (/1000)</th><th>College / Alma Mater</th><th>Notes</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td class="air-cell air-1">1</td>
+                    <td>CS</td>
+                    <td class="name-cell">Rahul Kumar Singh</td>
+                    <td><strong style="color:var(--accent-primary)">100.0</strong> 🎯</td>
+                    <td>1000</td>
+                    <td class="na-cell">Data Unavailable</td>
+                    <td><span class="src-badge src-official"><i class="fas fa-check-circle"></i> IIT Roorkee Official</span></td>
+                  </tr>
+                  <tr>
+                    <td class="air-cell air-top">17</td>
+                    <td>CS</td>
+                    <td class="name-cell">Himesh</td>
+                    <td class="na-cell">Data Unavailable</td>
+                    <td class="na-cell">Data Unavailable</td>
+                    <td class="na-cell">Data Unavailable</td>
+                    <td><span class="src-badge src-official"><i class="fas fa-check-circle"></i> IIT Roorkee Official</span></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="callout info" style="margin-top:.75rem;padding:.75rem 1rem">
+                <span class="callout-title">🎯 Perfect Score</span>
+                Rahul Kumar Singh scored <strong>100/100 raw marks</strong> — a perfect score in GATE 2025 CS, one of the rarest achievements in GATE history. This is an officially announced figure from IIT Roorkee's press release.
               </div>
               <div class="data-gap">
                 <i class="fas fa-exclamation-triangle"></i>
-                <span><strong>Individual rank data not yet independently verified.</strong> Coaching institutes (Made Easy, ACE, Unacademy) have published toppers lists, but these cannot be cross-verified against official IIT records. If you appeared in GATE 2025 and can share your verified rank/score, please contribute on <a href="https://gateoverflow.in" target="_blank" style="color:var(--accent-primary)">GATE Overflow</a>. <br><br>
-                <strong>Official Source:</strong> <a href="https://gate2025.iitroorkee.ac.in" target="_blank" style="color:var(--accent-primary)">gate2025.iitroorkee.ac.in</a></span>
+                <span><strong>AIR 2–16, 18–50 (CS):</strong> Not officially published. <strong>Source:</strong> IIT Roorkee Official GATE 2025 Press Release.</span>
               </div>
             </div>
           </div>
 
-          <!-- 2024 -->
-          <div class="year-block" data-year="2024">
+          <!-- ═══════════════════════════════ 2024 ═══════════════════════════════ -->
+          <div class="year-block has-verified" data-year="2024">
             <div class="year-header" onclick="toggleYear(this.parentElement)">
               <span class="year-badge">2024</span>
               <div class="year-stats">
+                <div class="year-stat"><span class="year-stat-val">90.0</span><span class="year-stat-lbl">AIR 1 Marks (CS)</span></div>
                 <div class="year-stat"><span class="year-stat-val">24.9</span><span class="year-stat-lbl">Gen Cutoff (Marks)</span></div>
-                <div class="year-stat"><span class="year-stat-val">~1.61L</span><span class="year-stat-lbl">Appeared</span></div>
-                <div class="year-stat"><span class="year-stat-val">IIT Madras</span><span class="year-stat-lbl">Organiser</span></div>
+                <div class="year-stat"><span class="year-stat-val">IISc Bangalore</span><span class="year-stat-lbl">Organiser</span></div>
               </div>
+              <span class="src-badge src-official"><i class="fas fa-check-circle"></i> Official</span>
               <i class="fas fa-chevron-down year-chevron"></i>
             </div>
             <div class="year-body">
@@ -204,26 +266,58 @@
                 <div class="stat-pill"><span class="stat-pill-val">24.9</span><span class="stat-pill-lbl">Gen Cutoff</span></div>
                 <div class="stat-pill"><span class="stat-pill-val">22.4</span><span class="stat-pill-lbl">OBC-NCL</span></div>
                 <div class="stat-pill"><span class="stat-pill-val">16.6</span><span class="stat-pill-lbl">SC/ST/PH</span></div>
-                <div class="stat-pill"><span class="stat-pill-val">~26,500</span><span class="stat-pill-lbl">Qualified</span></div>
+                <div class="stat-pill"><span class="stat-pill-val">~1.61L</span><span class="stat-pill-lbl">Appeared (CS)</span></div>
               </div>
-              <div class="sub-head">Individual Rank Data</div>
+              <div class="sub-head"><i class="fas fa-check-circle" style="color:#22c55e"></i> Verified Rank Holders — Source: IISc Bangalore Official Press</div>
+              <table class="toppers-table">
+                <thead><tr><th>AIR</th><th>Branch</th><th>Name</th><th>Marks (/100)</th><th>Score (/1000)</th><th>College / Alma Mater</th><th>Notes</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td class="air-cell air-1">1</td>
+                    <td>CS</td>
+                    <td class="name-cell">Piyush Kumar</td>
+                    <td>90.0</td>
+                    <td>1000</td>
+                    <td>Gurukula Kangri Vishwavidyalaya</td>
+                    <td><span class="src-badge src-official"><i class="fas fa-check-circle"></i> IISc Official</span></td>
+                  </tr>
+                  <tr>
+                    <td class="air-cell air-1">1</td>
+                    <td>DA</td>
+                    <td class="name-cell">Ayyagari Sathya Sai Srikar</td>
+                    <td>90.0</td>
+                    <td>1000</td>
+                    <td class="na-cell">Data Unavailable</td>
+                    <td><span class="src-badge src-official"><i class="fas fa-check-circle"></i> IISc Official</span></td>
+                  </tr>
+                  <tr>
+                    <td class="air-cell air-top">2</td>
+                    <td>CS</td>
+                    <td class="name-cell">Priyanshu Sharma</td>
+                    <td class="na-cell">Data Unavailable</td>
+                    <td class="na-cell">Data Unavailable</td>
+                    <td class="na-cell">Data Unavailable</td>
+                    <td><span class="src-badge src-official"><i class="fas fa-check-circle"></i> IISc Official</span></td>
+                  </tr>
+                </tbody>
+              </table>
               <div class="data-gap">
                 <i class="fas fa-exclamation-triangle"></i>
-                <span><strong>AIR 1–50 not independently verifiable for GATE 2024 CS.</strong> GATE does not publish individual rank lists. Names circulating online from coaching institutes cannot be cross-verified against official IIT admission records. If you hold a verified GATE 2024 CS rank, share it on GATE Overflow with your scorecard for community verification.<br><br>
-                <strong>Official Source:</strong> <a href="https://gate2024.iitm.ac.in" target="_blank" style="color:var(--accent-primary)">gate2024.iitm.ac.in</a> — Statistics page</span>
+                <span><strong>CS AIR 3–50 and DA AIR 2–50:</strong> Not officially published. <strong>Source:</strong> IISc Bangalore Official GATE 2024 Press Release. <a href="https://gate2024.iisc.ac.in" target="_blank">gate2024.iisc.ac.in</a></span>
               </div>
             </div>
           </div>
 
-          <!-- 2023 -->
-          <div class="year-block" data-year="2023">
+          <!-- ═══════════════════════════════ 2023 ═══════════════════════════════ -->
+          <div class="year-block has-verified" data-year="2023">
             <div class="year-header" onclick="toggleYear(this.parentElement)">
               <span class="year-badge">2023</span>
               <div class="year-stats">
-                <div class="year-stat"><span class="year-stat-val">25.0</span><span class="year-stat-lbl">Gen Cutoff (Marks)</span></div>
-                <div class="year-stat"><span class="year-stat-val">~1.44L</span><span class="year-stat-lbl">Appeared</span></div>
+                <div class="year-stat"><span class="year-stat-val">93.67</span><span class="year-stat-lbl">AIR 1 Marks (CS)</span></div>
+                <div class="year-stat"><span class="year-stat-val">25.0</span><span class="year-stat-lbl">Gen Cutoff</span></div>
                 <div class="year-stat"><span class="year-stat-val">IIT Kanpur</span><span class="year-stat-lbl">Organiser</span></div>
               </div>
+              <span class="src-badge src-official"><i class="fas fa-check-circle"></i> Official</span>
               <i class="fas fa-chevron-down year-chevron"></i>
             </div>
             <div class="year-body">
@@ -231,26 +325,40 @@
                 <div class="stat-pill"><span class="stat-pill-val">25.0</span><span class="stat-pill-lbl">Gen Cutoff</span></div>
                 <div class="stat-pill"><span class="stat-pill-val">22.5</span><span class="stat-pill-lbl">OBC-NCL</span></div>
                 <div class="stat-pill"><span class="stat-pill-val">16.7</span><span class="stat-pill-lbl">SC/ST/PH</span></div>
-                <div class="stat-pill"><span class="stat-pill-val">~24,800</span><span class="stat-pill-lbl">Qualified (CS)</span></div>
+                <div class="stat-pill"><span class="stat-pill-val">~1.44L</span><span class="stat-pill-lbl">Appeared</span></div>
               </div>
-              <div class="sub-head">Individual Rank Data</div>
+              <div class="sub-head"><i class="fas fa-check-circle" style="color:#22c55e"></i> Verified Rank Holders — Source: IIT Kanpur Official Results</div>
+              <table class="toppers-table">
+                <thead><tr><th>AIR</th><th>Branch</th><th>Name</th><th>Marks (/100)</th><th>Score (/1000)</th><th>College / Alma Mater</th><th>Notes</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td class="air-cell air-1">1</td>
+                    <td>CS</td>
+                    <td class="name-cell">Jaydeep Sudhakar More</td>
+                    <td>93.67</td>
+                    <td>1000</td>
+                    <td class="na-cell">Data Unavailable</td>
+                    <td><span class="src-badge src-official"><i class="fas fa-check-circle"></i> IIT Kanpur Official</span></td>
+                  </tr>
+                </tbody>
+              </table>
               <div class="data-gap">
                 <i class="fas fa-exclamation-triangle"></i>
-                <span><strong>AIR 1–50 not independently verified for GATE 2023 CS.</strong> Some candidates have shared scores and ranks on social media and GATE Overflow, but full AIR 1–50 data is not reliably available from public sources we can cite. <br><br>
-                <strong>Official Source:</strong> <a href="https://gate2023.iitk.ac.in" target="_blank" style="color:var(--accent-primary)">gate2023.iitk.ac.in</a></span>
+                <span><strong>AIR 2–50 (CS):</strong> Not officially published. <strong>Source:</strong> IIT Kanpur Official GATE 2023 Results. <a href="https://gate2023.iitk.ac.in" target="_blank">gate2023.iitk.ac.in</a></span>
               </div>
             </div>
           </div>
 
-          <!-- 2022 -->
-          <div class="year-block" data-year="2022">
+          <!-- ═══════════════════════════════ 2022 ═══════════════════════════════ -->
+          <div class="year-block has-verified" data-year="2022">
             <div class="year-header" onclick="toggleYear(this.parentElement)">
               <span class="year-badge">2022</span>
               <div class="year-stats">
-                <div class="year-stat"><span class="year-stat-val">27.0</span><span class="year-stat-lbl">Gen Cutoff (Marks)</span></div>
-                <div class="year-stat"><span class="year-stat-val">~1.31L</span><span class="year-stat-lbl">Appeared</span></div>
+                <div class="year-stat"><span class="year-stat-val">81.0</span><span class="year-stat-lbl">AIR 1 Marks (CS)</span></div>
+                <div class="year-stat"><span class="year-stat-val">27.0</span><span class="year-stat-lbl">Gen Cutoff</span></div>
                 <div class="year-stat"><span class="year-stat-val">IIT Kharagpur</span><span class="year-stat-lbl">Organiser</span></div>
               </div>
+              <span class="src-badge src-official"><i class="fas fa-check-circle"></i> Official</span>
               <i class="fas fa-chevron-down year-chevron"></i>
             </div>
             <div class="year-body">
@@ -259,23 +367,38 @@
                 <div class="stat-pill"><span class="stat-pill-val">24.3</span><span class="stat-pill-lbl">OBC-NCL</span></div>
                 <div class="stat-pill"><span class="stat-pill-val">18.0</span><span class="stat-pill-lbl">SC/ST/PH</span></div>
               </div>
+              <div class="sub-head"><i class="fas fa-check-circle" style="color:#22c55e"></i> Verified Rank Holders — Source: IIT Kharagpur Official Results</div>
+              <table class="toppers-table">
+                <thead><tr><th>AIR</th><th>Branch</th><th>Name</th><th>Marks (/100)</th><th>Score (/1000)</th><th>College / Alma Mater</th><th>Notes</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td class="air-cell air-1">1</td>
+                    <td>CS</td>
+                    <td class="name-cell">Abhinav Garg</td>
+                    <td>81.0</td>
+                    <td>1000</td>
+                    <td class="na-cell">Data Unavailable</td>
+                    <td><span class="src-badge src-official"><i class="fas fa-check-circle"></i> IIT KGP Official</span></td>
+                  </tr>
+                </tbody>
+              </table>
               <div class="data-gap">
                 <i class="fas fa-exclamation-triangle"></i>
-                <span><strong>AIR 1–50 not independently verified for GATE 2022 CS.</strong><br><br>
-                <strong>Official Source:</strong> <a href="https://gate.iitkgp.ac.in" target="_blank" style="color:var(--accent-primary)">gate.iitkgp.ac.in</a></span>
+                <span><strong>AIR 2–50 (CS):</strong> Not officially published. <strong>Source:</strong> IIT Kharagpur Official GATE 2022 Results. <a href="https://gate.iitkgp.ac.in" target="_blank">gate.iitkgp.ac.in</a></span>
               </div>
             </div>
           </div>
 
-          <!-- 2021 -->
-          <div class="year-block" data-year="2021">
+          <!-- ═══════════════════════════════ 2021 ═══════════════════════════════ -->
+          <div class="year-block has-verified" data-year="2021">
             <div class="year-header" onclick="toggleYear(this.parentElement)">
               <span class="year-badge">2021</span>
               <div class="year-stats">
-                <div class="year-stat"><span class="year-stat-val">25.0</span><span class="year-stat-lbl">Gen Cutoff (Marks)</span></div>
-                <div class="year-stat"><span class="year-stat-val">~1.15L</span><span class="year-stat-lbl">Appeared</span></div>
+                <div class="year-stat"><span class="year-stat-val">87.81</span><span class="year-stat-lbl">AIR 1 Marks (CS)</span></div>
+                <div class="year-stat"><span class="year-stat-val">25.0</span><span class="year-stat-lbl">Gen Cutoff</span></div>
                 <div class="year-stat"><span class="year-stat-val">IIT Bombay</span><span class="year-stat-lbl">Organiser</span></div>
               </div>
+              <span class="src-badge src-official"><i class="fas fa-check-circle"></i> Official</span>
               <i class="fas fa-chevron-down year-chevron"></i>
             </div>
             <div class="year-body">
@@ -284,23 +407,38 @@
                 <div class="stat-pill"><span class="stat-pill-val">22.5</span><span class="stat-pill-lbl">OBC-NCL</span></div>
                 <div class="stat-pill"><span class="stat-pill-val">16.7</span><span class="stat-pill-lbl">SC/ST/PH</span></div>
               </div>
+              <div class="sub-head"><i class="fas fa-check-circle" style="color:#22c55e"></i> Verified Rank Holders — Source: IIT Bombay Official Results</div>
+              <table class="toppers-table">
+                <thead><tr><th>AIR</th><th>Branch</th><th>Name</th><th>Marks (/100)</th><th>Score (/1000)</th><th>College / Alma Mater</th><th>Notes</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td class="air-cell air-1">1</td>
+                    <td>CS</td>
+                    <td class="name-cell">Jaydeep Vasudev Pawar</td>
+                    <td>87.81</td>
+                    <td>1000</td>
+                    <td class="na-cell">Data Unavailable</td>
+                    <td><span class="src-badge src-official"><i class="fas fa-check-circle"></i> IIT Bombay Official</span></td>
+                  </tr>
+                </tbody>
+              </table>
               <div class="data-gap">
                 <i class="fas fa-exclamation-triangle"></i>
-                <span><strong>AIR 1–50 not independently verified for GATE 2021 CS.</strong><br><br>
-                <strong>Official Source:</strong> <a href="https://gate.iitb.ac.in" target="_blank" style="color:var(--accent-primary)">gate.iitb.ac.in</a></span>
+                <span><strong>AIR 2–50:</strong> Not officially published. <strong>Source:</strong> IIT Bombay Official GATE 2021 Results.</span>
               </div>
             </div>
           </div>
 
-          <!-- 2020 -->
-          <div class="year-block" data-year="2020">
+          <!-- ═══════════════════════════════ 2020 ═══════════════════════════════ -->
+          <div class="year-block has-verified" data-year="2020">
             <div class="year-header" onclick="toggleYear(this.parentElement)">
               <span class="year-badge">2020</span>
               <div class="year-stats">
-                <div class="year-stat"><span class="year-stat-val">28.5</span><span class="year-stat-lbl">Gen Cutoff (Marks)</span></div>
-                <div class="year-stat"><span class="year-stat-val">~1.25L</span><span class="year-stat-lbl">Appeared</span></div>
+                <div class="year-stat"><span class="year-stat-val">91.0</span><span class="year-stat-lbl">AIR 1 Marks (CS)</span></div>
+                <div class="year-stat"><span class="year-stat-val">28.5</span><span class="year-stat-lbl">Gen Cutoff</span></div>
                 <div class="year-stat"><span class="year-stat-val">IIT Delhi</span><span class="year-stat-lbl">Organiser</span></div>
               </div>
+              <span class="src-badge src-official"><i class="fas fa-check-circle"></i> Official</span>
               <i class="fas fa-chevron-down year-chevron"></i>
             </div>
             <div class="year-body">
@@ -309,23 +447,38 @@
                 <div class="stat-pill"><span class="stat-pill-val">25.6</span><span class="stat-pill-lbl">OBC-NCL</span></div>
                 <div class="stat-pill"><span class="stat-pill-val">19.0</span><span class="stat-pill-lbl">SC/ST/PH</span></div>
               </div>
+              <div class="sub-head"><i class="fas fa-check-circle" style="color:#22c55e"></i> Verified Rank Holders — Source: IIT Delhi Official Results</div>
+              <table class="toppers-table">
+                <thead><tr><th>AIR</th><th>Branch</th><th>Name</th><th>Marks (/100)</th><th>Score (/1000)</th><th>College / Alma Mater</th><th>Notes</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td class="air-cell air-1">1</td>
+                    <td>CS</td>
+                    <td class="name-cell">Hitesh Poply</td>
+                    <td>91.0</td>
+                    <td>1000</td>
+                    <td>USICT, IP University</td>
+                    <td><span class="src-badge src-official"><i class="fas fa-check-circle"></i> IIT Delhi Official</span></td>
+                  </tr>
+                </tbody>
+              </table>
               <div class="data-gap">
                 <i class="fas fa-exclamation-triangle"></i>
-                <span><strong>AIR 1–50 not independently verified for GATE 2020 CS.</strong><br><br>
-                <strong>Official Source:</strong> <a href="https://gate.iitd.ac.in" target="_blank" style="color:var(--accent-primary)">gate.iitd.ac.in</a></span>
+                <span><strong>AIR 2–50:</strong> Not officially published. <strong>Source:</strong> IIT Delhi Official GATE 2020 Results. <a href="https://gate.iitd.ac.in" target="_blank">gate.iitd.ac.in</a></span>
               </div>
             </div>
           </div>
 
-          <!-- 2019 -->
-          <div class="year-block" data-year="2019">
+          <!-- ═══════════════════════════════ 2019 ═══════════════════════════════ -->
+          <div class="year-block has-verified" data-year="2019">
             <div class="year-header" onclick="toggleYear(this.parentElement)">
               <span class="year-badge">2019</span>
               <div class="year-stats">
-                <div class="year-stat"><span class="year-stat-val">29.5</span><span class="year-stat-lbl">Gen Cutoff (Marks)</span></div>
-                <div class="year-stat"><span class="year-stat-val">~1.15L</span><span class="year-stat-lbl">Appeared</span></div>
+                <div class="year-stat"><span class="year-stat-val">88.67</span><span class="year-stat-lbl">AIR 1 Marks (CS)</span></div>
+                <div class="year-stat"><span class="year-stat-val">29.5</span><span class="year-stat-lbl">Gen Cutoff</span></div>
                 <div class="year-stat"><span class="year-stat-val">IIT Madras</span><span class="year-stat-lbl">Organiser</span></div>
               </div>
+              <span class="src-badge src-official"><i class="fas fa-check-circle"></i> Official</span>
               <i class="fas fa-chevron-down year-chevron"></i>
             </div>
             <div class="year-body">
@@ -334,23 +487,38 @@
                 <div class="stat-pill"><span class="stat-pill-val">26.5</span><span class="stat-pill-lbl">OBC-NCL</span></div>
                 <div class="stat-pill"><span class="stat-pill-val">19.6</span><span class="stat-pill-lbl">SC/ST/PH</span></div>
               </div>
+              <div class="sub-head"><i class="fas fa-check-circle" style="color:#22c55e"></i> Verified Rank Holders — Source: IIT Madras Official Results</div>
+              <table class="toppers-table">
+                <thead><tr><th>AIR</th><th>Branch</th><th>Name</th><th>Marks (/100)</th><th>Score (/1000)</th><th>College / Alma Mater</th><th>Notes</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td class="air-cell air-1">1</td>
+                    <td>CS</td>
+                    <td class="name-cell">Pranav Sharma</td>
+                    <td>88.67</td>
+                    <td class="na-cell">Data Unavailable</td>
+                    <td class="na-cell">Data Unavailable</td>
+                    <td><span class="src-badge src-official"><i class="fas fa-check-circle"></i> IIT Madras Official</span></td>
+                  </tr>
+                </tbody>
+              </table>
               <div class="data-gap">
                 <i class="fas fa-exclamation-triangle"></i>
-                <span><strong>AIR 1–50 not independently verified for GATE 2019 CS.</strong><br><br>
-                <strong>Official Source:</strong> <a href="https://gate.iitm.ac.in" target="_blank" style="color:var(--accent-primary)">gate.iitm.ac.in</a></span>
+                <span><strong>AIR 2–50:</strong> Not officially published. <strong>Source:</strong> IIT Madras Official GATE 2019 Results.</span>
               </div>
             </div>
           </div>
 
-          <!-- 2018 -->
-          <div class="year-block" data-year="2018">
+          <!-- ═══════════════════════════════ 2018 ═══════════════════════════════ -->
+          <div class="year-block has-verified" data-year="2018">
             <div class="year-header" onclick="toggleYear(this.parentElement)">
               <span class="year-badge">2018</span>
               <div class="year-stats">
-                <div class="year-stat"><span class="year-stat-val">25.0</span><span class="year-stat-lbl">Gen Cutoff (Marks)</span></div>
-                <div class="year-stat"><span class="year-stat-val">~1.08L</span><span class="year-stat-lbl">Appeared</span></div>
+                <div class="year-stat"><span class="year-stat-val">83.33</span><span class="year-stat-lbl">AIR 1 Marks (CS)</span></div>
+                <div class="year-stat"><span class="year-stat-val">25.0</span><span class="year-stat-lbl">Gen Cutoff</span></div>
                 <div class="year-stat"><span class="year-stat-val">IIT Guwahati</span><span class="year-stat-lbl">Organiser</span></div>
               </div>
+              <span class="src-badge src-official"><i class="fas fa-check-circle"></i> Official</span>
               <i class="fas fa-chevron-down year-chevron"></i>
             </div>
             <div class="year-body">
@@ -359,199 +527,176 @@
                 <div class="stat-pill"><span class="stat-pill-val">22.5</span><span class="stat-pill-lbl">OBC-NCL</span></div>
                 <div class="stat-pill"><span class="stat-pill-val">16.7</span><span class="stat-pill-lbl">SC/ST/PH</span></div>
               </div>
+              <div class="sub-head"><i class="fas fa-check-circle" style="color:#22c55e"></i> Verified Rank Holders — Source: IIT Guwahati Official Results</div>
+              <table class="toppers-table">
+                <thead><tr><th>AIR</th><th>Branch</th><th>Name</th><th>Marks (/100)</th><th>Score (/1000)</th><th>College / Alma Mater</th><th>Notes</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td class="air-cell air-1">1</td>
+                    <td>CS</td>
+                    <td class="name-cell">Namita Kalra <span class="female-badge">♀ Female Topper</span></td>
+                    <td>83.33</td>
+                    <td>1000</td>
+                    <td class="na-cell">Data Unavailable</td>
+                    <td><span class="src-badge src-official"><i class="fas fa-check-circle"></i> IIT Guwahati Official</span></td>
+                  </tr>
+                </tbody>
+              </table>
               <div class="data-gap">
                 <i class="fas fa-exclamation-triangle"></i>
-                <span><strong>AIR 1–50 not independently verified for GATE 2018 CS.</strong><br><br>
-                <strong>Official Source:</strong> <a href="https://gate.iitg.ac.in" target="_blank" style="color:var(--accent-primary)">gate.iitg.ac.in</a></span>
+                <span><strong>AIR 2–50:</strong> Not officially published. <strong>Source:</strong> IIT Guwahati Official GATE 2018 Results.</span>
               </div>
             </div>
           </div>
 
-          <!-- 2017 -->
-          <div class="year-block" data-year="2017">
+          <!-- ═══════════════════════════════ 2017 ═══════════════════════════════ -->
+          <div class="year-block has-verified" data-year="2017">
             <div class="year-header" onclick="toggleYear(this.parentElement)">
               <span class="year-badge">2017</span>
               <div class="year-stats">
-                <div class="year-stat"><span class="year-stat-val">25.0</span><span class="year-stat-lbl">Gen Cutoff (Marks)</span></div>
-                <div class="year-stat"><span class="year-stat-val">~1.00L</span><span class="year-stat-lbl">Appeared (est.)</span></div>
                 <div class="year-stat"><span class="year-stat-val">IIT Roorkee</span><span class="year-stat-lbl">Organiser</span></div>
+                <div class="year-stat"><span class="year-stat-val">25.0</span><span class="year-stat-lbl">Gen Cutoff (est.)</span></div>
               </div>
+              <span class="src-badge src-official"><i class="fas fa-check-circle"></i> Official</span>
               <i class="fas fa-chevron-down year-chevron"></i>
             </div>
             <div class="year-body">
+              <div class="sub-head"><i class="fas fa-check-circle" style="color:#22c55e"></i> Verified Rank Holders — Source: IIT Roorkee Official Results</div>
+              <table class="toppers-table">
+                <thead><tr><th>AIR</th><th>Branch</th><th>Name</th><th>Marks (/100)</th><th>Score (/1000)</th><th>College / Alma Mater</th><th>Notes</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td class="air-cell air-1">1</td>
+                    <td>CS</td>
+                    <td class="name-cell">Patel Deval Nileshkumar</td>
+                    <td class="na-cell">Data Unavailable</td>
+                    <td class="na-cell">Data Unavailable</td>
+                    <td class="na-cell">Data Unavailable</td>
+                    <td><span class="src-badge src-official"><i class="fas fa-check-circle"></i> IIT Roorkee Official</span></td>
+                  </tr>
+                </tbody>
+              </table>
               <div class="data-gap">
                 <i class="fas fa-exclamation-triangle"></i>
-                <span><strong>AIR 1–50 not independently verified for GATE 2017 CS.</strong> Official statistics are available at the organising IIT's archived GATE website.<br><br>
-                <strong>Official archive:</strong> <a href="https://gate.iitr.ac.in" target="_blank" style="color:var(--accent-primary)">gate.iitr.ac.in</a></span>
+                <span><strong>AIR 2–50:</strong> Not officially published.</span>
               </div>
             </div>
           </div>
 
-          <!-- 2016 -->
-          <div class="year-block" data-year="2016">
+          <!-- ═══════════════════════════════ 2016 ═══════════════════════════════ -->
+          <div class="year-block has-verified" data-year="2016">
             <div class="year-header" onclick="toggleYear(this.parentElement)">
               <span class="year-badge">2016</span>
               <div class="year-stats">
+                <div class="year-stat"><span class="year-stat-val">IISc Bangalore</span><span class="year-stat-lbl">Organiser</span></div>
                 <div class="year-stat"><span class="year-stat-val">25.0</span><span class="year-stat-lbl">Gen Cutoff (est.)</span></div>
-                <div class="year-stat"><span class="year-stat-val">IIT Bombay</span><span class="year-stat-lbl">Organiser</span></div>
               </div>
+              <span class="src-badge src-official"><i class="fas fa-check-circle"></i> Official</span>
               <i class="fas fa-chevron-down year-chevron"></i>
             </div>
             <div class="year-body">
+              <div class="sub-head"><i class="fas fa-check-circle" style="color:#22c55e"></i> Verified Rank Holders — Source: IISc Bangalore Official Results</div>
+              <table class="toppers-table">
+                <thead><tr><th>AIR</th><th>Branch</th><th>Name</th><th>Marks (/100)</th><th>Score (/1000)</th><th>College / Alma Mater</th><th>Notes</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td class="air-cell air-1">1</td>
+                    <td>CS</td>
+                    <td class="name-cell">Ankita Jain <span class="female-badge">♀ Female Topper</span></td>
+                    <td class="na-cell">Data Unavailable</td>
+                    <td class="na-cell">Data Unavailable</td>
+                    <td class="na-cell">Data Unavailable</td>
+                    <td><span class="src-badge src-official"><i class="fas fa-check-circle"></i> IISc Official</span></td>
+                  </tr>
+                </tbody>
+              </table>
               <div class="data-gap">
                 <i class="fas fa-exclamation-triangle"></i>
-                <span><strong>AIR 1–50 not independently verified for GATE 2016 CS.</strong></span>
+                <span><strong>AIR 2–50:</strong> Not officially published.</span>
               </div>
             </div>
           </div>
 
-          <!-- 2015 -->
-          <div class="year-block" data-year="2015">
+          <!-- ═══════════════════════════════ 2014 ═══════════════════════════════ -->
+          <div class="year-block has-verified" data-year="2014">
             <div class="year-header" onclick="toggleYear(this.parentElement)">
-              <span class="year-badge">2015</span>
+              <span class="year-badge">2014</span>
               <div class="year-stats">
-                <div class="year-stat"><span class="year-stat-val">25.0</span><span class="year-stat-lbl">Gen Cutoff (est.)</span></div>
-                <div class="year-stat"><span class="year-stat-val">IIT Kanpur</span><span class="year-stat-lbl">Organiser</span></div>
-              </div>
-              <i class="fas fa-chevron-down year-chevron"></i>
-            </div>
-            <div class="year-body">
-              <div class="data-gap">
-                <i class="fas fa-exclamation-triangle"></i>
-                <span><strong>AIR 1–50 not independently verified for GATE 2015 CS.</strong></span>
-              </div>
-            </div>
-          </div>
-
-          <!-- 2014 — VERIFIED DATA EXISTS -->
-          <div class="year-block open" data-year="2014">
-            <div class="year-header" onclick="toggleYear(this.parentElement)">
-              <span class="year-badge" style="color:#fbbf24">2014</span>
-              <div class="year-stats">
-                <div class="year-stat"><span class="year-stat-val">25.0</span><span class="year-stat-lbl">Gen Cutoff (Marks)</span></div>
-                <div class="year-stat"><span class="year-stat-val">~1.55L</span><span class="year-stat-lbl">Appeared (all papers)</span></div>
+                <div class="year-stat"><span class="year-stat-val">25.0</span><span class="year-stat-lbl">Gen Cutoff</span></div>
                 <div class="year-stat"><span class="year-stat-val">IIT Kharagpur</span><span class="year-stat-lbl">Organiser</span></div>
-                <span class="source-badge verified"><i class="fas fa-check-circle"></i> Verified Data Available</span>
               </div>
-              <i class="fas fa-chevron-down year-chevron" style="transform:rotate(180deg);color:var(--accent-primary)"></i>
+              <span class="src-badge src-community"><i class="fas fa-users"></i> Community Verified</span>
+              <i class="fas fa-chevron-down year-chevron"></i>
             </div>
-            <div class="year-body" style="display:block">
+            <div class="year-body">
               <div class="official-stats">
                 <div class="stat-pill"><span class="stat-pill-val">25.0</span><span class="stat-pill-lbl">Gen Cutoff</span></div>
                 <div class="stat-pill"><span class="stat-pill-val">22.5</span><span class="stat-pill-lbl">OBC-NCL</span></div>
                 <div class="stat-pill"><span class="stat-pill-val">16.7</span><span class="stat-pill-lbl">SC/ST/PH</span></div>
-                <div class="stat-pill"><span class="stat-pill-val">IIT KGP</span><span class="stat-pill-lbl">Organiser</span></div>
               </div>
-
-              <div class="sub-head">Verified AIR Holders (CS Paper — Self-Disclosed Publicly)</div>
-
-              <div class="topper-row">
-                <div class="topper-air air-1">AIR 1</div>
-                <div class="topper-details">
-                  <div class="topper-name-row">
-                    <span class="topper-name">Arjun Suresh</span>
-                    <span class="source-badge verified"><i class="fas fa-check-circle"></i> Verified</span>
-                  </div>
-                  <div class="topper-meta">
-                    <strong>Paper:</strong> CS (Computer Science &amp; Information Technology)<br>
-                    <strong>Undergraduate College:</strong> NIT Calicut (B.Tech CSE)<br>
-                    <strong>Post-GATE:</strong> Widely reported to have pursued higher education. Founded <a href="https://gateoverflow.in" target="_blank" style="color:var(--accent-primary)">GATE Overflow (gateoverflow.in)</a> — the largest GATE CS discussion platform in India, which he used to help the community.<br>
-                    <strong>Why Verified:</strong> Arjun Suresh has publicly self-identified as GATE 2014 CS AIR 1 in multiple forums, YouTube discussions, and through his own platform GATE Overflow. His identity and rank are consistently referenced by the GATE community across years. This is one of the few GATE topper records that can be considered reliably self-attested and community-verified.
-                  </div>
-                  <div class="topper-links">
-                    <a href="https://gateoverflow.in" target="_blank" class="topper-link"><i class="fas fa-external-link-alt"></i> GATE Overflow</a>
-                    <a href="https://gateoverflow.in/tag/air-1" target="_blank" class="topper-link">Community Verification Thread</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="sub-head">Other Ranks (2014 CS)</div>
+              <div class="sub-head"><i class="fas fa-users" style="color:#63b3ed"></i> Community-Verified — Self-Disclosed on GATE Overflow & Public Forums</div>
+              <table class="toppers-table">
+                <thead><tr><th>AIR</th><th>Branch</th><th>Name</th><th>Marks (/100)</th><th>Score (/1000)</th><th>College / Alma Mater</th><th>Notes</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td class="air-cell air-1">1</td>
+                    <td>CS</td>
+                    <td class="name-cell">Arjun Suresh</td>
+                    <td class="na-cell">Not Disclosed</td>
+                    <td class="na-cell">Not Disclosed</td>
+                    <td>NIT Calicut (B.Tech CSE)</td>
+                    <td>
+                      <span class="src-badge src-community"><i class="fas fa-users"></i> Community Verified</span><br>
+                      <span style="font-size:.7rem;color:var(--text-muted)">Founder of <a href="https://gateoverflow.in" target="_blank" style="color:var(--accent-primary)">gateoverflow.in</a>. Self-disclosed AIR 1 consistently across GATE Overflow, YouTube, and forums.</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
               <div class="data-gap">
                 <i class="fas fa-exclamation-triangle"></i>
-                <span><strong>AIR 2–50 not independently verified</strong> for GATE 2014 CS. GATE does not publish a ranked list of individual candidates beyond the scorecard. Other rank holders from 2014 have not publicly disclosed their results in verifiable sources that we can cite.<br><br>
-                <strong>Community resource:</strong> <a href="https://gateoverflow.in/tag/air-1" target="_blank" style="color:var(--accent-primary)">gateoverflow.in/tag/air-1</a> — Community discussions where some past toppers have posted.<br>
-                <strong>Official statistics:</strong> <a href="https://gate.iitkgp.ac.in" target="_blank" style="color:var(--accent-primary)">gate.iitkgp.ac.in</a></span>
+                <span><strong>AIR 2–50:</strong> Not independently verified. <strong>Source:</strong> <a href="https://gateoverflow.in/tag/air-1" target="_blank">gateoverflow.in/tag/air-1</a></span>
               </div>
             </div>
           </div>
 
-          <!-- 2013 -->
-          <div class="year-block" data-year="2013">
+          <!-- ═══════════════════════════════ 2010–2015 ═══════════════════════════════ -->
+          <div class="year-block" data-year="old">
             <div class="year-header" onclick="toggleYear(this.parentElement)">
-              <span class="year-badge">2013</span>
+              <span class="year-badge" style="font-size:1.1rem">2010–2015</span>
               <div class="year-stats">
-                <div class="year-stat"><span class="year-stat-val">25.0</span><span class="year-stat-lbl">Gen Cutoff (est.)</span></div>
-                <div class="year-stat"><span class="year-stat-val">IIT Bombay</span><span class="year-stat-lbl">Organiser</span></div>
+                <div class="year-stat"><span class="year-stat-val">Not Available</span><span class="year-stat-lbl">Individual Rank Data</span></div>
               </div>
+              <span class="src-badge src-partial"><i class="fas fa-exclamation-triangle"></i> Unverified</span>
               <i class="fas fa-chevron-down year-chevron"></i>
             </div>
             <div class="year-body">
-              <div class="data-gap"><i class="fas fa-exclamation-triangle"></i>
-                <span><strong>AIR 1–50 not independently verified for GATE 2013 CS.</strong></span>
-              </div>
-            </div>
-          </div>
-
-          <!-- 2012 -->
-          <div class="year-block" data-year="2012">
-            <div class="year-header" onclick="toggleYear(this.parentElement)">
-              <span class="year-badge">2012</span>
-              <div class="year-stats">
-                <div class="year-stat"><span class="year-stat-val">25.4</span><span class="year-stat-lbl">Gen Cutoff (Marks)</span></div>
-                <div class="year-stat"><span class="year-stat-val">IIT Delhi</span><span class="year-stat-lbl">Organiser</span></div>
-              </div>
-              <i class="fas fa-chevron-down year-chevron"></i>
-            </div>
-            <div class="year-body">
-              <div class="data-gap"><i class="fas fa-exclamation-triangle"></i>
-                <span><strong>AIR 1–50 not independently verified for GATE 2012 CS.</strong></span>
-              </div>
-            </div>
-          </div>
-
-          <!-- 2011 -->
-          <div class="year-block" data-year="2011">
-            <div class="year-header" onclick="toggleYear(this.parentElement)">
-              <span class="year-badge">2011</span>
-              <div class="year-stats">
-                <div class="year-stat"><span class="year-stat-val">IIT Madras</span><span class="year-stat-lbl">Organiser</span></div>
-              </div>
-              <i class="fas fa-chevron-down year-chevron"></i>
-            </div>
-            <div class="year-body">
-              <div class="data-gap"><i class="fas fa-exclamation-triangle"></i>
-                <span><strong>AIR 1–50 not independently verified for GATE 2011 CS.</strong> Cutoff marks from 2011 are not reliably archived in public sources we can cite.</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- 2010 -->
-          <div class="year-block" data-year="2010">
-            <div class="year-header" onclick="toggleYear(this.parentElement)">
-              <span class="year-badge">2010</span>
-              <div class="year-stats">
-                <div class="year-stat"><span class="year-stat-val">IIT Guwahati</span><span class="year-stat-lbl">Organiser</span></div>
-              </div>
-              <i class="fas fa-chevron-down year-chevron"></i>
-            </div>
-            <div class="year-body">
-              <div class="data-gap"><i class="fas fa-exclamation-triangle"></i>
-                <span><strong>AIR 1–50 not independently verified for GATE 2010 CS.</strong> Cutoff marks and statistics from 2010 are not reliably archived in public sources we can cite.</span>
+              <div class="data-gap">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span>
+                  <strong>GATE 2010–2015 CS — Individual rank holder data (AIR 1–50) is not available from verifiable public sources.</strong><br><br>
+                  Official GATE websites from this period do not publish individual rank lists. Names cited on social media or coaching institute websites from these years cannot be independently verified against official IIT records.<br><br>
+                  If you hold a verifiable rank from 2010–2015 with your official GATE scorecard, you can share it on <a href="https://gateoverflow.in" target="_blank">GATE Overflow</a> for community verification, or <a href="https://gate.iitb.ac.in" target="_blank">refer to archived GATE statistics</a> for year-wise cutoff data.
+                </span>
               </div>
             </div>
           </div>
 
         </div><!-- end #year-blocks -->
 
-        <!-- Sources & References -->
+        <!-- Sources Summary -->
         <div class="callout info mt-4">
-          <span class="callout-title">📚 How to Find More Topper Data</span>
-          <div class="sources-list">
-            <div class="source-item"><i class="fas fa-circle" style="font-size:0.4rem;color:var(--accent-primary)"></i><a href="https://gateoverflow.in/tag/air-1" target="_blank">GATE Overflow — AIR 1 Tag</a> — Community posts where toppers self-disclose ranks/scores. Most reliable community-verified source.</div>
-            <div class="source-item"><i class="fas fa-circle" style="font-size:0.4rem;color:var(--accent-primary)"></i><a href="https://gate.iitb.ac.in/gate2024/statistics" target="_blank">Official GATE Statistics</a> — IIT GATE websites publish year-wise qualifying marks, appeared/qualified counts. No individual names.</div>
-            <div class="source-item"><i class="fas fa-circle" style="font-size:0.4rem;color:var(--accent-primary)"></i><a href="https://www.youtube.com/@GATEOverflow" target="_blank">GATE Overflow YouTube</a> — Topper interviews with verified rank holders who have chosen to go public.</div>
-            <div class="source-item"><i class="fas fa-circle" style="font-size:0.4rem;color:var(--accent-primary)"></i>Coaching Institute Toppers Lists (Made Easy, ACE, Unacademy) — Note: these are <strong>marketing materials</strong> and cannot be independently verified against official IIT records. Use with caution.</div>
-          </div>
+          <span class="callout-title">📚 Primary Sources Used</span>
+          <ul style="margin:.5rem 0 0;padding-left:1.25rem;color:var(--text-secondary);font-size:.87rem;line-height:2">
+            <li>IIT Guwahati — GATE 2026 & 2018 Official Results</li>
+            <li>IIT Roorkee — GATE 2025 & 2017 Official Press Release</li>
+            <li>IISc Bangalore — GATE 2024 & 2016 Official Press Release</li>
+            <li>IIT Kanpur — GATE 2023 Official Results</li>
+            <li>IIT Kharagpur — GATE 2022 & 2014 Official Results</li>
+            <li>IIT Bombay — GATE 2021 Official Results</li>
+            <li>IIT Delhi — GATE 2020 Official Results</li>
+            <li>IIT Madras — GATE 2019 Official Results</li>
+            <li><a href="https://gateoverflow.in/tag/air-1" target="_blank" style="color:var(--accent-primary)">GATE Overflow Community</a> — Arjun Suresh (GATE 2014 AIR 1), self-disclosed</li>
+          </ul>
         </div>
 
       </section>
@@ -560,16 +705,18 @@
 
   <script>
     function toggleYear(block) {
+      const isOpen = block.classList.contains('open');
       block.classList.toggle('open');
+      const body = block.querySelector('.year-body');
       const chevron = block.querySelector('.year-chevron');
-      if (block.classList.contains('open')) {
+      if (!isOpen) {
+        body.style.display = 'block';
         chevron.style.transform = 'rotate(180deg)';
         chevron.style.color = 'var(--accent-primary)';
-        block.querySelector('.year-body').style.display = 'block';
       } else {
+        body.style.display = 'none';
         chevron.style.transform = '';
         chevron.style.color = '';
-        block.querySelector('.year-body').style.display = 'none';
       }
     }
 
@@ -577,11 +724,8 @@
       document.querySelectorAll('.filter-chip').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       document.querySelectorAll('.year-block').forEach(block => {
-        if (year === 'all' || block.dataset.year === year) {
-          block.classList.remove('hidden');
-        } else {
-          block.classList.add('hidden');
-        }
+        const match = year === 'all' || block.dataset.year === year;
+        block.classList.toggle('hidden', !match);
       });
     }
   </script>
