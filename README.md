@@ -1,15 +1,73 @@
-# GATE A TO Z
+# GATE A TO Z Screenshots
 
-🚀 **Live Demo:** [https://gateatoz.netlify.app](https://gateatoz.netlify.app)
+This document contains screenshots of all the pages in the GATE A TO Z project.
 
-A complete roadmap and opportunities guide for B.Tech CSE students preparing for GATE.
+## Index Page (`index.html`)
+![Index Screenshot](ss/index.png)
 
-## Features
-- **Complete GATE CS Syllabus Breakdown**: Detailed priorities and topic-wise strategy.
-- **Career Opportunities and Admissions Flow**: Understand IIT, NIT, and foreign admissions.
-- **PSU Recruitment Information**: Verified facts on which PSUs recruit CSE students.
-- **Interactive Preparation Roadmap**: Timeline for 2nd, 3rd, and 4th-year students.
-- **Career Decision Tree**: Interactive guide on next steps based on your rank.
+## Basics Page (`basics.html`)
+![Basics Screenshot](ss/basics.png)
 
-## Usage
-Simply click the live link above to view the website, or clone this repository and open `index.html` in your web browser. No server is required.
+## Syllabus Page (`syllabus.html`)
+![Syllabus Screenshot](ss/syllabus.png)
+
+## Predictor Page (`predictor.html`)
+![Predictor Screenshot](ss/predictor.png)
+
+## Calculator Page (`calculator.html`)
+![Calculator Screenshot](ss/calculator.png)
+
+## Tracker Page (`tracker.html`)
+![Tracker Screenshot](ss/tracker.png)
+
+## Stats Page (`stats.html`)
+![Stats Screenshot](ss/stats.png)
+
+## Pyq Page (`pyq.html`)
+![Pyq Screenshot](ss/pyq.png)
+
+## Books Page (`books.html`)
+![Books Screenshot](ss/books.png)
+
+## Toppers Page (`toppers.html`)
+![Toppers Screenshot](ss/toppers.png)
+
+## Faq Page (`faq.html`)
+![Faq Screenshot](ss/faq.png)
+
+## Institutes Page (`institutes.html`)
+![Institutes Screenshot](ss/institutes.png)
+
+## Psu Page (`psu.html`)
+![Psu Screenshot](ss/psu.png)
+
+## Admissions Page (`admissions.html`)
+![Admissions Screenshot](ss/admissions.png)
+
+## Roadmap Page (`roadmap.html`)
+![Roadmap Screenshot](ss/roadmap.png)
+
+## Opportunities Page (`opportunities.html`)
+![Opportunities Screenshot](ss/opportunities.png)
+
+## Papers Page (`papers.html`)
+![Papers Screenshot](ss/papers.png)
+
+## Scholarship Page (`scholarship.html`)
+![Scholarship Screenshot](ss/scholarship.png)
+
+## Targets Page (`targets.html`)
+![Targets Screenshot](ss/targets.png)
+
+## Abroad Page (`abroad.html`)
+![Abroad Screenshot](ss/abroad.png)
+
+## Decision Tree Page (`decision-tree.html`)
+![Decision Tree Screenshot](ss/decision-tree.png)
+
+## Resources Page (`resources.html`)
+![Resources Screenshot](ss/resources.png)
+
+## Login Page (`login.html`)
+![Login Screenshot](ss/login.png)
+
